@@ -73,8 +73,12 @@ const Home = () => {
               </div>
             </div>
             <div className="relative animate-slide-right">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                <Icon name="Car" size={200} className="text-primary opacity-50" />
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/f2c4ccd1-a251-49b3-a48a-d75310d81881.jpg" 
+                  alt="Performance car tuning"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

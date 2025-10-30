@@ -15,7 +15,8 @@ const Portfolio = () => {
       powerAfter: 245,
       torqueBefore: 400,
       torqueAfter: 500,
-      tags: ['Дизель', 'Удаление DPF']
+      tags: ['Дизель', 'Удаление DPF'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b37c5e9a-92a3-4288-af19-9ac1eb09277c.jpg'
     },
     {
       brand: 'Audi',
@@ -26,7 +27,8 @@ const Portfolio = () => {
       powerAfter: 340,
       torqueBefore: 370,
       torqueAfter: 480,
-      tags: ['Бензин', 'Турбо']
+      tags: ['Бензин', 'Турбо'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9ddb80be-3f8d-4f50-85c6-ddc06297a2fb.jpg'
     },
     {
       brand: 'Volkswagen',
@@ -37,7 +39,8 @@ const Portfolio = () => {
       powerAfter: 310,
       torqueBefore: 370,
       torqueAfter: 450,
-      tags: ['Бензин', 'DSG']
+      tags: ['Бензин', 'DSG'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/f2c4ccd1-a251-49b3-a48a-d75310d81881.jpg'
     },
     {
       brand: 'Mercedes',
@@ -48,7 +51,8 @@ const Portfolio = () => {
       powerAfter: 250,
       torqueBefore: 400,
       torqueAfter: 520,
-      tags: ['Дизель', 'Эко-тюнинг']
+      tags: ['Дизель', 'Эко-тюнинг'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b37c5e9a-92a3-4288-af19-9ac1eb09277c.jpg'
     },
     {
       brand: 'Skoda',
@@ -59,7 +63,8 @@ const Portfolio = () => {
       powerAfter: 330,
       torqueBefore: 370,
       torqueAfter: 460,
-      tags: ['Бензин', 'Stage 2']
+      tags: ['Бензин', 'Stage 2'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9ddb80be-3f8d-4f50-85c6-ddc06297a2fb.jpg'
     },
     {
       brand: 'Ford',
@@ -70,7 +75,8 @@ const Portfolio = () => {
       powerAfter: 300,
       torqueBefore: 360,
       torqueAfter: 440,
-      tags: ['Бензин', 'Турбо']
+      tags: ['Бензин', 'Турбо'],
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/f2c4ccd1-a251-49b3-a48a-d75310d81881.jpg'
     },
   ];
 
@@ -89,7 +95,14 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="group hover:border-primary transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 50}ms` }}>
+              <Card key={index} className="group hover:border-primary transition-all duration-300 animate-scale-in overflow-hidden" style={{ animationDelay: `${index * 50}ms` }}>
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={`${project.brand} ${project.model}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>

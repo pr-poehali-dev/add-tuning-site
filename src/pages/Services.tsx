@@ -56,11 +56,20 @@ const Services = () => {
       
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Наши услуги</h1>
-            <p className="text-xl text-muted-foreground">
-              Полный спектр услуг по чип-тюнингу и диагностике автомобилей всех марок
-            </p>
+          <div className="mb-12 rounded-2xl overflow-hidden h-64 relative">
+            <img 
+              src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b37c5e9a-92a3-4288-af19-9ac1eb09277c.jpg" 
+              alt="Engine tuning"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end">
+              <div className="p-8 w-full text-center">
+                <h1 className="text-5xl md:text-6xl font-bold mb-4">Наши услуги</h1>
+                <p className="text-xl text-muted-foreground">
+                  Полный спектр услуг по чип-тюнингу и диагностике автомобилей всех марок
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
