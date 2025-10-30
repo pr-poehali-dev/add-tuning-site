@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import TuningCalculator from '@/components/TuningCalculator';
 
 const Price = () => {
   const priceCategories = [
@@ -89,9 +90,10 @@ const Price = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Прайс-лист</h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground mb-6">
               Прозрачные цены на все виды услуг. Точная стоимость определяется после диагностики вашего автомобиля
             </p>
+            <TuningCalculator />
           </div>
 
           <div className="mb-20">

@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import TuningCalculator from '@/components/TuningCalculator';
 
 const Home = () => {
   const services = [
@@ -66,10 +67,7 @@ const Home = () => {
                   <Icon name="CalendarCheck" size={20} className="mr-2" />
                   Записаться на тюнинг
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2">
-                  <Icon name="Calculator" size={20} className="mr-2" />
-                  Рассчитать стоимость
-                </Button>
+                <TuningCalculator />
               </div>
             </div>
             <div className="relative animate-slide-right">
