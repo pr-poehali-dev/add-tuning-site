@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import QuickBookingForm from '@/components/QuickBookingForm';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,13 +48,15 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+79999999999" className="text-foreground hover:text-primary transition-colors">
-              <Icon name="Phone" size={20} className="inline mr-2" />
+            <a href="tel:+79999999999" className="text-foreground hover:text-primary transition-colors flex items-center">
+              <Icon name="Phone" size={20} className="mr-2" />
               +7 (999) 999-99-99
             </a>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Записаться
-            </Button>
+            <a href="/contacts">
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                Записаться
+              </Button>
+            </a>
           </div>
 
           <button
@@ -81,13 +84,11 @@ const Header = () => {
               </Link>
             ))}
             <div className="mt-4 px-4 space-y-3">
-              <a href="tel:+79999999999" className="block text-foreground">
-                <Icon name="Phone" size={20} className="inline mr-2" />
+              <QuickBookingForm onSuccess={() => setIsMenuOpen(false)} />
+              <a href="tel:+79999999999" className="flex items-center justify-center text-foreground hover:text-primary transition-colors p-3 bg-muted rounded-md">
+                <Icon name="Phone" size={20} className="mr-2" />
                 +7 (999) 999-99-99
               </a>
-              <Button size="lg" className="w-full bg-primary hover:bg-primary/90">
-                Записаться
-              </Button>
             </div>
           </nav>
         )}
