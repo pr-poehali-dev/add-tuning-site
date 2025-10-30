@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Icon name="MapPin" size={16} className="mr-2 mt-1 text-primary flex-shrink-0" />
-                <span>г. Москва, ул. Автомобильная, д. 1</span>
+                <span>г. Тольятти, Пр-кт Степана Разина, дом 50</span>
               </li>
             </ul>
           </div>
