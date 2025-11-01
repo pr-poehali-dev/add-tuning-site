@@ -126,9 +126,7 @@ const Contacts = () => {
                     <Icon name="Info" size={24} className="text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold mb-2">Как нас найти?</h3>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Мы находимся на проспекте Степана Разина, д. 50 в Тольятти. Есть удобная парковка для клиентов.
-                      </p>
+                      <p className="text-sm text-muted-foreground mb-3">Мы находимся на проспекте Степана Разина, д. 50 в Тольятти. Есть удобная парковка для клиентов.</p>
                       <Button variant="outline" className="w-full" asChild>
                         <a href="https://yandex.ru/maps" target="_blank" rel="noopener noreferrer">
                           <Icon name="Navigation" size={16} className="mr-2" />
