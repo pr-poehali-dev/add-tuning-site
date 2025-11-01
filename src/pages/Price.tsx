@@ -70,6 +70,20 @@ const Price = () => {
 
   const { minTotal, maxTotal, count } = calculateTotal();
 
+  const sendToWhatsApp = () => {
+    const selected = services.filter(s => selectedServices.includes(s.id));
+    const servicesList = selected.map(s => `• ${s.name}`).join('\n');
+    const priceRange = minTotal === maxTotal 
+      ? `${minTotal.toLocaleString('ru-RU')} ₽`
+      : `${minTotal.toLocaleString('ru-RU')} - ${maxTotal.toLocaleString('ru-RU')} ₽`;
+    
+    const message = `Здравствуйте! Хочу узнать подробнее о следующих услугах:\n\n${servicesList}\n\nОриентировочная стоимость: ${priceRange}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/79270080050?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -158,9 +172,12 @@ const Price = () => {
                         </div>
 
                         <div className="pt-4 space-y-3">
-                          <Button className="w-full bg-primary hover:bg-primary/90">
-                            <Icon name="Phone" size={18} className="mr-2" />
-                            Записаться
+                          <Button 
+                            className="w-full bg-[#25D366] hover:bg-[#1fb855] text-white"
+                            onClick={sendToWhatsApp}
+                          >
+                            <Icon name="MessageCircle" size={18} className="mr-2" />
+                            Отправить в WhatsApp
                           </Button>
                           <Button
                             variant="outline"
