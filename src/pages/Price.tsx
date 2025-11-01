@@ -1,188 +1,197 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import TuningCalculator from '@/components/TuningCalculator';
+
+interface ServiceItem {
+  id: string;
+  name: string;
+  minPrice: number;
+  maxPrice: number;
+  category: string;
+}
 
 const Price = () => {
-  const priceCategories = [
-    {
-      category: 'Чип-тюнинг',
-      items: [
-        { service: 'Stage 1 (бензин)', price: '15 000 - 25 000 ₽' },
-        { service: 'Stage 1 (дизель)', price: '18 000 - 30 000 ₽' },
-        { service: 'Stage 2 (с доработками)', price: '35 000 - 60 000 ₽' },
-        { service: 'Эко-тюнинг', price: '12 000 - 20 000 ₽' },
-      ]
-    },
-    {
-      category: 'Программное отключение систем (бензин)',
-      items: [
-        { service: 'SpeedLim (изменение ограничения скорости)', price: '5 000 - 8 000 ₽' },
-        { service: 'RPM (изменение отсечки по оборотам)', price: '5 000 - 8 000 ₽' },
-        { service: 'E2 (отключение диагностики катализатора)', price: '6 000 - 10 000 ₽' },
-        { service: 'noSecAir (отключение вторичного воздуха)', price: '6 000 - 10 000 ₽' },
-        { service: 'noEGR (отключение рециркуляции газов)', price: '6 000 - 12 000 ₽' },
-        { service: 'noEVAP (отключение вентиляции бака)', price: '5 000 - 9 000 ₽' },
-        { service: 'noSwirl (отключение вихревых заслонок)', price: '5 000 - 9 000 ₽' },
-        { service: 'DTC (селективное отключение ошибок)', price: '4 000 - 7 000 ₽' },
-      ]
-    },
-    {
-      category: 'Программное отключение систем (дизель)',
-      items: [
-        { service: 'SpeedLim (изменение ограничения скорости)', price: '5 000 - 8 000 ₽' },
-        { service: 'RPM (изменение отсечки по оборотам)', price: '5 000 - 8 000 ₽' },
-        { service: 'noDPF (отключение сажевого фильтра)', price: '8 000 - 15 000 ₽' },
-        { service: 'noEGR (отключение рециркуляции газов)', price: '6 000 - 12 000 ₽' },
-        { service: 'noAdBlue (отключение впрыска мочевины)', price: '10 000 - 18 000 ₽' },
-        { service: 'noSwirl (отключение вихревых заслонок)', price: '5 000 - 9 000 ₽' },
-        { service: 'DTC (селективное отключение ошибок)', price: '4 000 - 7 000 ₽' },
-        { service: 'Оптимизация под ГБО', price: '12 000 - 20 000 ₽' },
-      ]
-    },
-    {
-      category: 'Коробки передач',
-      items: [
-        { service: 'Прошивка DSG', price: '18 000 - 25 000 ₽' },
-        { service: 'Прошивка АКПП', price: '15 000 - 22 000 ₽' },
-        { service: 'Увеличение лимитов АКПП', price: '20 000 - 30 000 ₽' },
-      ]
-    },
-    {
-      category: 'Диагностика',
-      items: [
-        { service: 'Компьютерная диагностика', price: '2 000 ₽' },
-        { service: 'Считывание прошивки', price: '3 000 ₽' },
-        { service: 'Восстановление ЭБУ', price: '5 000 - 15 000 ₽' },
-        { service: 'Полная диагностика', price: '4 000 ₽' },
-      ]
-    },
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const services: ServiceItem[] = [
+    { id: 'stage1-petrol', name: 'Stage 1 (бензин)', minPrice: 15000, maxPrice: 25000, category: 'Чип-тюнинг' },
+    { id: 'stage1-diesel', name: 'Stage 1 (дизель)', minPrice: 18000, maxPrice: 30000, category: 'Чип-тюнинг' },
+    { id: 'stage2', name: 'Stage 2 (с доработками)', minPrice: 35000, maxPrice: 60000, category: 'Чип-тюнинг' },
+    { id: 'eco-tuning', name: 'Эко-тюнинг', minPrice: 12000, maxPrice: 20000, category: 'Чип-тюнинг' },
+    
+    { id: 'speedlim-petrol', name: 'SpeedLim (изменение ограничения скорости)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (бензин)' },
+    { id: 'rpm-petrol', name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (бензин)' },
+    { id: 'e2', name: 'E2 (отключение диагностики катализатора)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
+    { id: 'nosecair', name: 'noSecAir (отключение вторичного воздуха)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
+    { id: 'noegr-petrol', name: 'noEGR (отключение рециркуляции газов)', minPrice: 6000, maxPrice: 12000, category: 'Программное отключение (бензин)' },
+    { id: 'noevap', name: 'noEVAP (отключение вентиляции бака)', minPrice: 5000, maxPrice: 9000, category: 'Программное отключение (бензин)' },
+    { id: 'noswirl-petrol', name: 'noSwirl (отключение вихревых заслонок)', minPrice: 5000, maxPrice: 9000, category: 'Программное отключение (бензин)' },
+    { id: 'dtc-petrol', name: 'DTC (селективное отключение ошибок)', minPrice: 4000, maxPrice: 7000, category: 'Программное отключение (бензин)' },
+    
+    { id: 'speedlim-diesel', name: 'SpeedLim (изменение ограничения скорости)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (дизель)' },
+    { id: 'rpm-diesel', name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (дизель)' },
+    { id: 'nodpf', name: 'noDPF (отключение сажевого фильтра)', minPrice: 8000, maxPrice: 15000, category: 'Программное отключение (дизель)' },
+    { id: 'noegr-diesel', name: 'noEGR (отключение рециркуляции газов)', minPrice: 6000, maxPrice: 12000, category: 'Программное отключение (дизель)' },
+    { id: 'noadblue', name: 'noAdBlue (отключение впрыска мочевины)', minPrice: 10000, maxPrice: 18000, category: 'Программное отключение (дизель)' },
+    { id: 'noswirl-diesel', name: 'noSwirl (отключение вихревых заслонок)', minPrice: 5000, maxPrice: 9000, category: 'Программное отключение (дизель)' },
+    { id: 'dtc-diesel', name: 'DTC (селективное отключение ошибок)', minPrice: 4000, maxPrice: 7000, category: 'Программное отключение (дизель)' },
+    { id: 'gbo', name: 'Оптимизация под ГБО', minPrice: 12000, maxPrice: 20000, category: 'Программное отключение (дизель)' },
+    
+    { id: 'dsg', name: 'Прошивка DSG', minPrice: 18000, maxPrice: 25000, category: 'Коробки передач' },
+    { id: 'akpp', name: 'Прошивка АКПП', minPrice: 15000, maxPrice: 22000, category: 'Коробки передач' },
+    { id: 'akpp-limits', name: 'Увеличение лимитов АКПП', minPrice: 20000, maxPrice: 30000, category: 'Коробки передач' },
+    
+    { id: 'diag-computer', name: 'Компьютерная диагностика', minPrice: 2000, maxPrice: 2000, category: 'Диагностика' },
+    { id: 'diag-read', name: 'Считывание прошивки', minPrice: 3000, maxPrice: 3000, category: 'Диагностика' },
+    { id: 'diag-recovery', name: 'Восстановление ЭБУ', minPrice: 5000, maxPrice: 15000, category: 'Диагностика' },
+    { id: 'diag-full', name: 'Полная диагностика', minPrice: 4000, maxPrice: 4000, category: 'Диагностика' },
   ];
 
-  const packages = [
-    {
-      name: 'Базовый',
-      price: '15 000 ₽',
-      features: [
-        'Stage 1 тюнинг',
-        'Прирост мощности до 30%',
-        'Компьютерная диагностика',
-        'Гарантия 1 год',
-      ],
-      popular: false
-    },
-    {
-      name: 'Оптимальный',
-      price: '28 000 ₽',
-      features: [
-        'Stage 2 тюнинг',
-        'Прирост мощности до 50%',
-        'Удаление DPF/EGR',
-        'Полная диагностика',
-        'Гарантия 2 года',
-      ],
-      popular: true
-    },
-    {
-      name: 'Максимальный',
-      price: '45 000 ₽',
-      features: [
-        'Stage 2+ с доработками',
-        'Прошивка АКПП/DSG',
-        'Все системы удалены',
-        'Стендовые испытания',
-        'Пожизненная гарантия',
-      ],
-      popular: false
-    },
-  ];
+  const categories = Array.from(new Set(services.map(s => s.category)));
+
+  const toggleService = (serviceId: string) => {
+    setSelectedServices(prev =>
+      prev.includes(serviceId)
+        ? prev.filter(id => id !== serviceId)
+        : [...prev, serviceId]
+    );
+  };
+
+  const calculateTotal = () => {
+    const selected = services.filter(s => selectedServices.includes(s.id));
+    const minTotal = selected.reduce((sum, s) => sum + s.minPrice, 0);
+    const maxTotal = selected.reduce((sum, s) => sum + s.maxPrice, 0);
+    return { minTotal, maxTotal, count: selected.length };
+  };
+
+  const { minTotal, maxTotal, count } = calculateTotal();
 
   return (
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Прайс-лист</h1>
-            <p className="text-xl text-muted-foreground mb-6">
-              Прозрачные цены на все виды услуг. Точная стоимость определяется после диагностики вашего автомобиля
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/5">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Прайс-лист</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Выберите интересующие услуги и получите ориентировочный расчет стоимости
             </p>
-            <TuningCalculator />
           </div>
 
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Готовые пакеты</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages.map((pkg, index) => (
-                <Card key={index} className={`relative ${pkg.popular ? 'border-primary border-2' : ''} animate-scale-in`} style={{ animationDelay: `${index * 100}ms` }}>
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                      Популярный
-                    </div>
-                  )}
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-2xl mb-2">{pkg.name}</CardTitle>
-                    <div className="text-4xl font-bold text-primary">{pkg.price}</div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-6">
+              {categories.map((category) => (
+                <Card key={category}>
+                  <CardHeader>
+                    <CardTitle className="text-xl">{category}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <Icon name="Check" size={20} className="text-primary mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className={`w-full ${pkg.popular ? 'bg-primary hover:bg-primary/90' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
-                      Выбрать пакет
-                    </Button>
+                    <div className="space-y-3">
+                      {services
+                        .filter(s => s.category === category)
+                        .map((service) => (
+                          <div
+                            key={service.id}
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors cursor-pointer"
+                            onClick={() => toggleService(service.id)}
+                          >
+                            <Checkbox
+                              id={service.id}
+                              checked={selectedServices.includes(service.id)}
+                              onCheckedChange={() => toggleService(service.id)}
+                            />
+                            <label
+                              htmlFor={service.id}
+                              className="flex-1 cursor-pointer select-none"
+                            >
+                              <div className="flex justify-between items-start gap-4">
+                                <span className="text-sm leading-relaxed">{service.name}</span>
+                                <span className="text-sm font-medium text-primary whitespace-nowrap">
+                                  {service.minPrice === service.maxPrice
+                                    ? `${service.minPrice.toLocaleString('ru-RU')} ₽`
+                                    : `${service.minPrice.toLocaleString('ru-RU')} - ${service.maxPrice.toLocaleString('ru-RU')} ₽`
+                                  }
+                                </span>
+                              </div>
+                            </label>
+                          </div>
+                        ))}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-          </div>
 
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-center">Подробный прайс</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {priceCategories.map((category, index) => (
-                <Card key={index} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                <Card className="border-2 border-primary/20">
                   <CardHeader>
-                    <CardTitle className="text-2xl flex items-center">
-                      <Icon name="ListChecks" size={24} className="text-primary mr-2" />
-                      {category.category}
+                    <CardTitle className="flex items-center gap-2">
+                      <Icon name="Calculator" size={20} className="text-primary" />
+                      Ваш расчет
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {category.items.map((item, idx) => (
-                        <div key={idx} className="flex justify-between items-center pb-3 border-b border-border last:border-0">
-                          <span className="text-muted-foreground">{item.service}</span>
-                          <span className="font-semibold text-primary">{item.price}</span>
+                  <CardContent className="space-y-4">
+                    {count > 0 ? (
+                      <>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <span className="text-muted-foreground">Выбрано услуг:</span>
+                            <span className="font-semibold">{count}</span>
+                          </div>
+                          <div className="pt-4 border-t">
+                            <p className="text-sm text-muted-foreground mb-2">
+                              Ориентировочная стоимость программных работ:
+                            </p>
+                            <div className="text-3xl font-bold text-primary">
+                              {minTotal === maxTotal
+                                ? `${minTotal.toLocaleString('ru-RU')} ₽`
+                                : `${minTotal.toLocaleString('ru-RU')} - ${maxTotal.toLocaleString('ru-RU')} ₽`
+                              }
+                            </div>
+                          </div>
                         </div>
-                      ))}
-                    </div>
+
+                        <div className="pt-4 space-y-3">
+                          <Button className="w-full bg-primary hover:bg-primary/90">
+                            <Icon name="Phone" size={18} className="mr-2" />
+                            Записаться
+                          </Button>
+                          <Button
+                            variant="outline"
+                            className="w-full"
+                            onClick={() => setSelectedServices([])}
+                          >
+                            Очистить выбор
+                          </Button>
+                        </div>
+
+                        <div className="pt-4 border-t">
+                          <div className="flex gap-2 text-xs text-muted-foreground">
+                            <Icon name="Info" size={14} className="mt-0.5 flex-shrink-0" />
+                            <p>
+                              Точная стоимость определяется после диагностики и зависит от марки и модели автомобиля
+                            </p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="text-center py-8">
+                        <Icon name="ListChecks" size={48} className="mx-auto mb-3 text-muted-foreground/30" />
+                        <p className="text-sm text-muted-foreground">
+                          Выберите услуги из списка для расчета стоимости
+                        </p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
-              ))}
+              </div>
             </div>
-          </div>
-
-          <div className="mt-16 bg-card rounded-2xl p-8 text-center">
-            <Icon name="Info" size={48} className="text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Важная информация</h3>
-            <div className="max-w-2xl mx-auto text-muted-foreground space-y-2">
-              <p>• Стоимость работ зависит от марки и модели автомобиля</p>
-              <p>• Первичная диагностика входит в стоимость тюнинга</p>
-              <p>• При заказе нескольких услуг предоставляются скидки</p>
-              <p>• Гарантия на все виды работ</p>
-            </div>
-            <Button size="lg" className="mt-6 bg-primary hover:bg-primary/90">
-              Получить точный расчет
-            </Button>
           </div>
         </div>
       </section>
