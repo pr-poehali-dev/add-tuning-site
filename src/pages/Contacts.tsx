@@ -42,7 +42,7 @@ const Contacts = () => {
     {
       icon: 'MapPin',
       title: 'Адрес',
-      content: 'г. Москва, ул. Автомобильная, д. 1',
+      content: 'г. Тольятти, проспект Степана Разина, д. 50',
       link: 'https://yandex.ru/maps'
     },
     {
@@ -127,7 +127,7 @@ const Contacts = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Как нас найти?</h3>
                       <p className="text-sm text-muted-foreground mb-3">
-                        Мы находимся в 5 минутах от метро Автозаводская. Есть удобная парковка для клиентов.
+                        Мы находимся на проспекте Степана Разина, д. 50 в Тольятти. Есть удобная парковка для клиентов.
                       </p>
                       <Button variant="outline" className="w-full" asChild>
                         <a href="https://yandex.ru/maps" target="_blank" rel="noopener noreferrer">
