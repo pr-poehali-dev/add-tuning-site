@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-foreground">ADD Tuning</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Профессиональный чип-тюнинг автомобилей. Увеличение мощности и крутящего момента.
+              Частный мастер по чип-тюнингу. Индивидуальный подход к каждому автомобилю.
             </p>
           </div>
 

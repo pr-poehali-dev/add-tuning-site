@@ -42,7 +42,7 @@ const Home = () => {
   const stats = [
     { number: '2500+', label: 'Автомобилей прошито' },
     { number: '98%', label: 'Довольных клиентов' },
-    { number: '7', label: 'Лет на рынке' },
+    { number: '7', label: 'Лет опыта' },
     { number: '50+', label: 'Марок авто' },
   ];
 
@@ -60,7 +60,7 @@ const Home = () => {
                 вашего авто
               </h1>
               <p className="text-xl text-muted-foreground">
-                Профессиональный чип-тюнинг от сертифицированных мастеров. Увеличение мощности до 50% с гарантией безопасности.
+                Профессиональный чип-тюнинг вашего автомобиля. Увеличение мощности до 50% с индивидуальным подходом и гарантией качества.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
@@ -99,8 +99,8 @@ const Home = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши услуги</h2>
-            <p className="text-xl text-muted-foreground">Полный спектр услуг по чип-тюнингу</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Мои услуги</h2>
+            <p className="text-xl text-muted-foreground">Полный спектр работ по чип-тюнингу</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
@@ -127,7 +127,7 @@ const Home = () => {
             </p>
             <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
               <Icon name="Phone" size={20} className="mr-2" />
-              Позвонить нам
+              Позвонить мне
             </Button>
           </div>
         </div>

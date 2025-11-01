@@ -72,9 +72,9 @@ const Services = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end">
               <div className="p-8 w-full text-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4">Наши услуги</h1>
+                <h1 className="text-5xl md:text-6xl font-bold mb-4">Мои услуги</h1>
                 <p className="text-xl text-muted-foreground">
-                  Полный спектр услуг по чип-тюнингу и диагностике автомобилей всех марок
+                  Полный спектр работ по чип-тюнингу и диагностике автомобилей всех марок
                 </p>
               </div>
             </div>
