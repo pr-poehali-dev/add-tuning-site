@@ -43,7 +43,7 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
           />
           <Input
             type="tel"
-            placeholder="+7 (999) 999-99-99"
+            placeholder="+7 (937) 213-45-47"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             required

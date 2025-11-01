@@ -48,9 +48,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+79999999999" className="text-foreground hover:text-primary transition-colors flex items-center">
+            <a href="tel:+79372134547" className="text-foreground hover:text-primary transition-colors flex items-center">
               <Icon name="Phone" size={20} className="mr-2" />
-              +7 (999) 999-99-99
+              +7 (937) 213-45-47
             </a>
             <a href="/contacts">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -85,9 +85,9 @@ const Header = () => {
             ))}
             <div className="mt-4 px-4 space-y-3">
               <QuickBookingForm onSuccess={() => setIsMenuOpen(false)} />
-              <a href="tel:+79999999999" className="flex items-center justify-center text-foreground hover:text-primary transition-colors p-3 bg-muted rounded-md">
+              <a href="tel:+79372134547" className="flex items-center justify-center text-foreground hover:text-primary transition-colors p-3 bg-muted rounded-md">
                 <Icon name="Phone" size={20} className="mr-2" />
-                +7 (999) 999-99-99
+                +7 (937) 213-45-47
               </a>
             </div>
           </nav>

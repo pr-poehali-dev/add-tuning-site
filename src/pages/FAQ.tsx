@@ -126,7 +126,7 @@ const FAQ = () => {
               Свяжитесь с нами любым удобным способом, и мы с радостью ответим на все ваши вопросы
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+79999999999" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-semibold">
+              <a href="tel:+79372134547" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-semibold">
                 <Icon name="Phone" size={20} className="mr-2" />
                 Позвонить нам
               </a>

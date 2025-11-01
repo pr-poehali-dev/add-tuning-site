@@ -30,14 +30,14 @@ const Contacts = () => {
     {
       icon: 'Phone',
       title: 'Телефон',
-      content: '+7 (999) 999-99-99',
-      link: 'tel:+79999999999'
+      content: '+7 (937) 213-45-47',
+      link: 'tel:+79372134547'
     },
     {
       icon: 'Mail',
       title: 'Email',
-      content: 'info@addtuning.ru',
-      link: 'mailto:info@addtuning.ru'
+      content: 'serereme@yandex.ru',
+      link: 'mailto:serereme@yandex.ru'
     },
     {
       icon: 'MapPin',
@@ -158,7 +158,7 @@ const Contacts = () => {
                     <label className="text-sm font-medium mb-2 block">Телефон</label>
                     <Input
                       type="tel"
-                      placeholder="+7 (999) 999-99-99"
+                      placeholder="+7 (937) 213-45-47"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
