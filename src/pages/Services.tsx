@@ -149,15 +149,26 @@ const Services = () => {
       </section>
 
       <section className="py-12 px-4 bg-background">
-        <div className="container mx-auto text-center">
-          <Button 
-            size="lg" 
-            className="gap-2"
-            onClick={() => window.open('https://wa.me/79270080050?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20ваших%20услугах', '_blank')}
-          >
-            <Icon name="MessageCircle" size={20} />
-            Получить консультацию
-          </Button>
+        <div className="container mx-auto">
+          <div className="flex justify-center gap-4 flex-wrap">
+            <Button 
+              size="lg" 
+              className="gap-2"
+              onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20ваших%20услугах', '_blank')}
+            >
+              <Icon name="MessageCircle" size={20} />
+              Консультация в WhatsApp
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="gap-2"
+              onClick={() => window.open('https://t.me/79372134547', '_blank')}
+            >
+              <Icon name="Send" size={20} />
+              Консультация в Telegram
+            </Button>
+          </div>
         </div>
       </section>
 

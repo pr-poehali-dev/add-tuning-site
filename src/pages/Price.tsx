@@ -113,14 +113,23 @@ const Price = () => {
             </CardContent>
           </Card>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex justify-center gap-4 flex-wrap">
             <Button 
               size="lg" 
               className="gap-2"
-              onClick={() => window.open('https://wa.me/79270080050?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20чип-тюнинга', '_blank')}
+              onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20чип-тюнинга', '_blank')}
             >
               <Icon name="MessageCircle" size={20} />
-              Получить консультацию
+              Консультация в WhatsApp
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="gap-2"
+              onClick={() => window.open('https://t.me/79372134547', '_blank')}
+            >
+              <Icon name="Send" size={20} />
+              Консультация в Telegram
             </Button>
           </div>
         </div>
