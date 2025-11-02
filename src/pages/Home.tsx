@@ -138,8 +138,7 @@ const Home = () => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-6 gap-2"
+                className="text-lg px-8 py-6 gap-2 bg-[#0088cc] hover:bg-[#0077b3] text-white"
                 onClick={() => window.open('https://t.me/79372134547', '_blank')}
               >
                 <Icon name="Send" size={20} />
