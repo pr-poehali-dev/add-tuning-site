@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -111,6 +112,17 @@ const Price = () => {
               </div>
             </CardContent>
           </Card>
+
+          <div className="mt-8 text-center">
+            <Button 
+              size="lg" 
+              className="gap-2"
+              onClick={() => window.open('https://wa.me/79270080050?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20чип-тюнинга', '_blank')}
+            >
+              <Icon name="MessageCircle" size={20} />
+              Получить консультацию
+            </Button>
+          </div>
         </div>
       </section>
 
