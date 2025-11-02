@@ -148,6 +148,19 @@ const Services = () => {
         </div>
       </section>
 
+      <section className="py-12 px-4 bg-background">
+        <div className="container mx-auto text-center">
+          <Button 
+            size="lg" 
+            className="gap-2"
+            onClick={() => window.open('https://wa.me/79270080050?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20ваших%20услугах', '_blank')}
+          >
+            <Icon name="MessageCircle" size={20} />
+            Получить консультацию
+          </Button>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

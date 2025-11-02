@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -165,16 +166,14 @@ const Portfolio = () => {
               <p className="text-muted-foreground mb-6">
                 Запишитесь на бесплатную диагностику и получите расчет прироста мощности для вашего автомобиля
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+79372134547" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-semibold">
-                  <Icon name="Phone" size={20} className="mr-2" />
-                  Позвонить нам
-                </a>
-                <a href="#" className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-foreground rounded-md hover:bg-primary/10 transition-colors font-semibold">
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  Написать в Telegram
-                </a>
-              </div>
+              <Button 
+                size="lg" 
+                className="gap-2 mx-auto"
+                onClick={() => window.open('https://wa.me/79270080050?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
+              >
+                <Icon name="MessageCircle" size={20} />
+                Получить консультацию
+              </Button>
             </div>
           </div>
         </div>
