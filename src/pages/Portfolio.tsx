@@ -122,7 +122,7 @@ const Portfolio = () => {
                       <div className="flex items-center justify-between">
                         <span className="text-lg">245</span>
                         <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">{project.powerAfter} л.с.</span>
+                        <span className="text-2xl font-bold text-primary">352</span>
                       </div>
                       <div className="text-right text-sm text-primary font-semibold mt-1">
                         +{project.powerAfter - project.powerBefore} л.с. 
