@@ -108,7 +108,7 @@ const Portfolio = () => {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold">{project.brand}</h3>
-                      <p className="text-muted-foreground">530d F10 2013</p>
+                      <p className="text-muted-foreground">{project.model} • {project.year}</p>
                     </div>
                     <Badge className="bg-primary">{project.stage}</Badge>
                   </div>
@@ -120,9 +120,9 @@ const Portfolio = () => {
                         <Icon name="TrendingUp" size={16} className="text-primary" />
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg">245</span>
+                        <span className="text-lg">{project.powerBefore} л.с.</span>
                         <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">352</span>
+                        <span className="text-2xl font-bold text-primary">{project.powerAfter} л.с.</span>
                       </div>
                       <div className="text-right text-sm text-primary font-semibold mt-1">
                         +{project.powerAfter - project.powerBefore} л.с. 
@@ -136,9 +136,9 @@ const Portfolio = () => {
                         <Icon name="Gauge" size={16} className="text-primary" />
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg">540</span>
+                        <span className="text-lg">{project.torqueBefore} Нм</span>
                         <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">631</span>
+                        <span className="text-2xl font-bold text-primary">{project.torqueAfter} Нм</span>
                       </div>
                       <div className="text-right text-sm text-primary font-semibold mt-1">
                         +{project.torqueAfter - project.torqueBefore} Нм
