@@ -61,16 +61,7 @@ const Home = () => {
               <p className="text-xl text-muted-foreground">
                 Профессиональный чип-тюнинг вашего автомобиля. Увеличение мощности до 50% с индивидуальным подходом и гарантией качества.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90"
-                  onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
-                >
-                  <Icon name="MessageCircle" size={20} className="mr-2" />
-                  Консультация в WhatsApp
-                </Button>
-              </div>
+
             </div>
             <div className="relative animate-slide-right">
               <div className="aspect-square rounded-2xl overflow-hidden">
