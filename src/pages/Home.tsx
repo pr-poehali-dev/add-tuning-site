@@ -123,7 +123,7 @@ const Home = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Готовы усилить свой автомобиль?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Пришло время ощутить весь потенциал вашего авто !</h2>
             <p className="text-xl text-muted-foreground mb-8">
               Запишитесь на консультацию и получите расчет стоимости под ваш автомобиль
             </p>
