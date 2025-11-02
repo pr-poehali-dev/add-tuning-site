@@ -134,7 +134,7 @@ const Services = () => {
                   <Icon name="Shield" size={32} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Гарантия</h3>
-                <p className="text-muted-foreground">Официальная гарантия на все виды работ</p>
+                <p className="text-muted-foreground">Гарантия на все виды работ</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
