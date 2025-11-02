@@ -108,7 +108,7 @@ const Services = () => {
                     className="w-full bg-primary hover:bg-primary/90"
                     onClick={() => setSelectedService(service.title)}
                   >
-                    Заказать услугу
+                    Запись на услугу
                   </Button>
                 </CardContent>
               </Card>
@@ -148,28 +148,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-12 px-4 bg-background">
-        <div className="container mx-auto">
-          <div className="flex justify-center gap-4 flex-wrap">
-            <Button 
-              size="lg" 
-              className="gap-2"
-              onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20ваших%20услугах', '_blank')}
-            >
-              <Icon name="MessageCircle" size={20} />
-              Консультация в WhatsApp
-            </Button>
-            <Button 
-              size="lg" 
-              className="gap-2 bg-[#0088cc] hover:bg-[#0077b3] text-white"
-              onClick={() => window.open('https://t.me/79372134547', '_blank')}
-            >
-              <Icon name="Send" size={20} />
-              Консультация в Telegram
-            </Button>
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
       

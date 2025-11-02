@@ -65,10 +65,10 @@ const Home = () => {
                 <Button 
                   size="lg" 
                   className="text-lg px-8 py-6 bg-primary hover:bg-primary/90"
-                  onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг', '_blank')}
+                  onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
                 >
-                  <Icon name="CalendarCheck" size={20} className="mr-2" />
-                  Записаться на тюнинг
+                  <Icon name="MessageCircle" size={20} className="mr-2" />
+                  Консультация в WhatsApp
                 </Button>
               </div>
             </div>
@@ -135,14 +135,6 @@ const Home = () => {
               >
                 <Icon name="MessageCircle" size={20} />
                 Консультация в WhatsApp
-              </Button>
-              <Button 
-                size="lg" 
-                className="text-lg px-8 py-6 gap-2 bg-[#0088cc] hover:bg-[#0077b3] text-white"
-                onClick={() => window.open('https://t.me/79372134547', '_blank')}
-              >
-                <Icon name="Send" size={20} />
-                Консультация в Telegram
               </Button>
             </div>
           </div>
