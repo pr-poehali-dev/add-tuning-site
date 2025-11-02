@@ -163,9 +163,7 @@ const Portfolio = () => {
             <div className="bg-card rounded-2xl p-8 max-w-2xl mx-auto">
               <Icon name="BarChart3" size={48} className="text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4">Хотите такой же результат?</h3>
-              <p className="text-muted-foreground mb-6">
-                Запишитесь на бесплатную диагностику и получите расчет прироста мощности для вашего автомобиля
-              </p>
+              <p className="text-muted-foreground mb-6">Запишитесь на диагностику и получите расчет прироста мощности для вашего автомобиля</p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <Button 
                   size="lg" 
