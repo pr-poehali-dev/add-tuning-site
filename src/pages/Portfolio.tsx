@@ -138,7 +138,7 @@ const Portfolio = () => {
                       <div className="flex items-center justify-between">
                         <span className="text-lg">540</span>
                         <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">{project.torqueAfter} Нм</span>
+                        <span className="text-2xl font-bold text-primary">631</span>
                       </div>
                       <div className="text-right text-sm text-primary font-semibold mt-1">
                         +{project.torqueAfter - project.torqueBefore} Нм
