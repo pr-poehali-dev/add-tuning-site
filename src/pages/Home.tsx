@@ -31,6 +31,11 @@ const Home = () => {
       title: 'Ремонт и восстановление блоков SRS',
       description: 'Чистка Crash data и восстановление после ДТП',
     },
+    {
+      icon: 'Navigation',
+      title: 'Восстановление работы SAS',
+      description: 'Калибровка датчика угла поворота руля',
+    },
   ];
 
   const stats = [
