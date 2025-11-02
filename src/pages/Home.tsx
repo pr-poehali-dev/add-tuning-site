@@ -32,9 +32,9 @@ const Home = () => {
       description: 'DPF, EGR, AdBlue - легально и профессионально',
     },
     {
-      icon: 'Shield',
-      title: 'Гарантия качества',
-      description: 'Полная гарантия на все виды работ',
+      icon: 'LifeBuoy',
+      title: 'Ремонт и восстановление блоков SRS',
+      description: 'Чистка Crash data и восстановление после ДТП',
     },
   ];
 
