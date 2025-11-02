@@ -22,11 +22,6 @@ const Home = () => {
       description: 'Полная диагностика электронного блока управления',
     },
     {
-      icon: 'TrendingUp',
-      title: 'Эко-тюнинг',
-      description: 'Снижение расхода топлива до 20%',
-    },
-    {
       icon: 'FileCheck',
       title: 'Удаление систем',
       description: 'DPF, EGR, AdBlue - легально и профессионально',
