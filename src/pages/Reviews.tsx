@@ -59,7 +59,7 @@ const Reviews = () => {
   const stats = [
     { value: '98%', label: 'Довольных клиентов' },
     { value: '4.9', label: 'Средняя оценка' },
-    { value: '2500+', label: 'Выполненных работ' },
+    { value: '1300+', label: 'Выполненных работ' },
   ];
 
   return (
