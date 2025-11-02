@@ -108,7 +108,7 @@ const Portfolio = () => {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold">{project.brand}</h3>
-                      <p className="text-muted-foreground">{project.model} • {project.year}</p>
+                      <p className="text-muted-foreground">530d F10 2013</p>
                     </div>
                     <Badge className="bg-primary">{project.stage}</Badge>
                   </div>
