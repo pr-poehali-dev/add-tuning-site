@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import OrderForm from '@/components/OrderForm';
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
   const servicesList = [
     {
       icon: 'Gauge',
@@ -101,7 +104,10 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full bg-primary hover:bg-primary/90">
+                  <Button 
+                    className="w-full bg-primary hover:bg-primary/90"
+                    onClick={() => setSelectedService(service.title)}
+                  >
                     Заказать услугу
                   </Button>
                 </CardContent>
@@ -166,6 +172,13 @@ const Services = () => {
       </section>
 
       <Footer />
+      
+      {selectedService && (
+        <OrderForm 
+          serviceName={selectedService} 
+          onClose={() => setSelectedService(null)} 
+        />
+      )}
     </div>
   );
 };

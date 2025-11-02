@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Submit order without token",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "service": "Чип-тюнинг Stage 1",
+        "name": "Иван Тестов",
+        "phone": "+79991234567",
+        "brand": "BMW",
+        "model": "320d",
+        "year": "2020",
+        "horsepower": "190",
+        "engineVolume": "2.0"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    }
+  ]
+}
