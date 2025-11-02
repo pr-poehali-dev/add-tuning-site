@@ -3,7 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import TuningCalculator from '@/components/TuningCalculator';
 
 const Home = () => {
   const services = [
@@ -63,11 +62,14 @@ const Home = () => {
                 Профессиональный чип-тюнинг вашего автомобиля. Увеличение мощности до 50% с индивидуальным подходом и гарантией качества.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90"
+                  onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг', '_blank')}
+                >
                   <Icon name="CalendarCheck" size={20} className="mr-2" />
                   Записаться на тюнинг
                 </Button>
-                <TuningCalculator />
               </div>
             </div>
             <div className="relative animate-slide-right">
