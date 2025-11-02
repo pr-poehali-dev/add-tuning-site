@@ -69,9 +69,11 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
 Мощность: {horsepower} л.с.
 Объём: {engine_volume} л"""
     
+    chat_id = os.environ.get('TELEGRAM_CHAT_ID', bot_token.split(':')[0])
+    
     telegram_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
     data = urllib.parse.urlencode({
-        'chat_id': bot_token.split(':')[0],
+        'chat_id': chat_id,
         'text': message
     }).encode('utf-8')
     

@@ -24,11 +24,12 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Icon name="Zap" size={24} className="text-primary-foreground" />
-            </div>
-            <span className="text-2xl font-bold text-foreground">ADD Tuning</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="https://cdn.poehali.dev/files/8f68f629-6f77-43c1-9c4a-5402964bcda5.JPG" 
+              alt="ADD Tuning" 
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">
