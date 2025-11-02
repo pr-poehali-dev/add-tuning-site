@@ -124,7 +124,10 @@ const Portfolio = () => {
                         <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
                         <span className="text-2xl font-bold text-primary">352</span>
                       </div>
-                      <div className="text-right text-sm text-primary font-semibold mt-1">+107л.с (69%)</div>
+                      <div className="text-right text-sm text-primary font-semibold mt-1">
+                        +{project.powerAfter - project.powerBefore} л.с. 
+                        ({Math.round(((project.powerAfter - project.powerBefore) / project.powerBefore) * 100)}%)
+                      </div>
                     </div>
 
                     <div className="bg-muted/50 rounded-lg p-4">
