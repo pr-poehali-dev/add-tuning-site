@@ -40,7 +40,7 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: '2500+', label: 'Автомобилей прошито' },
+    { number: '1300+', label: 'Автомобилей прошито' },
     { number: '98%', label: 'Довольных клиентов' },
     { number: '7', label: 'Лет опыта' },
     { number: '50+', label: 'Марок авто' },
