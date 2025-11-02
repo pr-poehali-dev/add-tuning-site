@@ -125,10 +125,25 @@ const Home = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Запишитесь на консультацию и получите расчет стоимости под ваш автомобиль
             </p>
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
-              <Icon name="Phone" size={20} className="mr-2" />
-              Позвонить мне
-            </Button>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 gap-2"
+                onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг', '_blank')}
+              >
+                <Icon name="MessageCircle" size={20} />
+                Консультация в WhatsApp
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-lg px-8 py-6 gap-2"
+                onClick={() => window.open('https://t.me/79372134547', '_blank')}
+              >
+                <Icon name="Send" size={20} />
+                Консультация в Telegram
+              </Button>
+            </div>
           </div>
         </div>
       </section>
