@@ -7,8 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="mb-4">
-              <span className="text-2xl font-bold text-foreground">ADD TUNING</span>
+            <div className="mb-4 flex items-center space-x-2">
+              <Icon name="Car" size={32} className="text-primary" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">ADD TUNING</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Частный мастер по чип-тюнингу. Индивидуальный подход к каждому автомобилю.

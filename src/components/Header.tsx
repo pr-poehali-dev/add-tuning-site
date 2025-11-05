@@ -24,8 +24,9 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3">
-            <span className="text-2xl font-bold text-foreground">ADD TUNING</span>
+          <Link to="/" className="flex items-center space-x-2">
+            <Icon name="Car" size={32} className="text-primary" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">ADD TUNING</span>
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">
