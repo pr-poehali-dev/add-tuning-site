@@ -19,7 +19,7 @@ const Price = () => {
     { name: 'Эко-тюнинг', minPrice: 12000, maxPrice: 20000, category: 'Чип-тюнинг' },
     
     { name: 'SpeedLim (изменение ограничения скорости)', minPrice: 5000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
-    { name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (бензин)' },
+    { name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
     { name: 'E2 (отключение диагностики катализатора)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
     { name: 'Иммобилайзер OFF', minPrice: 7000, maxPrice: 12000, category: 'Программное отключение (бензин)' },
     { name: 'noSecAir (отключение вторичного воздуха)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
