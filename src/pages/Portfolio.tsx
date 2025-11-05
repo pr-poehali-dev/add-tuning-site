@@ -58,7 +58,7 @@ const Portfolio = () => {
     {
       brand: 'Mercedes',
       model: 'C200 CDI',
-      year: 2019,
+      year: 2006,
       stage: 'Stage 1',
       powerBefore: 136,
       powerAfter: 180,
