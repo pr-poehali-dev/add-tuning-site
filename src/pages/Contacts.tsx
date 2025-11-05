@@ -17,6 +17,14 @@ const Contacts = () => {
     message: ''
   });
 
+  const [diagnosticForm, setDiagnosticForm] = useState({
+    brand: '',
+    model: '',
+    year: '',
+    engineVolume: '',
+    message: ''
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -24,6 +32,15 @@ const Contacts = () => {
       description: "Мы свяжемся с вами в ближайшее время",
     });
     setFormData({ name: '', phone: '', car: '', message: '' });
+  };
+
+  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Заявка на диагностику отправлена!",
+      description: "Мы свяжемся с вами для уточнения времени",
+    });
+    setDiagnosticForm({ brand: '', model: '', year: '', engineVolume: '', message: '' });
   };
 
   const contactInfo = [
@@ -120,23 +137,70 @@ const Contacts = () => {
 
               <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 animate-fade-in" style={{ animationDelay: '300ms' }}>
                 <CardContent className="p-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon name="Calendar" size={32} className="text-primary" />
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                      <Icon name="Calendar" size={24} className="text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">Записаться на диагностику</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Полная компьютерная диагностика вашего автомобиля — 2000 ₽
-                    </p>
-                    <Button 
-                      size="lg" 
-                      className="gap-2"
-                      onClick={() => window.open('https://t.me/AddTuningBot?start=diagnostic', '_blank')}
-                    >
-                      <Icon name="Send" size={20} />
-                      Записаться через Telegram
-                    </Button>
+                    <div>
+                      <h3 className="text-xl font-bold">Записаться на диагностику</h3>
+                      <p className="text-sm text-muted-foreground">Стоимость: 2000 ₽</p>
+                    </div>
                   </div>
+                  <form onSubmit={handleDiagnosticSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm font-medium mb-2 block">Марка</label>
+                        <Input
+                          placeholder="BMW"
+                          value={diagnosticForm.brand}
+                          onChange={(e) => setDiagnosticForm({ ...diagnosticForm, brand: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium mb-2 block">Модель</label>
+                        <Input
+                          placeholder="320d"
+                          value={diagnosticForm.model}
+                          onChange={(e) => setDiagnosticForm({ ...diagnosticForm, model: e.target.value })}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm font-medium mb-2 block">Год выпуска</label>
+                        <Input
+                          placeholder="2018"
+                          value={diagnosticForm.year}
+                          onChange={(e) => setDiagnosticForm({ ...diagnosticForm, year: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium mb-2 block">Объем двигателя</label>
+                        <Input
+                          placeholder="2.0"
+                          value={diagnosticForm.engineVolume}
+                          onChange={(e) => setDiagnosticForm({ ...diagnosticForm, engineVolume: e.target.value })}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Что необходимо</label>
+                      <Textarea
+                        placeholder="Опишите проблему или что нужно проверить..."
+                        value={diagnosticForm.message}
+                        onChange={(e) => setDiagnosticForm({ ...diagnosticForm, message: e.target.value })}
+                        rows={3}
+                      />
+                    </div>
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                      <Icon name="Send" size={20} className="mr-2" />
+                      Отправить заявку
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>
