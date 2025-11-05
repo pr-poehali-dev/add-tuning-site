@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Test diagnostic booking submission",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "brand": "BMW",
+        "model": "320d",
+        "year": "2018",
+        "engineVolume": "2.0",
+        "message": "Нужна полная диагностика"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}

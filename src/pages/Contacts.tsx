@@ -34,13 +34,38 @@ const Contacts = () => {
     setFormData({ name: '', phone: '', car: '', message: '' });
   };
 
-  const handleDiagnosticSubmit = (e: React.FormEvent) => {
+  const handleDiagnosticSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Заявка на диагностику отправлена!",
-      description: "Мы свяжемся с вами для уточнения времени",
-    });
-    setDiagnosticForm({ brand: '', model: '', year: '', engineVolume: '', message: '' });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/01f2cb9d-2f7b-43df-ad0d-d7fea2093342', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(diagnosticForm),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Заявка на диагностику отправлена!",
+          description: "Мы свяжемся с вами для уточнения времени",
+        });
+        setDiagnosticForm({ brand: '', model: '', year: '', engineVolume: '', message: '' });
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить заявку. Попробуйте позже.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [
