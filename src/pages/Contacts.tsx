@@ -100,27 +100,7 @@ const Contacts = () => {
                 ))}
               </div>
 
-              <Card className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center">
-                    <Icon name="Share2" size={20} className="text-primary mr-2" />
-                    Мы в социальных сетях
-                  </h3>
-                  <div className="flex gap-4">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.link}
-                        className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center hover:bg-primary transition-colors group"
-                      >
-                        <Icon name={social.icon as any} size={24} className="text-muted-foreground group-hover:text-primary-foreground transition-colors" />
-                      </a>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-primary/5 border-primary/20 animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <Card className="bg-primary/5 border-primary/20 animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <Icon name="Info" size={24} className="text-primary mt-1" />
