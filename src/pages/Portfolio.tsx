@@ -68,15 +68,15 @@ const Portfolio = () => {
       image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/ae86bb72-910a-40db-be26-fdc4787dcd4f.jpg'
     },
     {
-      brand: 'Ford',
-      model: 'Focus ST',
-      year: 2019,
+      brand: 'Hyundai',
+      model: 'Solaris',
+      year: 2020,
       stage: 'Stage 1',
-      powerBefore: 250,
-      powerAfter: 300,
-      torqueBefore: 360,
-      torqueAfter: 440,
-      tags: ['Бензин', 'Турбо'],
+      powerBefore: 123,
+      powerAfter: 145,
+      torqueBefore: 151,
+      torqueAfter: 180,
+      tags: ['Бензин', 'Эко-тюнинг'],
       image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/345a2dfa-871e-4787-b9eb-7518df5827cd.jpg'
     },
   ];
