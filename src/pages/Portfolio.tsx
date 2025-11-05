@@ -56,15 +56,15 @@ const Portfolio = () => {
       image: 'https://cdn.poehali.dev/files/7b082b82-7c29-4d7e-86a8-8a10ad560dba.png'
     },
     {
-      brand: 'Skoda',
-      model: 'Octavia RS',
-      year: 2021,
-      stage: 'Stage 2',
-      powerBefore: 245,
-      powerAfter: 330,
-      torqueBefore: 370,
-      torqueAfter: 460,
-      tags: ['Бензин', 'Stage 2'],
+      brand: 'Mercedes',
+      model: 'C200 CDI',
+      year: 2019,
+      stage: 'Stage 1',
+      powerBefore: 136,
+      powerAfter: 180,
+      torqueBefore: 300,
+      torqueAfter: 380,
+      tags: ['Дизель', 'Удаление DPF'],
       image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/ae86bb72-910a-40db-be26-fdc4787dcd4f.jpg'
     },
     {
