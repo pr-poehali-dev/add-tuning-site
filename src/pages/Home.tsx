@@ -24,7 +24,7 @@ const Home = () => {
     {
       icon: 'FileCheck',
       title: 'Удаление систем',
-      description: 'DPF, EGR, AdBlue - легально и профессионально',
+      description: 'DPF, EGR, AdBlue, Перевод на Евро 2, Иммобилайзер OFF, Отключение Swirl, Отключение DTC, Оптимизация под ГБО',
     },
     {
       icon: 'LifeBuoy',
