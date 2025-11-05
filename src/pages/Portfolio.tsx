@@ -65,7 +65,7 @@ const Portfolio = () => {
       torqueBefore: 300,
       torqueAfter: 380,
       tags: ['Дизель', 'Удаление DPF'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/ae86bb72-910a-40db-be26-fdc4787dcd4f.jpg'
+      image: 'https://cdn.poehali.dev/files/e6a030a8-0741-4e43-951f-ee726e6be7a9.png'
     },
     {
       brand: 'Hyundai',
