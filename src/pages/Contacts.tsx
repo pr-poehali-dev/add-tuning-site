@@ -25,8 +25,50 @@ const Contacts = () => {
     message: ''
   });
 
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
+  const validateForm = (data: typeof formData) => {
+    const nameRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    if (!nameRegex.test(data.name)) {
+      toast({
+        title: "Ошибка",
+        description: "Имя должно содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+    if (!phoneRegex.test(data.phone) || data.phone.replace(/\D/g, '').length < 10) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный номер телефона",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      toast({
+        title: "Подождите",
+        description: "Вы отправляете заявки слишком часто. Подождите 10 секунд.",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm(formData)) {
+      return;
+    }
+
+    setLastSubmitTime(Date.now());
     
     try {
       const response = await fetch('https://functions.poehali.dev/6400c45a-8e89-4809-b5a1-19d27ee8d1c6', {
