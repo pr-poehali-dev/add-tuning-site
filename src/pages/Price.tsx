@@ -13,7 +13,7 @@ interface ServiceItem {
 
 const Price = () => {
   const services: ServiceItem[] = [
-    { name: 'Stage 1 (бензин)', minPrice: 15000, maxPrice: 25000, category: 'Чип-тюнинг' },
+    { name: 'Stage 1 (бензин)', minPrice: 7000, maxPrice: 25000, category: 'Чип-тюнинг' },
     { name: 'Stage 1 (дизель)', minPrice: 18000, maxPrice: 30000, category: 'Чип-тюнинг' },
     { name: 'Stage 2 (с доработками)', minPrice: 35000, maxPrice: 60000, category: 'Чип-тюнинг' },
     { name: 'Эко-тюнинг', minPrice: 12000, maxPrice: 20000, category: 'Чип-тюнинг' },
@@ -21,6 +21,7 @@ const Price = () => {
     { name: 'SpeedLim (изменение ограничения скорости)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (бензин)' },
     { name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 8000, category: 'Программное отключение (бензин)' },
     { name: 'E2 (отключение диагностики катализатора)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
+    { name: 'Иммобилайзер OFF', minPrice: 7000, maxPrice: 12000, category: 'Программное отключение (бензин)' },
     { name: 'noSecAir (отключение вторичного воздуха)', minPrice: 6000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
     { name: 'noEGR (отключение рециркуляции газов)', minPrice: 6000, maxPrice: 12000, category: 'Программное отключение (бензин)' },
     { name: 'noEVAP (отключение вентиляции бака)', minPrice: 5000, maxPrice: 9000, category: 'Программное отключение (бензин)' },
@@ -34,7 +35,8 @@ const Price = () => {
     { name: 'noAdBlue (отключение впрыска мочевины)', minPrice: 10000, maxPrice: 18000, category: 'Программное отключение (дизель)' },
     { name: 'noSwirl (отключение вихревых заслонок)', minPrice: 5000, maxPrice: 9000, category: 'Программное отключение (дизель)' },
     { name: 'DTC (селективное отключение ошибок)', minPrice: 4000, maxPrice: 7000, category: 'Программное отключение (дизель)' },
-    { name: 'Оптимизация под ГБО', minPrice: 12000, maxPrice: 20000, category: 'Программное отключение (дизель)' },
+    { name: 'Оптимизация под ГБО', minPrice: 7000, maxPrice: 20000, category: 'Программное отключение (дизель)' },
+    { name: 'Иммобилайзер OFF', minPrice: 7000, maxPrice: 12000, category: 'Программное отключение (дизель)' },
     
     { name: 'Прошивка DSG', minPrice: 18000, maxPrice: 25000, category: 'Коробки передач' },
     { name: 'Прошивка АКПП', minPrice: 15000, maxPrice: 22000, category: 'Коробки передач' },
@@ -42,7 +44,9 @@ const Price = () => {
     
     { name: 'Компьютерная диагностика', minPrice: 2000, maxPrice: 2000, category: 'Диагностика' },
     { name: 'Считывание прошивки', minPrice: 3000, maxPrice: 3000, category: 'Диагностика' },
-    { name: 'Восстановление ЭБУ', minPrice: 5000, maxPrice: 15000, category: 'Диагностика' },
+    { name: 'Восстановление ЭБУ после неудачной прошивки', minPrice: 7000, maxPrice: 15000, category: 'Диагностика' },
+    { name: 'Восстановление блоков SRS', minPrice: 3000, maxPrice: 10000, category: 'Диагностика' },
+    { name: 'Восстановление работы SAS', minPrice: 5000, maxPrice: 8000, category: 'Диагностика' },
     { name: 'Полная диагностика', minPrice: 4000, maxPrice: 4000, category: 'Диагностика' },
   ];
 
