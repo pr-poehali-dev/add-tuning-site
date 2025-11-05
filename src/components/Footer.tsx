@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <div className="mb-4 flex items-center space-x-2">
               <Icon name="Car" size={32} className="text-primary" />
@@ -42,21 +42,6 @@ const Footer = () => {
                 <span>г. Тольятти, Пр-кт Степана Разина, дом 50</span>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Мы в соцсетях</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary transition-colors group">
-                <Icon name="Instagram" size={20} className="text-muted-foreground group-hover:text-primary-foreground" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary transition-colors group">
-                <Icon name="Youtube" size={20} className="text-muted-foreground group-hover:text-primary-foreground" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary transition-colors group">
-                <Icon name="MessageCircle" size={20} className="text-muted-foreground group-hover:text-primary-foreground" />
-              </a>
-            </div>
           </div>
         </div>
 
