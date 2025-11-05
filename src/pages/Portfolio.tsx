@@ -53,7 +53,7 @@ const Portfolio = () => {
       torqueBefore: 400,
       torqueAfter: 520,
       tags: ['Дизель', 'Эко-тюнинг'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/4b12f75b-a879-42be-8e8b-6bfe61a4d46a.jpg'
+      image: 'https://cdn.poehali.dev/files/7b082b82-7c29-4d7e-86a8-8a10ad560dba.png'
     },
     {
       brand: 'Skoda',
