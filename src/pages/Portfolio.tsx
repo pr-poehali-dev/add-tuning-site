@@ -41,7 +41,7 @@ const Portfolio = () => {
       torqueBefore: 370,
       torqueAfter: 450,
       tags: ['Бензин', 'DSG'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/98920824-3d45-445f-80ab-6d22b5c47c3a.jpg'
+      image: 'https://cdn.poehali.dev/files/43696436-5287-424d-83c7-59937a0b8762.png'
     },
     {
       brand: 'Mercedes',
