@@ -117,6 +117,28 @@ const Contacts = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 animate-fade-in" style={{ animationDelay: '300ms' }}>
+                <CardContent className="p-6">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon name="Calendar" size={32} className="text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Записаться на диагностику</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Полная компьютерная диагностика вашего автомобиля — 2000 ₽
+                    </p>
+                    <Button 
+                      size="lg" 
+                      className="gap-2"
+                      onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20диагностику', '_blank')}
+                    >
+                      <Icon name="MessageCircle" size={20} />
+                      Написать в WhatsApp
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             <Card className="animate-fade-in" style={{ animationDelay: '100ms' }}>
