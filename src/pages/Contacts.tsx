@@ -131,10 +131,10 @@ const Contacts = () => {
                     <Button 
                       size="lg" 
                       className="gap-2"
-                      onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20диагностику', '_blank')}
+                      onClick={() => window.open('https://t.me/AddTuningBot?start=diagnostic', '_blank')}
                     >
-                      <Icon name="MessageCircle" size={20} />
-                      Написать в WhatsApp
+                      <Icon name="Send" size={20} />
+                      Записаться через Telegram
                     </Button>
                   </div>
                 </CardContent>
