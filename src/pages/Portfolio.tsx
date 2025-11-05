@@ -29,7 +29,7 @@ const Portfolio = () => {
       torqueBefore: 370,
       torqueAfter: 480,
       tags: ['Бензин', 'Турбо'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/37ca6d72-69be-455e-a276-21484822e911.jpg'
+      image: 'https://cdn.poehali.dev/files/0e7c2531-1a2f-495f-9e1f-ca06c1226ef9.png'
     },
     {
       brand: 'Volkswagen',
