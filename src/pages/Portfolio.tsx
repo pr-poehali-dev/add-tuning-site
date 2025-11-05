@@ -17,7 +17,7 @@ const Portfolio = () => {
       torqueBefore: 400,
       torqueAfter: 500,
       tags: ['Дизель', 'Удаление DPF'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/1517d6ef-3652-47dd-9fb7-8714cf4b87e3.jpg'
+      image: 'https://cdn.poehali.dev/files/8c1ea7ab-c671-424f-92a5-4d94593b56bd.png'
     },
     {
       brand: 'Audi',
