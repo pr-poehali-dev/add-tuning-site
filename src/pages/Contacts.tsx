@@ -25,13 +25,38 @@ const Contacts = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время",
-    });
-    setFormData({ name: '', phone: '', car: '', message: '' });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/6400c45a-8e89-4809-b5a1-19d27ee8d1c6', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время",
+        });
+        setFormData({ name: '', phone: '', car: '', message: '' });
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить заявку. Попробуйте позже.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleDiagnosticSubmit = async (e: React.FormEvent) => {

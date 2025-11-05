@@ -35,14 +35,10 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     body_data = json.loads(event.get('body', '{}'))
     
-    service = body_data.get('service', '')
     name = body_data.get('name', '')
     phone = body_data.get('phone', '')
-    brand = body_data.get('brand', '')
-    model = body_data.get('model', '')
-    year = body_data.get('year', '')
-    horsepower = body_data.get('horsepower', '')
-    engine_volume = body_data.get('engineVolume', '')
+    car = body_data.get('car', '')
+    message_text = body_data.get('message', '')
     
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
     
@@ -54,20 +50,17 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'isBase64Encoded': False
         }
     
-    message = f"""🔧 Новая заявка на услугу
-
-📋 Услуга: {service}
+    message = f"""🔧 Новая заявка на чип-тюнинг
 
 👤 Клиент:
 Имя: {name}
 Телефон: {phone}
 
 🚗 Автомобиль:
-Марка: {brand}
-Модель: {model}
-Год: {year}
-Мощность: {horsepower} л.с.
-Объём: {engine_volume} л"""
+{car}
+
+💬 Комментарий:
+{message_text if message_text else 'Не указан'}"""
     
     chat_id = os.environ.get('TELEGRAM_CHAT_ID', bot_token.split(':')[0])
     

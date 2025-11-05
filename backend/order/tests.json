@@ -7,18 +7,14 @@
       "expectedStatus": 200
     },
     {
-      "name": "Submit order without token",
+      "name": "Submit tuning order",
       "method": "POST",
       "path": "/",
       "body": {
-        "service": "Чип-тюнинг Stage 1",
         "name": "Иван Тестов",
         "phone": "+79991234567",
-        "brand": "BMW",
-        "model": "320d",
-        "year": "2020",
-        "horsepower": "190",
-        "engineVolume": "2.0"
+        "car": "BMW 320d F30",
+        "message": "Интересует Stage 1 тюнинг"
       },
       "expectedStatus": 200,
       "bodyMatcher": "partial"
