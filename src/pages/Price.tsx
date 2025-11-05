@@ -38,7 +38,7 @@ const Price = () => {
     { name: 'Оптимизация под ГБО', minPrice: 7000, maxPrice: 20000, category: 'Программное отключение (дизель)' },
     { name: 'Иммобилайзер OFF', minPrice: 7000, maxPrice: 12000, category: 'Программное отключение (дизель)' },
     
-    { name: 'Прошивка DSG', minPrice: 18000, maxPrice: 25000, category: 'Коробки передач' },
+    { name: 'Прошивка DSG', minPrice: 7000, maxPrice: 25000, category: 'Коробки передач' },
     { name: 'Прошивка АКПП', minPrice: 15000, maxPrice: 22000, category: 'Коробки передач' },
     { name: 'Увеличение лимитов АКПП', minPrice: 7000, maxPrice: 30000, category: 'Коробки передач' },
     
