@@ -40,7 +40,7 @@ const Price = () => {
     
     { name: 'Прошивка DSG', minPrice: 18000, maxPrice: 25000, category: 'Коробки передач' },
     { name: 'Прошивка АКПП', minPrice: 15000, maxPrice: 22000, category: 'Коробки передач' },
-    { name: 'Увеличение лимитов АКПП', minPrice: 20000, maxPrice: 30000, category: 'Коробки передач' },
+    { name: 'Увеличение лимитов АКПП', minPrice: 7000, maxPrice: 30000, category: 'Коробки передач' },
     
     { name: 'Компьютерная диагностика', minPrice: 2000, maxPrice: 2000, category: 'Диагностика' },
     { name: 'Считывание прошивки', minPrice: 3000, maxPrice: 3000, category: 'Диагностика' },
