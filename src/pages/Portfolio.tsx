@@ -171,7 +171,7 @@ const Portfolio = () => {
                   onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
                 >
                   <Icon name="MessageCircle" size={20} />
-                  Консультация в WhatsApp
+                  Написать в WhatsApp
                 </Button>
               </div>
             </div>

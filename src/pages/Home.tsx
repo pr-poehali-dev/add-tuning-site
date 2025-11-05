@@ -130,7 +130,7 @@ const Home = () => {
                 onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг', '_blank')}
               >
                 <Icon name="MessageCircle" size={20} />
-                Консультация в WhatsApp
+                Написать в WhatsApp
               </Button>
             </div>
           </div>
