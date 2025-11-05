@@ -181,15 +181,6 @@ const FAQ = () => {
                 <Icon name="MessageCircle" size={20} />
                 Написать в WhatsApp
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="gap-2"
-                onClick={() => window.location.href = 'tel:+79372134547'}
-              >
-                <Icon name="Phone" size={20} />
-                Позвонить
-              </Button>
             </div>
           </div>
         </div>
