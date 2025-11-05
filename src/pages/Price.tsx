@@ -47,7 +47,7 @@ const Price = () => {
     { name: 'Восстановление ЭБУ после неудачной прошивки', minPrice: 7000, maxPrice: 15000, category: 'Диагностика' },
     { name: 'Восстановление блоков SRS', minPrice: 3000, maxPrice: 10000, category: 'Диагностика' },
     { name: 'Восстановление работы SAS', minPrice: 5000, maxPrice: 8000, category: 'Диагностика' },
-    { name: 'Полная диагностика', minPrice: 4000, maxPrice: 4000, category: 'Диагностика' },
+    { name: 'Полная компьютерная диагностика', minPrice: 4000, maxPrice: 4000, category: 'Диагностика' },
   ];
 
   const categories = Array.from(new Set(services.map(s => s.category)));
