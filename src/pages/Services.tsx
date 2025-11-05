@@ -127,7 +127,7 @@ const Services = () => {
                   <Icon name="Award" size={32} className="text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Опыт 7+ лет</h3>
-                <p className="text-muted-foreground">Более 1300 авто с чипом ADD</p>
+                <p className="text-muted-foreground">Более 1300 авто с чипом ADD TUNING</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
