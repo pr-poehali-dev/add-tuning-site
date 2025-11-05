@@ -17,7 +17,7 @@ const Portfolio = () => {
       torqueBefore: 400,
       torqueAfter: 500,
       tags: ['Дизель', 'Удаление DPF'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b37c5e9a-92a3-4288-af19-9ac1eb09277c.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/1517d6ef-3652-47dd-9fb7-8714cf4b87e3.jpg'
     },
     {
       brand: 'Audi',
@@ -29,7 +29,7 @@ const Portfolio = () => {
       torqueBefore: 370,
       torqueAfter: 480,
       tags: ['Бензин', 'Турбо'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9ddb80be-3f8d-4f50-85c6-ddc06297a2fb.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/37ca6d72-69be-455e-a276-21484822e911.jpg'
     },
     {
       brand: 'Volkswagen',
@@ -41,7 +41,7 @@ const Portfolio = () => {
       torqueBefore: 370,
       torqueAfter: 450,
       tags: ['Бензин', 'DSG'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/f2c4ccd1-a251-49b3-a48a-d75310d81881.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/98920824-3d45-445f-80ab-6d22b5c47c3a.jpg'
     },
     {
       brand: 'Mercedes',
