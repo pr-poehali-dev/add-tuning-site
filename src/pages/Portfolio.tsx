@@ -53,7 +53,7 @@ const Portfolio = () => {
       torqueBefore: 400,
       torqueAfter: 520,
       tags: ['Дизель', 'Эко-тюнинг'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b37c5e9a-92a3-4288-af19-9ac1eb09277c.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/4b12f75b-a879-42be-8e8b-6bfe61a4d46a.jpg'
     },
     {
       brand: 'Skoda',
@@ -65,7 +65,7 @@ const Portfolio = () => {
       torqueBefore: 370,
       torqueAfter: 460,
       tags: ['Бензин', 'Stage 2'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9ddb80be-3f8d-4f50-85c6-ddc06297a2fb.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/ae86bb72-910a-40db-be26-fdc4787dcd4f.jpg'
     },
     {
       brand: 'Ford',
@@ -77,7 +77,7 @@ const Portfolio = () => {
       torqueBefore: 360,
       torqueAfter: 440,
       tags: ['Бензин', 'Турбо'],
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/f2c4ccd1-a251-49b3-a48a-d75310d81881.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/345a2dfa-871e-4787-b9eb-7518df5827cd.jpg'
     },
   ];
 
