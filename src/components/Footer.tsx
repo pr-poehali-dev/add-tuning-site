@@ -8,11 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="mb-4">
-              <img 
-                src="https://cdn.poehali.dev/files/8f68f629-6f77-43c1-9c4a-5402964bcda5.JPG" 
-                alt="ADD Tuning" 
-                className="h-12 w-auto object-contain"
-              />
+              <span className="text-2xl font-bold text-foreground">ADD TUNING</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Частный мастер по чип-тюнингу. Индивидуальный подход к каждому автомобилю.
