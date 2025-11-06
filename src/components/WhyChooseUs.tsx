@@ -51,25 +51,25 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-card via-card to-primary/5">
+    <section className="py-12 sm:py-20 px-4 bg-gradient-to-br from-card via-card to-primary/5">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Почему выбирают нас?</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Почему выбирают нас?</h2>
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               За годы работы я выработал подход, который гарантирует результат и безопасность вашего автомобиля
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {advantages.map((advantage, index) => (
               <Card key={index} className="hover:border-primary transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon name={advantage.icon as any} size={28} className="text-primary" />
+                <CardContent className="p-4 sm:p-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon name={advantage.icon as any} size={24} className="text-primary sm:w-7 sm:h-7" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{advantage.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{advantage.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {advantage.description}
                   </p>
                 </CardContent>

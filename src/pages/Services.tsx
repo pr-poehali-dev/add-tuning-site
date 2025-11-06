@@ -27,9 +27,9 @@ const Services = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto">
-          <div className="mb-12 rounded-2xl overflow-hidden h-64 relative">
+          <div className="mb-8 sm:mb-12 rounded-2xl overflow-hidden h-48 sm:h-64 relative">
             <img 
               src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b7230c8f-37cf-4de4-9ea5-f92b8a189791.jpg" 
               alt="Диагностика и чип-тюнинг ЭБУ автомобилей - ADD Tuning Тольятти"
@@ -37,16 +37,16 @@ const Services = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end">
-              <div className="p-8 w-full text-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4">Мои услуги</h1>
-                <p className="text-xl text-muted-foreground">
+              <div className="p-4 sm:p-8 w-full text-center">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 sm:mb-4">Мои услуги</h1>
+                <p className="text-base sm:text-xl text-muted-foreground">
                   Полный спектр работ по чип-тюнингу и диагностике автомобилей всех марок
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {servicesList.map((service, index) => (
               <ServiceCard 
                 key={index}
