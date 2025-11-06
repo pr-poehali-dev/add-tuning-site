@@ -23,7 +23,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-11-01',
     readTime: '5 мин',
     category: 'Чип-тюнинг',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/0c7e6a37-3ed3-4929-b668-dcfb7463b5c3.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/88c9fbac-f879-4749-b8dd-93ca9e48cbee.jpg',
     content: {
       intro: 'Чип-тюнинг делится на несколько этапов (Stage), и каждый из них дает разный прирост мощности и требует разных вложений. Разбираемся, какой Stage выбрать именно для вашего автомобиля и бюджета.',
       sections: [

@@ -24,7 +24,7 @@ const Blog = () => {
       date: '2025-11-01',
       readTime: '5 мин',
       category: 'Чип-тюнинг',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/88c9fbac-f879-4749-b8dd-93ca9e48cbee.jpg'
     },
     {
       id: 'priznaki-zabitogo-dpf',
