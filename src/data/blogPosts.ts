@@ -23,7 +23,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-11-01',
     readTime: '5 мин',
     category: 'Чип-тюнинг',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/0c7e6a37-3ed3-4929-b668-dcfb7463b5c3.jpg',
     content: {
       intro: 'Чип-тюнинг делится на несколько этапов (Stage), и каждый из них дает разный прирост мощности и требует разных вложений. Разбираемся, какой Stage выбрать именно для вашего автомобиля и бюджета.',
       sections: [
@@ -80,7 +80,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-10-28',
     readTime: '4 мин',
     category: 'Диагностика',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/973cc919-676e-441e-a3c0-64aee086e77d.jpg',
     content: {
       intro: 'Сажевый фильтр (DPF) — это «ловушка» для сажи в выхлопной системе дизельных автомобилей. Со временем он забивается, что приводит к потере мощности, повышенному расходу и ошибкам. Разбираем 7 главных симптомов и что делать.',
       sections: [
@@ -167,7 +167,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-10-25',
     readTime: '6 мин',
     category: 'Чип-тюнинг',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/d9004008-5e0f-45a8-9254-01cafe1ac8ca.jpg',
     content: {
       intro: 'Не все автомобили одинаково хорошо реагируют на чип-тюнинг. Есть модели, которые дают огромный прирост мощности только от прошивки, а есть те, где результат минимален. Вот топ-5 машин, которые раскрываются после тюнинга лучше всего.',
       sections: [
@@ -252,7 +252,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-10-20',
     readTime: '5 мин',
     category: 'Чип-тюнинг',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/7832b055-adb6-4e47-801b-9933aa305b51.jpg',
     content: {
       intro: 'Дизельные и бензиновые моторы работают по-разному, поэтому и тюнинг для них отличается. Дизели дают больший прирост мощности, а бензиновые моторы требуют более тонкой настройки. Разбираемся в деталях.',
       sections: [
@@ -331,7 +331,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-10-15',
     readTime: '4 мин',
     category: 'Программное отключение',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/55de95e6-714a-4564-9e16-b3d94326ce3f.jpg',
     content: {
       intro: 'Система AdBlue (SCR) на дизельных автомобилях снижает выбросы оксидов азота, но приносит массу проблем владельцам: дорогой ремонт, частые ошибки, блокировка двигателя. Разбираемся, что делать, когда загорелась лампа AdBlue.',
       sections: [
@@ -423,7 +423,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     date: '2025-10-10',
     readTime: '7 мин',
     category: 'Чип-тюнинг',
-    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg',
+    image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/d7a4c211-fb30-405c-a3fd-2c0ec72c65c3.jpg',
     content: {
       intro: 'Многие думают, что чип-тюнинг — это просто подключение ноутбука и нажатие кнопки. На самом деле это сложный процесс из 7 этапов, который занимает 3-5 часов. Показываем, что происходит с вашим автомобилем от приезда до выдачи.',
       sections: [

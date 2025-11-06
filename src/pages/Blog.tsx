@@ -33,7 +33,7 @@ const Blog = () => {
       date: '2025-10-28',
       readTime: '4 мин',
       category: 'Диагностика',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/973cc919-676e-441e-a3c0-64aee086e77d.jpg'
     },
     {
       id: 'top-5-avto-dlya-tyuninga',
@@ -42,7 +42,7 @@ const Blog = () => {
       date: '2025-10-25',
       readTime: '6 мин',
       category: 'Чип-тюнинг',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/d9004008-5e0f-45a8-9254-01cafe1ac8ca.jpg'
     },
     {
       id: 'chip-tyuning-dizel-vs-benzin',
@@ -51,7 +51,7 @@ const Blog = () => {
       date: '2025-10-20',
       readTime: '5 мин',
       category: 'Чип-тюнинг',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/7832b055-adb6-4e47-801b-9933aa305b51.jpg'
     },
     {
       id: 'adblue-udalenie-ili-remont',
@@ -60,7 +60,7 @@ const Blog = () => {
       date: '2025-10-15',
       readTime: '4 мин',
       category: 'Программное отключение',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/55de95e6-714a-4564-9e16-b3d94326ce3f.jpg'
     },
     {
       id: 'kak-proishodit-chip-tyuning',
@@ -69,7 +69,7 @@ const Blog = () => {
       date: '2025-10-10',
       readTime: '7 мин',
       category: 'Чип-тюнинг',
-      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg'
+      image: 'https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/d7a4c211-fb30-405c-a3fd-2c0ec72c65c3.jpg'
     }
   ];
 
