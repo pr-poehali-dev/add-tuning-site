@@ -25,7 +25,7 @@ const Home = () => {
       id: 'diagnostic',
       icon: 'Settings',
       title: 'Диагностика ЭБУ',
-      description: 'Полная диагностика электронного блока управления',
+      description: 'Полная диагностика электронных блоков управления',
     },
     {
       id: 'removal',
