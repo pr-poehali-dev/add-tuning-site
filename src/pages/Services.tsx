@@ -222,10 +222,7 @@ const Services = () => {
                     <Icon name="TrendingUp" size={28} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Реальные результаты</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    После прошивки 98% клиентов отмечают улучшение динамики и снижение расхода при спокойной езде. 
-                    Показываю логи параметров работы двигателя. По желанию — замер на диностенде.
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">После прошивки 98% клиентов отмечают улучшение динамики и снижение расхода при спокойной езде. </p>
                 </CardContent>
               </Card>
 
