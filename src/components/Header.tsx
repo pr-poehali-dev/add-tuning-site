@@ -16,6 +16,7 @@ const Header = () => {
     { to: '/reviews', label: 'Отзывы' },
     { to: '/faq', label: 'FAQ' },
     { to: '/myths', label: 'Мифы' },
+    { to: '/blog', label: 'Блог' },
     { to: '/contacts', label: 'Контакты' },
   ];
 

@@ -13,6 +13,7 @@ import Reviews from "./pages/Reviews";
 import FAQ from "./pages/FAQ";
 import Contacts from "./pages/Contacts";
 import Myths from "./pages/Myths";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/myths" element={<Myths />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

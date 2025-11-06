@@ -60,6 +60,13 @@
   </url>
   
   <url>
+    <loc>https://add-tuning-site.poehali.dev/blog</loc>
+    <lastmod>2025-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>https://add-tuning-site.poehali.dev/contacts</loc>
     <lastmod>2025-11-06</lastmod>
     <changefreq>monthly</changefreq>
