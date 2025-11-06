@@ -146,33 +146,159 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-card">
+      <section className="py-20 px-4 bg-gradient-to-br from-card via-card to-primary/5">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Почему выбирают нас?</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Award" size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Опыт 7+ лет</h3>
-                <p className="text-muted-foreground">Более 1300 авто с чипом ADD TUNING</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Shield" size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Гарантия</h3>
-                <p className="text-muted-foreground">Гарантия на все виды работ</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Clock" size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Быстро</h3>
-                <p className="text-muted-foreground">Большинство работ выполняется за 2-3 часа</p>
-              </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Почему выбирают нас?</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                За годы работы я выработал подход, который гарантирует результат и безопасность вашего автомобиля
+              </p>
             </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Award" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">7 лет опыта</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Более 1300 автомобилей прошито за годы работы. Работаю с европейскими, японскими, американскими и корейскими автомобилями. 
+                    Каждая прошивка — индивидуальная калибровка под конкретный двигатель.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Shield" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Гарантия 1 год</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Даю письменную гарантию на прошивку. Всегда сохраняю оригинальный файл ЭБУ — при необходимости верну всё как было бесплатно. 
+                    Первые 2 недели — любые корректировки бесплатно.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Database" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Собственная база</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Работаю только с проверенными файлами от европейских тюнинг-компаний. Каждая прошивка тестируется на стенде. 
+                    База более 500 калибровок для популярных моделей.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Wrench" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Современное оборудование</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Использую профессиональные программаторы Alientech K-TAG, CMD Flash, MPPS. 
+                    Работаю с блоками Bosch, Siemens, Delphi, Marelli. Считывание прошивки по OBD или BDM.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Clock" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Работа за 2-4 часа</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Stage 1 занимает 2-3 часа: диагностика, считывание, прошивка, тест-драйв. 
+                    Можете подождать в комфортной зоне ожидания или вернуться позже. Работаю без очередей по записи.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="TrendingUp" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Реальные результаты</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    После прошивки показываю логи параметров работы двигателя. По желанию — замер на диностенде. 
+                    98% клиентов отмечают улучшение динамики и снижение расхода при спокойной езде.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="Users" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Индивидуальный подход</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Перед работой обсуждаю ваши ожидания: нужна экономия топлива или максимальная мощность. 
+                    Учитываю состояние автомобиля, октановое число топлива, стиль езды.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="FileText" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Прозрачность работы</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Показываю процесс работы, объясняю что меняю в прошивке. Даю копию файла калибровки. 
+                    Никаких скрытых платежей — цена известна до начала работ.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:border-primary transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="MessageSquare" size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Поддержка после прошивки</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    На связи 24/7 в WhatsApp. Если что-то смущает после прошивки — звоните сразу. 
+                    Даю рекомендации по эксплуатации и обслуживанию прошитого автомобиля.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+              <CardContent className="p-8 text-center">
+                <Icon name="CheckCircle2" size={48} className="text-primary mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-3">Работаю официально</h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+                  ИП с 2018 года. Выдаю чеки и договор на оказание услуг. Для юрлиц — полный пакет документов с актом выполненных работ. 
+                  Оплата наличными, по карте или переводом. Работаю легально и плачу налоги — ваша безопасность гарантирована.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Icon name="FileCheck" size={20} className="text-primary" />
+                    <span>Договор на услуги</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Receipt" size={20} className="text-primary" />
+                    <span>Кассовый чек</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Briefcase" size={20} className="text-primary" />
+                    <span>Для юридических лиц</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
