@@ -1,0 +1,66 @@
+import { Card, CardContent } from '@/components/ui/card';
+import Icon from '@/components/ui/icon';
+
+interface ContactInfoItem {
+  icon: string;
+  title: string;
+  content: string;
+  link: string | null;
+}
+
+const ContactInfo = () => {
+  const contactInfo: ContactInfoItem[] = [
+    {
+      icon: 'Phone',
+      title: 'Телефон',
+      content: '+7 (937) 213-45-47',
+      link: 'tel:+79372134547'
+    },
+    {
+      icon: 'Mail',
+      title: 'Email',
+      content: 'serereme@yandex.ru',
+      link: 'mailto:serereme@yandex.ru'
+    },
+    {
+      icon: 'MapPin',
+      title: 'Адрес',
+      content: 'г. Тольятти, проспект Степана Разина, д. 50',
+      link: 'https://yandex.ru/maps'
+    },
+    {
+      icon: 'Clock',
+      title: 'Режим работы',
+      content: 'Пн-Сб: 9:00 - 20:00, Вс: 10:00 - 18:00',
+      link: null
+    },
+  ];
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-4">
+      {contactInfo.map((item, index) => (
+        <Card key={index} className="animate-scale-in" style={{ animationDelay: `${index * 50}ms` }}>
+          <CardContent className="p-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name={item.icon as any} size={24} className="text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{item.title}</h3>
+                {item.link ? (
+                  <a href={item.link} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    {item.content}
+                  </a>
+                ) : (
+                  <p className="text-muted-foreground text-sm">{item.content}</p>
+                )}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+};
+
+export default ContactInfo;
