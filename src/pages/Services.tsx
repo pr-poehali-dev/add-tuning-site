@@ -176,10 +176,7 @@ const Services = () => {
                     <Icon name="Shield" size={28} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Гарантия 1 год</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Даю письменную гарантию на прошивку. Всегда сохраняю оригинальный файл ЭБУ — при необходимости верну всё как было бесплатно. 
-                    Первые 2 недели — любые корректировки бесплатно.
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">Всегда сохраняю оригинальный файл ЭБУ — при необходимости верну всё как было бесплатно. Первые 2 недели — любые корректировки бесплатно.</p>
                 </CardContent>
               </Card>
 
