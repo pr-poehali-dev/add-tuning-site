@@ -17,6 +17,10 @@ const carBrands = [
   'Другая'
 ];
 
+const currentYear = new Date().getFullYear();
+const years = Array.from({ length: 36 }, (_, i) => currentYear - i + 1);
+const engineVolumes = ['1.0', '1.2', '1.4', '1.5', '1.6', '1.8', '2.0', '2.2', '2.4', '2.5', '2.7', '3.0', '3.2', '3.5', '3.6', '4.0', '4.2', '4.4', '4.6', '5.0', '5.5', '6.0', '6.2'];
+
 interface DiagnosticFormProps {
   lastSubmitTime: number;
   setLastSubmitTime: (time: number) => void;
@@ -48,28 +52,6 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
       toast({
         title: "Ошибка",
         description: "Модель должна содержать только буквы",
-        variant: "destructive",
-      });
-      return false;
-    }
-
-    const yearRegex = /^\d{4}$/;
-    const year = parseInt(data.year);
-    if (!yearRegex.test(data.year) || year < 1990 || year > new Date().getFullYear() + 1) {
-      toast({
-        title: "Ошибка",
-        description: "Введите корректный год выпуска (1990-2025)",
-        variant: "destructive",
-      });
-      return false;
-    }
-
-    const volumeRegex = /^\d+\.?\d*$/;
-    const volume = parseFloat(data.engineVolume);
-    if (!volumeRegex.test(data.engineVolume) || volume < 0.5 || volume > 10) {
-      toast({
-        title: "Ошибка",
-        description: "Введите корректный объем двигателя (0.5-10.0 л)",
         variant: "destructive",
       });
       return false;
@@ -182,21 +164,31 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="text-sm font-medium mb-2 block">Год выпуска</label>
-              <Input
-                placeholder="2018"
+              <select
+                className="w-full px-4 py-2 rounded-md border border-input bg-background"
                 value={diagnosticForm.year}
                 onChange={(e) => setDiagnosticForm({ ...diagnosticForm, year: e.target.value })}
                 required
-              />
+              >
+                <option value="">Выберите год</option>
+                {years.map((year) => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
             </div>
             <div>
               <label className="text-sm font-medium mb-2 block">Объем двигателя</label>
-              <Input
-                placeholder="2.0"
+              <select
+                className="w-full px-4 py-2 rounded-md border border-input bg-background"
                 value={diagnosticForm.engineVolume}
                 onChange={(e) => setDiagnosticForm({ ...diagnosticForm, engineVolume: e.target.value })}
                 required
-              />
+              >
+                <option value="">Выберите объем</option>
+                {engineVolumes.map((volume) => (
+                  <option key={volume} value={volume}>{volume}</option>
+                ))}
+              </select>
             </div>
           </div>
           <div>
