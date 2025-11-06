@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -8,8 +9,22 @@ import OrderForm from '@/components/OrderForm';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [location]);
   const servicesList = [
     {
+      id: 'stage1',
       icon: 'Gauge',
       title: 'Чип-тюнинг Stage 1',
       description: 'Программная оптимизация ЭБУ без механических изменений',
@@ -17,6 +32,7 @@ const Services = () => {
       price: 'от 7 000 ₽'
     },
     {
+      id: 'stage2',
       icon: 'Zap',
       title: 'Чип-тюнинг Stage 2',
       description: 'Глубокая модификация с установкой дополнительного оборудования',
@@ -24,6 +40,7 @@ const Services = () => {
       price: 'от 35 000 ₽'
     },
     {
+      id: 'diagnostic',
       icon: 'Settings',
       title: 'Диагностика ЭБУ',
       description: 'Полная диагностика электронного блока управления',
@@ -31,6 +48,7 @@ const Services = () => {
       price: 'от 2 000 ₽'
     },
     {
+      id: 'removal',
       icon: 'Trash2',
       title: 'Удаление систем',
       description: 'Профессиональное удаление экологических систем',
@@ -38,6 +56,7 @@ const Services = () => {
       price: 'от 7 000 ₽'
     },
     {
+      id: 'transmission',
       icon: 'Activity',
       title: 'Настройка DSG/АКПП',
       description: 'Оптимизация работы автоматической коробки передач',
@@ -45,6 +64,7 @@ const Services = () => {
       price: 'от 18 000 ₽'
     },
     {
+      id: 'srs',
       icon: 'LifeBuoy',
       title: 'Восстановление блоков SRS',
       description: 'Профессиональное восстановление и ремонт блоков системы безопасности',
@@ -52,6 +72,7 @@ const Services = () => {
       price: 'от 3 000 ₽'
     },
     {
+      id: 'sas',
       icon: 'Navigation',
       title: 'Восстановление работы SAS',
       description: 'Калибровка и восстановление датчика угла поворота руля',
@@ -59,6 +80,7 @@ const Services = () => {
       price: 'от 5 000 ₽'
     },
     {
+      id: 'ecu-recovery',
       icon: 'RefreshCw',
       title: 'Восстановление ECU',
       description: 'Восстановление электронного блока управления после неудачной прошивки',
@@ -91,7 +113,7 @@ const Services = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {servicesList.map((service, index) => (
-              <Card key={index} className="group hover:border-primary transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card key={index} id={service.id} className="group hover:border-primary transition-all duration-300 animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors">
