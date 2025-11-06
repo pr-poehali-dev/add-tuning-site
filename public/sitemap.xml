@@ -67,10 +67,52 @@
   </url>
   
   <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/kak-vybrat-stage-tyuninga</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/priznaki-zabitogo-dpf</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/top-5-avto-dlya-tyuninga</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/chip-tyuning-dizel-vs-benzin</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/adblue-udalenie-ili-remont</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://add-tuning-site.poehali.dev/blog/kak-proishodit-chip-tyuning</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://add-tuning-site.poehali.dev/contacts</loc>
     <lastmod>2025-11-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   
 </urlset>
