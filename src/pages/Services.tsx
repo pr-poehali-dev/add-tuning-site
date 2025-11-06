@@ -6,6 +6,7 @@ import OrderForm from '@/components/OrderForm';
 import ServiceCard from '@/components/ServiceCard';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import { servicesList } from '@/data/servicesList';
+import MobileBookingButton from '@/components/MobileBookingButton';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -69,6 +70,7 @@ const Services = () => {
           onClose={() => setSelectedService(null)} 
         />
       )}
+      <MobileBookingButton />
     </div>
   );
 };

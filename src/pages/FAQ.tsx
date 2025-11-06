@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileBookingButton from '@/components/MobileBookingButton';
 
 const FAQ = () => {
   const faqCategories = [
@@ -186,6 +187,7 @@ const FAQ = () => {
       </section>
 
       <Footer />
+      <MobileBookingButton />
     </div>
   );
 };

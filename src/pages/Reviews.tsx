@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileBookingButton from '@/components/MobileBookingButton';
 
 const Reviews = () => {
   const reviews = [
@@ -138,6 +139,7 @@ const Reviews = () => {
       </section>
 
       <Footer />
+      <MobileBookingButton />
     </div>
   );
 };

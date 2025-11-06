@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileBookingButton from '@/components/MobileBookingButton';
 import { Link } from 'react-router-dom';
 
 interface BlogPost {
@@ -161,6 +162,7 @@ const Blog = () => {
       </section>
 
       <Footer />
+      <MobileBookingButton />
     </div>
   );
 };

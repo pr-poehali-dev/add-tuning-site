@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MobileBookingButton from '@/components/MobileBookingButton';
 
 const Myths = () => {
   const myths = [
@@ -166,6 +167,7 @@ const Myths = () => {
       </section>
 
       <Footer />
+      <MobileBookingButton />
     </div>
   );
 };
