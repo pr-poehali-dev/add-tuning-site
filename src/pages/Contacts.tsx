@@ -10,9 +10,22 @@ import Footer from '@/components/Footer';
 
 const Contacts = () => {
   const { toast } = useToast();
+  
+  const carBrands = [
+    'Audi', 'BMW', 'Mercedes-Benz', 'Volkswagen', 'Porsche', 'Skoda',
+    'Toyota', 'Lexus', 'Honda', 'Nissan', 'Mazda', 'Mitsubishi', 'Subaru',
+    'Hyundai', 'Kia', 'Genesis',
+    'Ford', 'Chevrolet', 'Jeep', 'Dodge', 'Chrysler',
+    'Volvo', 'Peugeot', 'Renault', 'Citroen',
+    'Land Rover', 'Jaguar', 'Mini',
+    'Lada', 'UAZ', 'ГАЗ',
+    'Другая'
+  ];
+  
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    brand: '',
     car: '',
     message: ''
   });
@@ -313,12 +326,17 @@ const Contacts = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label className="text-sm font-medium mb-2 block">Марка</label>
-                        <Input
-                          placeholder="BMW"
+                        <select
+                          className="w-full px-4 py-2 rounded-md border border-input bg-background"
                           value={diagnosticForm.brand}
                           onChange={(e) => setDiagnosticForm({ ...diagnosticForm, brand: e.target.value })}
                           required
-                        />
+                        >
+                          <option value="">Выберите марку</option>
+                          {carBrands.map((brand) => (
+                            <option key={brand} value={brand}>{brand}</option>
+                          ))}
+                        </select>
                       </div>
                       <div>
                         <label className="text-sm font-medium mb-2 block">Модель</label>
@@ -392,9 +410,23 @@ const Contacts = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Марка и модель автомобиля</label>
+                    <label className="text-sm font-medium mb-2 block">Марка автомобиля</label>
+                    <select
+                      className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                      value={formData.brand}
+                      onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+                      required
+                    >
+                      <option value="">Выберите марку</option>
+                      {carBrands.map((brand) => (
+                        <option key={brand} value={brand}>{brand}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Модель автомобиля</label>
                     <Input
-                      placeholder="BMW 320d F30"
+                      placeholder="320d F30"
                       value={formData.car}
                       onChange={(e) => setFormData({ ...formData, car: e.target.value })}
                       required
