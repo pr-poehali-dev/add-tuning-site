@@ -13,6 +13,7 @@ import Reviews from "./pages/Reviews";
 import FAQ from "./pages/FAQ";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieConsent />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
