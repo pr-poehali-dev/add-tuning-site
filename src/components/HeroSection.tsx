@@ -16,11 +16,11 @@ const HeroSection = () => {
           <div className="relative animate-slide-right">
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img 
-                src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/fccdfcea-9025-4179-ab3c-491b2c485eb0.jpg" 
+                src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg" 
                 alt="Профессиональный чип-тюнинг автомобилей в Тольятти - ADD Tuning"
                 loading="eager"
                 fetchPriority="high"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover blur-[2px]"
               />
             </div>
           </div>
