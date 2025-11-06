@@ -135,9 +135,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Пришло время ощутить весь потенциал вашего авто !</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Запишитесь на консультацию и получите расчет стоимости под ваш автомобиль
-            </p>
+            <p className="text-xl text-muted-foreground mb-8">Свяжитесь с нами и получите расчет стоимости под ваш автомобиль</p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Button 
                 size="lg" 
