@@ -452,22 +452,6 @@ const Contacts = () => {
               </CardContent>
             </Card>
           </div>
-
-          <Card className="bg-card animate-fade-in" style={{ animationDelay: '400ms' }}>
-            <CardContent className="p-0">
-              <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=1234567890&ll=49.348913,53.507836"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  className="w-full h-full"
-                  title="Карта: г. Тольятти, проспект Степана Разина, д. 50"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
