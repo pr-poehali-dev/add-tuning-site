@@ -16,7 +16,7 @@ const Price = () => {
     { name: 'Stage 1 (бензин)', minPrice: 7000, maxPrice: 20000, category: 'Чип-тюнинг' },
     { name: 'Stage 1 (дизель)', minPrice: 7000, maxPrice: 30000, category: 'Чип-тюнинг' },
     { name: 'Stage 2 (с доработками)', minPrice: 35000, maxPrice: 60000, category: 'Чип-тюнинг' },
-    { name: 'Эко-тюнинг', minPrice: 12000, maxPrice: 20000, category: 'Чип-тюнинг' },
+    { name: 'Эко-тюнинг', minPrice: 7000, maxPrice: 15000, category: 'Чип-тюнинг' },
     
     { name: 'SpeedLim (изменение ограничения скорости)', minPrice: 5000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
     { name: 'RPM (изменение отсечки по оборотам)', minPrice: 5000, maxPrice: 10000, category: 'Программное отключение (бензин)' },
