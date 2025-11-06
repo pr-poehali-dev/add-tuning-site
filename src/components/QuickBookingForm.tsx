@@ -10,9 +10,50 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
     name: '',
     phone: '',
   });
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
+  const validateForm = () => {
+    const nameRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    if (!nameRegex.test(formData.name)) {
+      toast({
+        title: "Ошибка",
+        description: "Имя должно содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный номер телефона",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      toast({
+        title: "Подождите",
+        description: "Вы отправляете заявки слишком часто. Подождите 10 секунд.",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    return true;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setLastSubmitTime(Date.now());
     
     toast({
       title: "Заявка отправлена!",

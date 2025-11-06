@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
 interface OrderFormProps {
@@ -9,6 +10,7 @@ interface OrderFormProps {
 }
 
 const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -20,10 +22,104 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
+  const validateForm = () => {
+    const nameRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    if (!nameRegex.test(formData.name)) {
+      toast({
+        title: "Ошибка",
+        description: "Имя должно содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+    if (!phoneRegex.test(formData.phone) || formData.phone.replace(/\D/g, '').length < 10) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный номер телефона",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const textRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    if (!textRegex.test(formData.brand)) {
+      toast({
+        title: "Ошибка",
+        description: "Марка должна содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const modelRegex = /^[а-яёА-ЯЁa-zA-Z0-9\s-]+$/;
+    if (!modelRegex.test(formData.model)) {
+      toast({
+        title: "Ошибка",
+        description: "Модель должна содержать только буквы и цифры",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const yearRegex = /^\d{4}$/;
+    const year = parseInt(formData.year);
+    if (!yearRegex.test(formData.year) || year < 1990 || year > new Date().getFullYear() + 1) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный год выпуска (1990-2025)",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const powerRegex = /^\d+$/;
+    const power = parseInt(formData.horsepower);
+    if (!powerRegex.test(formData.horsepower) || power < 30 || power > 2000) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректную мощность (30-2000 л.с.)",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const volumeRegex = /^\d+\.?\d*$/;
+    const volume = parseFloat(formData.engineVolume);
+    if (!volumeRegex.test(formData.engineVolume) || volume < 0.5 || volume > 10) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный объем двигателя (0.5-10.0 л)",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      toast({
+        title: "Подождите",
+        description: "Вы отправляете заявки слишком часто. Подождите 10 секунд.",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    return true;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
+    setLastSubmitTime(Date.now());
 
     try {
       const response = await fetch('https://functions.poehali.dev/6400c45a-8e89-4809-b5a1-19d27ee8d1c6', {
@@ -40,9 +136,19 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
         setTimeout(() => {
           onClose();
         }, 3000);
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить заявку. Попробуйте позже.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
-      console.error('Error submitting order:', error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
