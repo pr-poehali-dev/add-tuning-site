@@ -37,22 +37,22 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="grid sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
       {contactInfo.map((item, index) => (
         <Card key={index} className="animate-scale-in" style={{ animationDelay: `${index * 50}ms` }}>
-          <CardContent className="p-6">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Icon name={item.icon as any} size={24} className="text-primary" />
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name={item.icon as any} size={20} className="text-primary sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">{item.title}</h3>
+                <h3 className="text-sm sm:text-base font-semibold mb-1">{item.title}</h3>
                 {item.link ? (
-                  <a href={item.link} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  <a href={item.link} className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm">
                     {item.content}
                   </a>
                 ) : (
-                  <p className="text-muted-foreground text-sm">{item.content}</p>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{item.content}</p>
                 )}
               </div>
             </div>

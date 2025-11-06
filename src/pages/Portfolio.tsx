@@ -85,16 +85,16 @@ const Portfolio = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Мои работы</h1>
-            <p className="text-xl text-muted-foreground">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Мои работы</h1>
+            <p className="text-base sm:text-xl text-muted-foreground px-4">
               Реальные результаты чип-тюнинга автомобилей моих клиентов
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.map((project, index) => (
               <Card key={index} className="group hover:border-primary transition-all duration-300 animate-scale-in overflow-hidden" style={{ animationDelay: `${index * 50}ms` }}>
                 <div className="aspect-video overflow-hidden">
@@ -104,43 +104,43 @@ const Portfolio = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-start justify-between mb-3 sm:mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold">{project.brand}</h3>
-                      <p className="text-muted-foreground">{project.model} • {project.year}</p>
+                      <h3 className="text-xl sm:text-2xl font-bold">{project.brand}</h3>
+                      <p className="text-sm sm:text-base text-muted-foreground">{project.model} • {project.year}</p>
                     </div>
                     <Badge className="bg-primary">{project.stage}</Badge>
                   </div>
 
-                  <div className="space-y-4 mb-6">
-                    <div className="bg-muted/50 rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-muted-foreground">Мощность</span>
-                        <Icon name="TrendingUp" size={16} className="text-primary" />
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                    <div className="bg-muted/50 rounded-lg p-3 sm:p-4">
+                      <div className="flex items-center justify-between mb-1 sm:mb-2">
+                        <span className="text-xs sm:text-sm text-muted-foreground">Мощность</span>
+                        <Icon name="TrendingUp" size={14} className="text-primary sm:w-4 sm:h-4" />
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg">{project.powerBefore} л.с.</span>
-                        <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">{project.powerAfter} л.с.</span>
+                        <span className="text-sm sm:text-lg">{project.powerBefore} л.с.</span>
+                        <Icon name="ArrowRight" size={16} className="text-muted-foreground sm:w-5 sm:h-5" />
+                        <span className="text-lg sm:text-2xl font-bold text-primary">{project.powerAfter} л.с.</span>
                       </div>
-                      <div className="text-right text-sm text-primary font-semibold mt-1">
+                      <div className="text-right text-xs sm:text-sm text-primary font-semibold mt-1">
                         +{project.powerAfter - project.powerBefore} л.с. 
                         ({Math.round(((project.powerAfter - project.powerBefore) / project.powerBefore) * 100)}%)
                       </div>
                     </div>
 
-                    <div className="bg-muted/50 rounded-lg p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-muted-foreground">Крутящий момент</span>
-                        <Icon name="Gauge" size={16} className="text-primary" />
+                    <div className="bg-muted/50 rounded-lg p-3 sm:p-4">
+                      <div className="flex items-center justify-between mb-1 sm:mb-2">
+                        <span className="text-xs sm:text-sm text-muted-foreground">Крутящий момент</span>
+                        <Icon name="Gauge" size={14} className="text-primary sm:w-4 sm:h-4" />
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-lg">{project.torqueBefore} Нм</span>
-                        <Icon name="ArrowRight" size={20} className="text-muted-foreground" />
-                        <span className="text-2xl font-bold text-primary">{project.torqueAfter} Нм</span>
+                        <span className="text-sm sm:text-lg">{project.torqueBefore} Нм</span>
+                        <Icon name="ArrowRight" size={16} className="text-muted-foreground sm:w-5 sm:h-5" />
+                        <span className="text-lg sm:text-2xl font-bold text-primary">{project.torqueAfter} Нм</span>
                       </div>
-                      <div className="text-right text-sm text-primary font-semibold mt-1">
+                      <div className="text-right text-xs sm:text-sm text-primary font-semibold mt-1">
                         +{project.torqueAfter - project.torqueBefore} Нм
                         ({Math.round(((project.torqueAfter - project.torqueBefore) / project.torqueBefore) * 100)}%)
                       </div>
@@ -149,7 +149,7 @@ const Portfolio = () => {
 
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, idx) => (
-                      <Badge key={idx} variant="outline" className="border-primary/50">
+                      <Badge key={idx} variant="outline" className="border-primary/50 text-xs">
                         {tag}
                       </Badge>
                     ))}
@@ -159,15 +159,15 @@ const Portfolio = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="bg-card rounded-2xl p-8 max-w-2xl mx-auto">
-              <Icon name="BarChart3" size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Хотите такой же результат?</h3>
-              <p className="text-muted-foreground mb-6">Запишитесь на диагностику и получите расчет прироста мощности для вашего автомобиля</p>
+          <div className="mt-10 sm:mt-16 text-center">
+            <div className="bg-card rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+              <Icon name="BarChart3" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Хотите такой же результат?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">Запишитесь на диагностику и получите расчет прироста мощности для вашего автомобиля</p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <Button 
                   size="lg" 
-                  className="gap-2"
+                  className="gap-2 text-sm sm:text-base"
                   onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
                 >
                   <Icon name="MessageCircle" size={20} />

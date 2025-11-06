@@ -55,35 +55,35 @@ const Price = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/5">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/5">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Прайс-лист</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Прайс-лист</h1>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Стоимость услуг по чип-тюнингу и диагностике
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {categories.map((category) => (
               <Card key={category}>
-                <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-2">
-                    <Icon name="Settings" size={20} className="text-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-lg sm:text-xl flex items-center gap-2">
+                    <Icon name="Settings" size={18} className="text-primary sm:w-5 sm:h-5" />
                     {category}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="space-y-1 sm:space-y-2">
                     {services
                       .filter(s => s.category === category)
                       .map((service, index) => (
                         <div
                           key={index}
-                          className="flex justify-between items-center p-3 rounded-lg hover:bg-accent/50 transition-colors"
+                          className="flex justify-between items-center p-2 sm:p-3 rounded-lg hover:bg-accent/50 transition-colors gap-2"
                         >
-                          <span className="text-sm">{service.name}</span>
-                          <span className="text-sm font-medium text-primary whitespace-nowrap ml-4">
+                          <span className="text-xs sm:text-sm">{service.name}</span>
+                          <span className="text-xs sm:text-sm font-medium text-primary whitespace-nowrap">
                             {service.minPrice === service.maxPrice
                               ? `${service.minPrice.toLocaleString('ru-RU')} ₽`
                               : `${service.minPrice.toLocaleString('ru-RU')} - ${service.maxPrice.toLocaleString('ru-RU')} ₽`
@@ -97,11 +97,11 @@ const Price = () => {
             ))}
           </div>
 
-          <Card className="mt-8 bg-primary/5 border-primary/20">
-            <CardContent className="p-6">
-              <div className="flex items-start gap-3">
-                <Icon name="Info" size={20} className="text-primary mt-1 flex-shrink-0" />
-                <div className="space-y-2 text-sm text-muted-foreground">
+          <Card className="mt-6 sm:mt-8 bg-primary/5 border-primary/20">
+            <CardContent className="p-4 sm:p-6">
+              <div className="flex items-start gap-2 sm:gap-3">
+                <Icon name="Info" size={18} className="text-primary mt-1 flex-shrink-0 sm:w-5 sm:h-5" />
+                <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                   <p>
                     <strong className="text-foreground">Обратите внимание:</strong> указанные цены являются ориентировочными.
                   </p>

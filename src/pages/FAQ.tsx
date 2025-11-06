@@ -131,32 +131,32 @@ const FAQ = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Часто задаваемые вопросы</h1>
-            <p className="text-xl text-muted-foreground">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Часто задаваемые вопросы</h1>
+            <p className="text-base sm:text-xl text-muted-foreground px-4">
               Честные и подробные ответы на все вопросы о чип-тюнинге
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8">
             {faqCategories.map((category, index) => (
-              <Card key={index} className="p-6 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon name={category.icon as any} size={24} className="text-primary" />
+              <Card key={index} className="p-4 sm:p-6 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon name={category.icon as any} size={20} className="text-primary sm:w-6 sm:h-6" />
                   </div>
-                  <h2 className="text-2xl font-bold">{category.category}</h2>
+                  <h2 className="text-lg sm:text-2xl font-bold">{category.category}</h2>
                 </div>
                 
                 <Accordion type="single" collapsible className="w-full">
                   {category.questions.map((item, idx) => (
                     <AccordionItem key={idx} value={`item-${index}-${idx}`}>
-                      <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary">
+                      <AccordionTrigger className="text-left text-sm sm:text-lg font-semibold hover:text-primary">
                         {item.q}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed">
+                      <AccordionContent className="text-xs sm:text-base text-muted-foreground leading-relaxed">
                         {item.a}
                       </AccordionContent>
                     </AccordionItem>
@@ -166,17 +166,17 @@ const FAQ = () => {
             ))}
           </div>
 
-          <div className="mt-16 bg-card rounded-2xl p-8 max-w-3xl mx-auto text-center">
-            <Icon name="MessageCircleQuestion" size={48} className="text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Остались вопросы?</h3>
-            <p className="text-muted-foreground mb-6">
+          <div className="mt-10 sm:mt-16 bg-card rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center">
+            <Icon name="MessageCircleQuestion" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Остались вопросы?</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
               Напишите в WhatsApp — отвечу на все вопросы, помогу определиться с выбором услуги
             </p>
             <a
               href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20есть%20вопрос%20по%20чип-тюнингу"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm sm:text-lg"
             >
               <Icon name="MessageCircle" size={24} className="mr-2" />
               Написать в WhatsApp

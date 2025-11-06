@@ -77,19 +77,19 @@ const Blog = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Icon name="BookOpen" size={40} className="text-primary" />
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <Icon name="BookOpen" size={32} className="text-primary sm:w-10 sm:h-10" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Блог о чип-тюнинге</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Блог о чип-тюнинге</h1>
+            <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Полезные статьи, гайды и реальные кейсы от мастера с 7-летним опытом
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {posts.map((post, index) => (
               <Card 
                 key={post.id}
@@ -103,20 +103,20 @@ const Blog = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <span className="text-xs font-semibold text-primary bg-primary/10 px-2 sm:px-3 py-1 rounded-full">
                       {post.category}
                     </span>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Icon name="Clock" size={14} />
+                      <Icon name="Clock" size={12} className="sm:w-3.5 sm:h-3.5" />
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-base sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
@@ -139,18 +139,18 @@ const Blog = () => {
             ))}
           </div>
 
-          <Card className="mt-12 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
-            <CardContent className="p-8 text-center">
-              <Icon name="MessageSquare" size={48} className="text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Не нашли ответ на свой вопрос?</h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <Card className="mt-8 sm:mt-12 bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
+            <CardContent className="p-6 sm:p-8 text-center">
+              <Icon name="MessageSquare" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Не нашли ответ на свой вопрос?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto px-4">
                 Напишите в WhatsApp — я подробно расскажу про тюнинг именно вашего автомобиля
               </p>
               <a
                 href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20вопрос%20о%20чип-тюнинге"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm sm:text-lg"
               >
                 <Icon name="MessageCircle" size={24} className="mr-2" />
                 Написать в WhatsApp

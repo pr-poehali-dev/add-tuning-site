@@ -7,13 +7,13 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-card border-y border-border">
+    <section className="py-8 sm:py-12 bg-card border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-1 sm:mb-2">{stat.number}</div>
+              <div className="text-xs sm:text-base text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

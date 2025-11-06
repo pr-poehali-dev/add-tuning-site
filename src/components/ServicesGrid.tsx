@@ -51,13 +51,13 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 sm:py-20 px-4">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Мои услуги</h2>
-          <p className="text-xl text-muted-foreground">Полный спектр работ по чип-тюнингу</p>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Мои услуги</h2>
+          <p className="text-base sm:text-xl text-muted-foreground">Полный спектр работ по чип-тюнингу</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <Card 
               key={index} 
@@ -65,12 +65,12 @@ const ServicesGrid = () => {
               style={{ animationDelay: `${index * 50}ms` }}
               onClick={() => navigate(`/services#${service.id}`)}
             >
-              <CardContent className="p-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
-                  <Icon name={service.icon as any} size={28} className="text-primary group-hover:text-primary-foreground transition-colors" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary transition-colors">
+                  <Icon name={service.icon as any} size={24} className="text-primary group-hover:text-primary-foreground transition-colors sm:w-7 sm:h-7" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
               </CardContent>
             </Card>
           ))}

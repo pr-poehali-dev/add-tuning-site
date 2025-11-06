@@ -83,54 +83,54 @@ const Myths = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Icon name="Lightbulb" size={40} className="text-primary" />
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-16 animate-fade-in">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <Icon name="Lightbulb" size={32} className="text-primary sm:w-10 sm:h-10" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Мифы о чип-тюнинге</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Мифы о чип-тюнинге</h1>
+            <p className="text-base sm:text-xl text-muted-foreground px-4">
               Разбираем популярные заблуждения и рассказываем, как всё на самом деле. 
               Честные ответы без маркетинга — только факты из 7 лет практики.
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-6">
+          <div className="max-w-5xl mx-auto space-y-4 sm:space-y-6">
             {myths.map((item, index) => (
               <Card 
                 key={index} 
                 className="group hover:border-primary transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-start gap-4 md:gap-6">
-                    <div className="w-12 h-12 md:w-14 md:h-14 bg-destructive/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-destructive/20 transition-colors">
-                      <Icon name={item.icon as any} size={28} className="text-destructive" />
+                <CardContent className="p-4 sm:p-6 md:p-8">
+                  <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-destructive/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-destructive/20 transition-colors">
+                      <Icon name={item.icon as any} size={20} className="text-destructive sm:w-7 sm:h-7" />
                     </div>
                     <div className="flex-1">
-                      <div className="mb-4">
-                        <span className="inline-block text-xs font-semibold text-destructive bg-destructive/10 px-3 py-1 rounded-full mb-3">
+                      <div className="mb-3 sm:mb-4">
+                        <span className="inline-block text-xs font-semibold text-destructive bg-destructive/10 px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">
                           МИФ
                         </span>
-                        <h3 className="text-xl md:text-2xl font-bold text-destructive mb-4">
+                        <h3 className="text-base sm:text-xl md:text-2xl font-bold text-destructive mb-3 sm:mb-4">
                           {item.myth}
                         </h3>
                       </div>
                       
-                      <div className="mb-4">
-                        <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-3">
+                      <div className="mb-3 sm:mb-4">
+                        <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">
                           РЕАЛЬНОСТЬ
                         </span>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                           {item.reality}
                         </p>
                       </div>
 
-                      <div className="bg-primary/5 border-l-4 border-primary rounded-r-lg p-4">
+                      <div className="bg-primary/5 border-l-4 border-primary rounded-r-lg p-3 sm:p-4">
                         <div className="flex items-start gap-2">
-                          <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-medium">
+                          <Icon name="CheckCircle2" size={16} className="text-primary mt-0.5 flex-shrink-0 sm:w-5 sm:h-5" />
+                          <p className="text-xs sm:text-sm font-medium">
                             {item.fact}
                           </p>
                         </div>
@@ -142,19 +142,19 @@ const Myths = () => {
             ))}
           </div>
 
-          <div className="max-w-4xl mx-auto mt-16">
+          <div className="max-w-4xl mx-auto mt-10 sm:mt-16">
             <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30">
-              <CardContent className="p-8 text-center">
-                <Icon name="MessageSquare" size={48} className="text-primary mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Остались вопросы?</h3>
-                <p className="text-muted-foreground mb-6">
+              <CardContent className="p-6 sm:p-8 text-center">
+                <Icon name="MessageSquare" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Остались вопросы?</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
                   Напишите в WhatsApp — я готов честно ответить на любые вопросы о чип-тюнинге
                 </p>
                 <a
                   href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20вопрос%20о%20чип-тюнинге"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm sm:text-lg"
                 >
                   <Icon name="MessageCircle" size={24} className="mr-2" />
                   Написать в WhatsApp
