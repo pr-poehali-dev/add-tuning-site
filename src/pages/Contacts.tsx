@@ -22,11 +22,19 @@ const Contacts = () => {
     'Другая'
   ];
   
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: 36 }, (_, i) => currentYear - i + 1);
+  const engineVolumes = ['1.0', '1.2', '1.4', '1.5', '1.6', '1.8', '2.0', '2.2', '2.4', '2.5', '2.7', '3.0', '3.2', '3.5', '3.6', '4.0', '4.2', '4.4', '4.6', '5.0', '5.5', '6.0', '6.2'];
+  const horsepowers = Array.from({ length: 40 }, (_, i) => (i + 5) * 10);
+  
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     brand: '',
     car: '',
+    year: '',
+    engineVolume: '',
+    horsepower: '',
     message: ''
   });
 
@@ -431,6 +439,50 @@ const Contacts = () => {
                       onChange={(e) => setFormData({ ...formData, car: e.target.value })}
                       required
                     />
+                  </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Год выпуска</label>
+                      <select
+                        className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                        value={formData.year}
+                        onChange={(e) => setFormData({ ...formData, year: e.target.value })}
+                        required
+                      >
+                        <option value="">Год</option>
+                        {years.map((year) => (
+                          <option key={year} value={year}>{year}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Объем (л)</label>
+                      <select
+                        className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                        value={formData.engineVolume}
+                        onChange={(e) => setFormData({ ...formData, engineVolume: e.target.value })}
+                        required
+                      >
+                        <option value="">Объем</option>
+                        {engineVolumes.map((volume) => (
+                          <option key={volume} value={volume}>{volume}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Мощность (л.с.)</label>
+                      <select
+                        className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                        value={formData.horsepower}
+                        onChange={(e) => setFormData({ ...formData, horsepower: e.target.value })}
+                        required
+                      >
+                        <option value="">Л.с.</option>
+                        {horsepowers.map((hp) => (
+                          <option key={hp} value={hp}>{hp}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-2 block">Комментарий</label>
