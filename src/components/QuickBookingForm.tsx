@@ -9,6 +9,7 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    serviceType: 'diagnostic' as 'diagnostic' | 'tuning',
   });
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
@@ -46,7 +47,7 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -55,15 +56,41 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
 
     setLastSubmitTime(Date.now());
     
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы перезвоним вам в ближайшее время",
-    });
-    
-    setFormData({ name: '', phone: '' });
-    
-    if (onSuccess) {
-      onSuccess();
+    try {
+      const response = await fetch('https://functions.poehali.dev/6400c45a-8e89-4809-b5a1-19d27ee8d1c6', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          serviceType: formData.serviceType === 'diagnostic' ? 'Диагностика' : 'Чип-тюнинг',
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы перезвоним вам в ближайшее время",
+        });
+        setFormData({ name: '', phone: '', serviceType: 'diagnostic' });
+        
+        if (onSuccess) {
+          onSuccess();
+        }
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить заявку. Попробуйте позже.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -75,6 +102,29 @@ const QuickBookingForm = ({ onSuccess }: { onSuccess?: () => void }) => {
           Быстрая запись
         </h3>
         <div className="space-y-3">
+          <div>
+            <label className="text-xs font-medium mb-2 block">Выберите услугу</label>
+            <div className="grid grid-cols-2 gap-2">
+              <Button
+                type="button"
+                variant={formData.serviceType === 'diagnostic' ? 'default' : 'outline'}
+                className="w-full"
+                onClick={() => setFormData({ ...formData, serviceType: 'diagnostic' })}
+              >
+                <Icon name="Search" size={16} className="mr-2" />
+                Диагностика
+              </Button>
+              <Button
+                type="button"
+                variant={formData.serviceType === 'tuning' ? 'default' : 'outline'}
+                className="w-full"
+                onClick={() => setFormData({ ...formData, serviceType: 'tuning' })}
+              >
+                <Icon name="Zap" size={16} className="mr-2" />
+                Чип-тюнинг
+              </Button>
+            </div>
+          </div>
           <Input
             placeholder="Ваше имя"
             value={formData.name}
