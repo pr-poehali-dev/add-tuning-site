@@ -1,3 +1,9 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +16,7 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+Sitemap: https://add-tuning-site.poehali.dev/sitemap.xml
+
+# Chip tuning in Togliatti - ADD Tuning
+# Professional ECU tuning services
