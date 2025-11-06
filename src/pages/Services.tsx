@@ -212,10 +212,7 @@ const Services = () => {
                     <Icon name="Clock" size={28} className="text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Работа за 2-4 часа</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Stage 1 занимает 2-3 часа: диагностика, считывание, прошивка, тест-драйв. 
-                    Можете подождать в комфортной зоне ожидания или вернуться позже. Работаю без очередей по записи.
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">Stage 1 занимает 2-3 часа: диагностика, считывание, прошивка, тест-драйв.</p>
                 </CardContent>
               </Card>
 
