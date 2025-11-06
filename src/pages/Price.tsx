@@ -13,7 +13,7 @@ interface ServiceItem {
 
 const Price = () => {
   const services: ServiceItem[] = [
-    { name: 'Stage 1 (бензин)', minPrice: 7000, maxPrice: 25000, category: 'Чип-тюнинг' },
+    { name: 'Stage 1 (бензин)', minPrice: 7000, maxPrice: 30000, category: 'Чип-тюнинг' },
     { name: 'Stage 1 (дизель)', minPrice: 7000, maxPrice: 30000, category: 'Чип-тюнинг' },
     { name: 'Stage 2 (с доработками)', minPrice: 35000, maxPrice: 60000, category: 'Чип-тюнинг' },
     { name: 'Эко-тюнинг', minPrice: 12000, maxPrice: 20000, category: 'Чип-тюнинг' },
