@@ -170,18 +170,17 @@ const FAQ = () => {
             <Icon name="MessageCircleQuestion" size={48} className="text-primary mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Остались вопросы?</h3>
             <p className="text-muted-foreground mb-6">
-              Звоните или пишите в WhatsApp — отвечу на все вопросы, помогу определиться с выбором услуги
+              Напишите в WhatsApp — отвечу на все вопросы, помогу определиться с выбором услуги
             </p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <Button 
-                size="lg" 
-                className="gap-2"
-                onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20есть%20вопрос%20по%20чип-тюнингу', '_blank')}
-              >
-                <Icon name="MessageCircle" size={20} />
-                Написать в WhatsApp
-              </Button>
-            </div>
+            <a
+              href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20есть%20вопрос%20по%20чип-тюнингу"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg"
+            >
+              <Icon name="MessageCircle" size={24} className="mr-2" />
+              Написать в WhatsApp
+            </a>
           </div>
         </div>
       </section>
