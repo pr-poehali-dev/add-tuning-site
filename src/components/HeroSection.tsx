@@ -20,7 +20,7 @@ const HeroSection = () => {
                 alt="Профессиональный чип-тюнинг автомобилей в Тольятти - ADD Tuning"
                 loading="eager"
                 fetchPriority="high"
-                className="w-full h-full object-cover blur-[2px]"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
