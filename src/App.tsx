@@ -12,6 +12,7 @@ import Portfolio from "./pages/Portfolio";
 import Reviews from "./pages/Reviews";
 import FAQ from "./pages/FAQ";
 import Contacts from "./pages/Contacts";
+import Myths from "./pages/Myths";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/myths" element={<Myths />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

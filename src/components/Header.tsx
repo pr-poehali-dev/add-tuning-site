@@ -15,6 +15,7 @@ const Header = () => {
     { to: '/portfolio', label: 'Портфолио' },
     { to: '/reviews', label: 'Отзывы' },
     { to: '/faq', label: 'FAQ' },
+    { to: '/myths', label: 'Мифы' },
     { to: '/contacts', label: 'Контакты' },
   ];
 
