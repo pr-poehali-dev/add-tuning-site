@@ -265,31 +265,6 @@ const Services = () => {
                 </CardContent>
               </Card>
             </div>
-
-            <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
-              <CardContent className="p-8 text-center">
-                <Icon name="CheckCircle2" size={48} className="text-primary mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-3">Работаю официально</h3>
-                <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                  ИП с 2018 года. Выдаю чеки и договор на оказание услуг. Для юрлиц — полный пакет документов с актом выполненных работ. 
-                  Оплата наличными, по карте или переводом. Работаю легально и плачу налоги — ваша безопасность гарантирована.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Icon name="FileCheck" size={20} className="text-primary" />
-                    <span>Договор на услуги</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Receipt" size={20} className="text-primary" />
-                    <span>Кассовый чек</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Briefcase" size={20} className="text-primary" />
-                    <span>Для юридических лиц</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
