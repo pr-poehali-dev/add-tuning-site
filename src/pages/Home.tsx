@@ -82,7 +82,9 @@ const Home = () => {
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img 
                   src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/fccdfcea-9025-4179-ab3c-491b2c485eb0.jpg" 
-                  alt="Performance car tuning"
+                  alt="Профессиональный чип-тюнинг автомобилей в Тольятти - ADD Tuning"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </div>

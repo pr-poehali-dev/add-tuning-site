@@ -98,7 +98,8 @@ const Services = () => {
           <div className="mb-12 rounded-2xl overflow-hidden h-64 relative">
             <img 
               src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/b7230c8f-37cf-4de4-9ea5-f92b8a189791.jpg" 
-              alt="ECU diagnostics and tuning workshop"
+              alt="Диагностика и чип-тюнинг ЭБУ автомобилей - ADD Tuning Тольятти"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent flex items-end">

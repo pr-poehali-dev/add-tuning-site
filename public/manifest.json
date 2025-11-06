@@ -1,0 +1,20 @@
+{
+  "name": "ADD Tuning - Чип-тюнинг в Тольятти",
+  "short_name": "ADD Tuning",
+  "description": "Профессиональный чип-тюнинг автомобилей в Тольятти",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://cdn.poehali.dev/files/8f68f629-6f77-43c1-9c4a-5402964bcda5.JPG",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["automotive", "business"],
+  "lang": "ru"
+}
