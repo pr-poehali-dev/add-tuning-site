@@ -272,18 +272,28 @@ const Contacts = () => {
 
               <Card className="bg-primary/5 border-primary/20 animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 mb-4">
                     <Icon name="Info" size={24} className="text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold mb-2">Как нас найти?</h3>
                       <p className="text-sm text-muted-foreground mb-3">Мы находимся на проспекте Степана Разина, дом 50 в Тольятти. Есть удобная парковка для клиентов.</p>
                       <Button variant="outline" className="w-full" asChild>
-                        <a href="https://yandex.ru/maps" target="_blank" rel="noopener noreferrer">
+                        <a href="https://yandex.ru/maps/-/CDdkqSlp" target="_blank" rel="noopener noreferrer">
                           <Icon name="Navigation" size={16} className="mr-2" />
                           Построить маршрут
                         </a>
                       </Button>
                     </div>
+                  </div>
+                  <div className="mt-4 rounded-lg overflow-hidden border border-border">
+                    <iframe
+                      src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b5e8c6f9d4a3e2f1c0b9a8d7e6f5a4b3c2d1e0f&amp;source=constructor"
+                      width="100%"
+                      height="300"
+                      frameBorder="0"
+                      className="w-full"
+                      title="Карта ADD Tuning"
+                    ></iframe>
                   </div>
                 </CardContent>
               </Card>
