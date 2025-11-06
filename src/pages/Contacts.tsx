@@ -300,12 +300,12 @@ const Contacts = () => {
                   </div>
                   <div className="mt-4 rounded-lg overflow-hidden border border-border">
                     <iframe
-                      src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b5e8c6f9d4a3e2f1c0b9a8d7e6f5a4b3c2d1e0f&amp;source=constructor"
+                      src="https://yandex.ru/map-widget/v1/?ll=49.346100%2C53.530300&z=16&l=map&pt=49.346100,53.530300,pm2rdm"
                       width="100%"
                       height="300"
                       frameBorder="0"
                       className="w-full"
-                      title="Карта ADD Tuning"
+                      title="ADD Tuning - проспект Степана Разина, 50, Тольятти"
                     ></iframe>
                   </div>
                 </CardContent>
