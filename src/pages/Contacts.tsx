@@ -101,8 +101,69 @@ const Contacts = () => {
     }
   };
 
+  const validateDiagnosticForm = (data: typeof diagnosticForm) => {
+    const textRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    if (!textRegex.test(data.brand)) {
+      toast({
+        title: "Ошибка",
+        description: "Марка должна содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    if (!textRegex.test(data.model)) {
+      toast({
+        title: "Ошибка",
+        description: "Модель должна содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const yearRegex = /^\d{4}$/;
+    const year = parseInt(data.year);
+    if (!yearRegex.test(data.year) || year < 1990 || year > new Date().getFullYear() + 1) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный год выпуска (1990-2025)",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const volumeRegex = /^\d+\.?\d*$/;
+    const volume = parseFloat(data.engineVolume);
+    if (!volumeRegex.test(data.engineVolume) || volume < 0.5 || volume > 10) {
+      toast({
+        title: "Ошибка",
+        description: "Введите корректный объем двигателя (0.5-10.0 л)",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      toast({
+        title: "Подождите",
+        description: "Вы отправляете заявки слишком часто. Подождите 10 секунд.",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
   const handleDiagnosticSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateDiagnosticForm(diagnosticForm)) {
+      return;
+    }
+
+    setLastSubmitTime(Date.now());
     
     try {
       const response = await fetch('https://functions.poehali.dev/01f2cb9d-2f7b-43df-ad0d-d7fea2093342', {
