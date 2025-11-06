@@ -39,6 +39,8 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
 
   const validateDiagnosticForm = (data: typeof diagnosticForm) => {
     const textRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
+    const modelRegex = /^[а-яёА-ЯЁa-zA-Z0-9\s-]+$/;
+    
     if (!textRegex.test(data.brand)) {
       toast({
         title: "Ошибка",
@@ -48,10 +50,10 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
       return false;
     }
 
-    if (!textRegex.test(data.model)) {
+    if (!modelRegex.test(data.model)) {
       toast({
         title: "Ошибка",
-        description: "Модель должна содержать только буквы",
+        description: "Модель должна содержать только буквы и цифры",
         variant: "destructive",
       });
       return false;
