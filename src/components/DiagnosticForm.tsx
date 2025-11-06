@@ -141,6 +141,7 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
             <div>
               <label className="text-sm font-medium mb-2 block">Модель</label>
               <Input
+                type="text"
                 placeholder="320d"
                 value={diagnosticForm.model}
                 onChange={(e) => setDiagnosticForm({ ...diagnosticForm, model: e.target.value })}
