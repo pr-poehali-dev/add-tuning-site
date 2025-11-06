@@ -28,6 +28,7 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
     brand: '',
     model: '',
     year: '',
+    fuelType: '',
     engineVolume: '',
     message: ''
   });
@@ -110,7 +111,7 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
           title: "Заявка на диагностику отправлена!",
           description: "Мы свяжемся с вами для уточнения времени",
         });
-        setDiagnosticForm({ brand: '', model: '', year: '', engineVolume: '', message: '' });
+        setDiagnosticForm({ brand: '', model: '', year: '', fuelType: '', engineVolume: '', message: '' });
       } else {
         toast({
           title: "Ошибка",
@@ -164,6 +165,19 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
                 required
               />
             </div>
+          </div>
+          <div>
+            <label className="text-sm font-medium mb-2 block">Тип топлива</label>
+            <select
+              className="w-full px-4 py-2 rounded-md border border-input bg-background"
+              value={diagnosticForm.fuelType}
+              onChange={(e) => setDiagnosticForm({ ...diagnosticForm, fuelType: e.target.value })}
+              required
+            >
+              <option value="">Выберите тип топлива</option>
+              <option value="Бензин">Бензин</option>
+              <option value="Дизель">Дизель</option>
+            </select>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>

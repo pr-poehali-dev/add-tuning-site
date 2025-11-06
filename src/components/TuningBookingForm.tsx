@@ -35,6 +35,7 @@ const TuningBookingForm = ({ lastSubmitTime, setLastSubmitTime }: TuningBookingF
     brand: '',
     car: '',
     year: '',
+    fuelType: '',
     engineVolume: '',
     horsepower: '',
     message: ''
@@ -97,7 +98,7 @@ const TuningBookingForm = ({ lastSubmitTime, setLastSubmitTime }: TuningBookingF
           title: "Заявка отправлена!",
           description: "Мы свяжемся с вами в ближайшее время",
         });
-        setFormData({ name: '', phone: '', brand: '', car: '', year: '', engineVolume: '', horsepower: '', message: '' });
+        setFormData({ name: '', phone: '', brand: '', car: '', year: '', fuelType: '', engineVolume: '', horsepower: '', message: '' });
       } else {
         toast({
           title: "Ошибка",
@@ -160,6 +161,19 @@ const TuningBookingForm = ({ lastSubmitTime, setLastSubmitTime }: TuningBookingF
               onChange={(e) => setFormData({ ...formData, car: e.target.value })}
               required
             />
+          </div>
+          <div>
+            <label className="text-sm font-medium mb-2 block">Тип топлива</label>
+            <select
+              className="w-full px-4 py-2 rounded-md border border-input bg-background"
+              value={formData.fuelType}
+              onChange={(e) => setFormData({ ...formData, fuelType: e.target.value })}
+              required
+            >
+              <option value="">Выберите тип топлива</option>
+              <option value="Бензин">Бензин</option>
+              <option value="Дизель">Дизель</option>
+            </select>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div>
