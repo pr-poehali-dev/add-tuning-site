@@ -300,7 +300,7 @@ const Contacts = () => {
                   </div>
                   <div className="mt-4 rounded-lg overflow-hidden border border-border">
                     <iframe
-                      src="https://yandex.ru/map-widget/v1/?ll=49.346100%2C53.530300&z=16&l=map&pt=49.346100,53.530300,pm2rdm"
+                      src="https://yandex.ru/map-widget/v1/?ll=49.291683%2C53.510332&z=16&l=map&pt=49.291683,53.510332,pm2rdm"
                       width="100%"
                       height="300"
                       frameBorder="0"
