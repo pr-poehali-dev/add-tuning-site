@@ -43,7 +43,7 @@ const Price = () => {
     
     { name: 'Компьютерная диагностика', minPrice: 2000, maxPrice: 2000, category: 'Диагностика' },
     { name: 'Считывание прошивки', minPrice: 3000, maxPrice: 3000, category: 'Диагностика' },
-    { name: 'Восстановление ЭБУ после неудачной прошивки', minPrice: 7000, maxPrice: 15000, category: 'Диагностика' },
+    { name: 'Восстановление ЭБУ после неудачной прошивки', minPrice: 10000, maxPrice: 37000, category: 'Диагностика' },
     { name: 'Восстановление блоков SRS', minPrice: 3000, maxPrice: 10000, category: 'Диагностика' },
     { name: 'Восстановление работы SAS', minPrice: 5000, maxPrice: 8000, category: 'Диагностика' },
     { name: 'Полная компьютерная диагностика', minPrice: 4000, maxPrice: 4000, category: 'Диагностика' },
