@@ -52,11 +52,11 @@ const Header = () => {
               <Icon name="Phone" size={20} className="mr-2" />
               +7 (937) 213-45-47
             </a>
-            <a href="/contacts">
+            <Link to="/contacts">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 Записаться
               </Button>
-            </a>
+            </Link>
           </div>
 
           <button
