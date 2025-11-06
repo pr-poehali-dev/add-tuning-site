@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
-import QuickBookingForm from '@/components/QuickBookingForm';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,8 +82,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-4 px-4 space-y-3">
-              <QuickBookingForm onSuccess={() => setIsMenuOpen(false)} />
+            <div className="mt-4 px-4">
               <a href="tel:+79372134547" className="flex items-center justify-center text-foreground hover:text-primary transition-colors p-3 bg-muted rounded-md">
                 <Icon name="Phone" size={20} className="mr-2" />
                 +7 (937) 213-45-47
