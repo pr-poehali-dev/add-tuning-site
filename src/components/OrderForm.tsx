@@ -4,6 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import Icon from '@/components/ui/icon';
 
+const carBrands = [
+  'Audi', 'BMW', 'Mercedes-Benz', 'Volkswagen', 'Porsche', 'Skoda',
+  'Toyota', 'Lexus', 'Honda', 'Nissan', 'Mazda', 'Mitsubishi', 'Subaru',
+  'Hyundai', 'Kia', 'Genesis',
+  'Ford', 'Chevrolet', 'Jeep', 'Dodge', 'Chrysler',
+  'Volvo', 'Peugeot', 'Renault', 'Citroen',
+  'Land Rover', 'Jaguar', 'Mini',
+  'Lada', 'UAZ', 'ГАЗ',
+  'Другая'
+];
+
+const currentYear = new Date().getFullYear();
+const years = Array.from({ length: 36 }, (_, i) => currentYear - i + 1);
+const engineVolumes = ['1.0', '1.2', '1.4', '1.5', '1.6', '1.8', '2.0', '2.2', '2.4', '2.5', '2.7', '3.0', '3.2', '3.5', '3.6', '4.0', '4.2', '4.4', '4.6', '5.0', '5.5', '6.0', '6.2'];
+const horsepowers = Array.from({ length: 40 }, (_, i) => (i + 5) * 10);
+
 interface OrderFormProps {
   serviceName: string;
   onClose: () => void;
@@ -16,6 +32,7 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
     phone: '',
     brand: '',
     model: '',
+    fuelType: '',
     year: '',
     horsepower: '',
     engineVolume: '',
@@ -45,54 +62,11 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
       return false;
     }
 
-    const textRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
-    if (!textRegex.test(formData.brand)) {
-      toast({
-        title: "Ошибка",
-        description: "Марка должна содержать только буквы",
-        variant: "destructive",
-      });
-      return false;
-    }
-
     const modelRegex = /^[а-яёА-ЯЁa-zA-Z0-9\s-]+$/;
     if (!modelRegex.test(formData.model)) {
       toast({
         title: "Ошибка",
         description: "Модель должна содержать только буквы и цифры",
-        variant: "destructive",
-      });
-      return false;
-    }
-
-    const yearRegex = /^\d{4}$/;
-    const year = parseInt(formData.year);
-    if (!yearRegex.test(formData.year) || year < 1990 || year > new Date().getFullYear() + 1) {
-      toast({
-        title: "Ошибка",
-        description: "Введите корректный год выпуска (1990-2025)",
-        variant: "destructive",
-      });
-      return false;
-    }
-
-    const powerRegex = /^\d+$/;
-    const power = parseInt(formData.horsepower);
-    if (!powerRegex.test(formData.horsepower) || power < 30 || power > 2000) {
-      toast({
-        title: "Ошибка",
-        description: "Введите корректную мощность (30-2000 л.с.)",
-        variant: "destructive",
-      });
-      return false;
-    }
-
-    const volumeRegex = /^\d+\.?\d*$/;
-    const volume = parseFloat(formData.engineVolume);
-    if (!volumeRegex.test(formData.engineVolume) || volume < 0.5 || volume > 10) {
-      toast({
-        title: "Ошибка",
-        description: "Введите корректный объем двигателя (0.5-10.0 л)",
         variant: "destructive",
       });
       return false;
@@ -154,7 +128,7 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -230,15 +204,18 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
                   <label className="block text-sm font-medium mb-2">
                     Марка <span className="text-destructive">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="brand"
                     required
                     value={formData.brand}
                     onChange={handleChange}
                     className="w-full px-4 py-2 rounded-md border border-input bg-background"
-                    placeholder="BMW"
-                  />
+                  >
+                    <option value="">Выберите марку</option>
+                    {carBrands.map((brand) => (
+                      <option key={brand} value={brand}>{brand}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
@@ -256,45 +233,70 @@ const OrderForm = ({ serviceName, onClose }: OrderFormProps) => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
+                    Тип топлива <span className="text-destructive">*</span>
+                  </label>
+                  <select
+                    name="fuelType"
+                    required
+                    value={formData.fuelType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                  >
+                    <option value="">Выберите тип топлива</option>
+                    <option value="Бензин">Бензин</option>
+                    <option value="Дизель">Дизель</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
                     Год выпуска <span className="text-destructive">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="year"
                     required
                     value={formData.year}
                     onChange={handleChange}
                     className="w-full px-4 py-2 rounded-md border border-input bg-background"
-                    placeholder="2020"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Мощность (л.с.) <span className="text-destructive">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="horsepower"
-                    required
-                    value={formData.horsepower}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-md border border-input bg-background"
-                    placeholder="190"
-                  />
+                  >
+                    <option value="">Выберите год</option>
+                    {years.map((year) => (
+                      <option key={year} value={year}>{year}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
                     Объём двигателя (л) <span className="text-destructive">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="engineVolume"
                     required
                     value={formData.engineVolume}
                     onChange={handleChange}
                     className="w-full px-4 py-2 rounded-md border border-input bg-background"
-                    placeholder="2.0"
-                  />
+                  >
+                    <option value="">Выберите объем</option>
+                    {engineVolumes.map((volume) => (
+                      <option key={volume} value={volume}>{volume}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Мощность (л.с.) <span className="text-destructive">*</span>
+                  </label>
+                  <select
+                    name="horsepower"
+                    required
+                    value={formData.horsepower}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 rounded-md border border-input bg-background"
+                  >
+                    <option value="">Выберите мощность</option>
+                    {horsepowers.map((hp) => (
+                      <option key={hp} value={hp}>{hp}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
             </div>
