@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Price from "./pages/Price";
@@ -21,11 +21,13 @@ import CookieConsent from "./components/CookieConsent";
 const queryClient = new QueryClient();
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };
@@ -49,6 +51,15 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contacts" element={<Contacts />} />
+          
+          {/* SEO redirects */}
+          <Route path="/service" element={<Navigate to="/services" replace />} />
+          <Route path="/service/*" element={<Navigate to="/services" replace />} />
+          <Route path="/pricing" element={<Navigate to="/price" replace />} />
+          <Route path="/contact" element={<Navigate to="/contacts" replace />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
+          
+          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

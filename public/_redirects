@@ -1,0 +1,40 @@
+# SPA для всех маршрутов
+/*    /index.html   200
+
+# Редиректы с www на без www (для будущего домена)
+https://www.add-tuning-site.poehali.dev/*  https://add-tuning-site.poehali.dev/:splat  301!
+
+# Редиректы устаревших URL на актуальные
+/service   /services   301
+/service/* /services   301
+/pricing   /price      301
+/contact   /contacts   301
+/about     /          301
+
+# Редиректы для часто ошибочных URL
+/blog/     /blog      301
+
+# Специфические редиректы для SEO
+/chip-tuning           /services#chip-tuning-stage-1    301
+/diagnostika           /services#diagnostika-ecu        301
+/dpf-removal           /services#dpf-egr-adblue        301
+/egr-removal           /services#dpf-egr-adblue        301
+/adblue-removal        /services#dpf-egr-adblue        301
+/stage-1               /services#chip-tuning-stage-1    301
+/stage-2               /services#chip-tuning-stage-2    301
+
+# Защита от спам-ботов
+/wp-admin              /                               404
+/wp-login.php          /                               404
+/wordpress             /                               404
+/admin                 /                               404
+/.env                  /                               404
+/config                /                               404
+
+# Обработка кириллических URL (транслитерация)
+/услуги                /services   301
+/цены                  /price      301
+/портфолио             /portfolio  301
+/отзывы                /reviews    301
+/контакты              /contacts   301
+/блог                  /blog       301
