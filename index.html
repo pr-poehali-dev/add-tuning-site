@@ -65,6 +65,37 @@
     <meta name="pp-name" value="add-tuning-site">
       <script src="https://cdn.poehali.dev/intertnal/js/inspector-min.js"></script>
       
+    <!-- Verification meta tags - REPLACE WITH YOUR CODES -->
+    <!-- Google Search Console: Get your code from https://search.google.com/search-console -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_CODE_HERE" /> -->
+    
+    <!-- Yandex Webmaster: Get your code from https://webmaster.yandex.ru -->
+    <!-- <meta name="yandex-verification" content="YOUR_YANDEX_CODE_HERE" /> -->
+    
+    <!-- Bing Webmaster: Get your code from https://www.bing.com/webmasters -->
+    <!-- <meta name="msvalidate.01" content="YOUR_BING_CODE_HERE" /> -->
+      
+    <!-- SEO: Ping search engines on sitemap update -->
+    <script type="text/javascript">
+      // Автоматическое уведомление поисковых систем об обновлении sitemap
+      if (window.location.pathname === '/' && document.referrer === '') {
+        // Только при прямом заходе на главную
+        const sitemapUrl = encodeURIComponent('https://add-tuning-site.poehali.dev/sitemap.xml');
+        
+        // Google ping (происходит автоматически при наличии в Search Console)
+        // Яндекс автоматически проверяет sitemap раз в несколько дней
+        
+        // Bing ping
+        const bingPingUrl = `https://www.bing.com/ping?sitemap=${sitemapUrl}`;
+        
+        // Создаем невидимый пинг для Bing (выполняется в фоне)
+        setTimeout(() => {
+          const img = new Image();
+          img.src = bingPingUrl;
+        }, 3000);
+      }
+    </script>
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
