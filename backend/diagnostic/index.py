@@ -35,9 +35,12 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     body_data = json.loads(event.get('body', '{}'))
     
+    name = body_data.get('name', '')
+    phone = body_data.get('phone', '')
     brand = body_data.get('brand', '')
     model = body_data.get('model', '')
     year = body_data.get('year', '')
+    fuel_type = body_data.get('fuelType', '')
     engine_volume = body_data.get('engineVolume', '')
     message = body_data.get('message', '')
     
@@ -53,10 +56,15 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     telegram_message = f"""🔍 Новая заявка на диагностику
 
+👤 Клиент:
+Имя: {name}
+Телефон: {phone}
+
 🚗 Автомобиль:
 Марка: {brand}
 Модель: {model}
 Год: {year}
+Тип топлива: {fuel_type}
 Объём двигателя: {engine_volume} л
 
 💬 Что необходимо:
