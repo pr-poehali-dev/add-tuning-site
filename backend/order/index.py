@@ -39,11 +39,12 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     name = body_data.get('name', '')
     phone = body_data.get('phone', '')
     brand = body_data.get('brand', '')
-    model = body_data.get('model', '')
+    model = body_data.get('model', '') or body_data.get('car', '')
     fuel_type = body_data.get('fuelType', '')
     year = body_data.get('year', '')
     horsepower = body_data.get('horsepower', '')
     engine_volume = body_data.get('engineVolume', '')
+    comment = body_data.get('message', '')
     
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
     
@@ -67,7 +68,10 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
 Год: {year}
 Тип топлива: {fuel_type}
 Мощность: {horsepower} л.с.
-Объём двигателя: {engine_volume} л"""
+Объём двигателя: {engine_volume} л
+
+💬 Комментарий:
+{comment if comment else 'Не указан'}"""
     
     chat_id = os.environ.get('TELEGRAM_CHAT_ID', bot_token.split(':')[0])
     
