@@ -34,12 +34,14 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
     year: '',
     fuelType: '',
     engineVolume: '',
+    phone: '',
     message: ''
   });
 
   const validateDiagnosticForm = (data: typeof diagnosticForm) => {
     const textRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
     const modelRegex = /^[а-яёА-ЯЁa-zA-Z0-9\s-]+$/;
+    const phoneRegex = /^[\d\s+()-]+$/;
     
     if (!textRegex.test(data.brand)) {
       toast({
@@ -54,6 +56,15 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
       toast({
         title: "Ошибка",
         description: "Модель должна содержать только буквы и цифры",
+        variant: "destructive",
+      });
+      return false;
+    }
+
+    if (data.phone && !phoneRegex.test(data.phone)) {
+      toast({
+        title: "Ошибка",
+        description: "Номер телефона содержит недопустимые символы",
         variant: "destructive",
       });
       return false;
@@ -95,7 +106,7 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
           title: "Заявка на диагностику отправлена!",
           description: "Мы свяжемся с вами для уточнения времени",
         });
-        setDiagnosticForm({ brand: '', model: '', year: '', fuelType: '', engineVolume: '', message: '' });
+        setDiagnosticForm({ brand: '', model: '', year: '', fuelType: '', engineVolume: '', phone: '', message: '' });
       } else {
         toast({
           title: "Ошибка",
@@ -193,6 +204,16 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
                 ))}
               </select>
             </div>
+          </div>
+          <div>
+            <label className="text-sm font-medium mb-2 block">Номер телефона</label>
+            <Input
+              type="tel"
+              placeholder="+7 (900) 123-45-67"
+              value={diagnosticForm.phone}
+              onChange={(e) => setDiagnosticForm({ ...diagnosticForm, phone: e.target.value })}
+              required
+            />
           </div>
           <div>
             <label className="text-sm font-medium mb-2 block">Что необходимо</label>
