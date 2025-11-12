@@ -9,7 +9,12 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://cdn.poehali.dev/files/8f68f629-6f77-43c1-9c4a-5402964bcda5.JPG",
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/35ebf55c-4c28-40ba-9899-f071602cfe4e.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
