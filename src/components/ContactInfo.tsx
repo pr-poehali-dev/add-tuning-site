@@ -31,7 +31,7 @@ const ContactInfo = () => {
     {
       icon: 'Clock',
       title: 'Режим работы',
-      content: 'Пн-Сб: 9:00 - 20:00, Вс: 10:00 - 18:00',
+      content: 'Пн-Вс: 9:00 - 20:00 Без выходных',
       link: null
     },
   ];
