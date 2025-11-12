@@ -29,6 +29,7 @@ interface DiagnosticFormProps {
 const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormProps) => {
   const { toast } = useToast();
   const [diagnosticForm, setDiagnosticForm] = useState({
+    name: '',
     brand: '',
     model: '',
     year: '',
@@ -43,6 +44,15 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
     const modelRegex = /^[а-яёА-ЯЁa-zA-Z0-9\s-]+$/;
     const phoneRegex = /^[\d\s+()-]+$/;
     
+    if (data.name && !textRegex.test(data.name)) {
+      toast({
+        title: "Ошибка",
+        description: "Имя должно содержать только буквы",
+        variant: "destructive",
+      });
+      return false;
+    }
+
     if (!textRegex.test(data.brand)) {
       toast({
         title: "Ошибка",
@@ -106,7 +116,7 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
           title: "Заявка на диагностику отправлена!",
           description: "Мы свяжемся с вами для уточнения времени",
         });
-        setDiagnosticForm({ brand: '', model: '', year: '', fuelType: '', engineVolume: '', phone: '', message: '' });
+        setDiagnosticForm({ name: '', brand: '', model: '', year: '', fuelType: '', engineVolume: '', phone: '', message: '' });
       } else {
         toast({
           title: "Ошибка",
@@ -136,6 +146,16 @@ const DiagnosticForm = ({ lastSubmitTime, setLastSubmitTime }: DiagnosticFormPro
           </div>
         </div>
         <form onSubmit={handleDiagnosticSubmit} className="space-y-4">
+          <div>
+            <label className="text-sm font-medium mb-2 block">Ваше имя</label>
+            <Input
+              type="text"
+              placeholder="Иван"
+              value={diagnosticForm.name}
+              onChange={(e) => setDiagnosticForm({ ...diagnosticForm, name: e.target.value })}
+              required
+            />
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="text-sm font-medium mb-2 block">Марка</label>
