@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 User-agent: Yandex
 Allow: /
+Crawl-delay: 0.5
+Host: add-tuning-site.poehali.dev
 
 User-agent: Googlebot
 Allow: /
@@ -16,7 +19,21 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Блокировка нежелательных ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
 Sitemap: https://add-tuning-site.poehali.dev/sitemap.xml
 
-# Chip tuning in Togliatti - ADD Tuning
+# ADD Tuning - Чип-тюнинг в Тольятти
 # Professional ECU tuning services
+# Tel: +7 (937) 213-45-47
