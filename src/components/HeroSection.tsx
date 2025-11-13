@@ -19,7 +19,7 @@ const HeroSection = () => {
                 src="https://cdn.poehali.dev/projects/4f97b19c-94db-4455-b25f-d94a7a09b94d/files/9903e850-e0e4-45a1-b0ee-b6a98625291b.jpg" 
                 alt="Профессиональный чип-тюнинг автомобилей в Тольятти - ADD Tuning"
                 loading="eager"
-                fetchPriority="high"
+                fetchpriority="high"
                 className="w-full h-full object-cover"
               />
             </div>
