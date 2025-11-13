@@ -5,7 +5,7 @@ Crawl-delay: 1
 User-agent: Yandex
 Allow: /
 Crawl-delay: 0.5
-Host: add-tuning-site.poehali.dev
+Host: add-tuning.ru
 
 User-agent: Googlebot
 Allow: /
@@ -32,7 +32,7 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-Sitemap: https://add-tuning-site.poehali.dev/sitemap.xml
+Sitemap: https://add-tuning.ru/sitemap.xml
 
 # ADD Tuning - Чип-тюнинг в Тольятти
 # Professional ECU tuning services
