@@ -159,6 +159,7 @@ const Blog = () => {
                   <img 
                     src={post.image} 
                     alt={post.title}
+                    loading={index < 3 ? "eager" : "lazy"}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

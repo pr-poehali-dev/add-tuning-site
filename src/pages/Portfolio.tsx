@@ -131,6 +131,7 @@ const Portfolio = () => {
                   <img 
                     src={project.image} 
                     alt={`${project.brand} ${project.model}`}
+                    loading={index < 3 ? "eager" : "lazy"}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
