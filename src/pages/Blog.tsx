@@ -84,6 +84,35 @@ const Blog = () => {
         <meta property="og:description" content="Статьи, гайды и реальные кейсы от мастера с 7-летним опытом." />
         <meta property="og:url" content="https://add-tuning.ru/blog" />
         <link rel="canonical" href="https://add-tuning.ru/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Блог о чип-тюнинге ADD Tuning",
+            "description": "Профессиональные статьи и гайды о чип-тюнинге автомобилей",
+            "url": "https://add-tuning.ru/blog",
+            "publisher": {
+              "@type": "AutomotiveBusiness",
+              "name": "ADD Tuning",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Тольятти"
+              }
+            },
+            "blogPost": posts.slice(0, 3).map(post => ({
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": post.excerpt,
+              "datePublished": post.date,
+              "author": {
+                "@type": "Person",
+                "name": "ADD Tuning"
+              },
+              "image": post.image,
+              "url": `https://add-tuning.ru/blog/${post.id}`
+            }))
+          })}
+        </script>
       </Helmet>
       <Header />
       

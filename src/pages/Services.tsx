@@ -34,6 +34,35 @@ const Services = () => {
         <meta property="og:description" content="Stage 1/2, удаление DPF/EGR/AdBlue, диагностика ЭБУ. Опыт 7+ лет, гарантия 1 год." />
         <meta property="og:url" content="https://add-tuning.ru/services" />
         <link rel="canonical" href="https://add-tuning.ru/services" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": servicesList.map((service, index) => ({
+              "@type": "Service",
+              "position": index + 1,
+              "name": service.title,
+              "description": service.description,
+              "provider": {
+                "@type": "AutomotiveBusiness",
+                "name": "ADD Tuning",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Тольятти",
+                  "addressRegion": "Самарская область",
+                  "addressCountry": "RU"
+                },
+                "telephone": "+79372134547"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": service.price.match(/\d+/)?.[0] || "7000",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock"
+              }
+            }))
+          })}
+        </script>
       </Helmet>
       <Header />
       

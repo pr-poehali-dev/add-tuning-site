@@ -73,6 +73,39 @@ const Reviews = () => {
         <meta property="og:description" content="127 реальных отзывов. Рейтинг 4.9/5. Опыт клиентов на BMW, Audi, VW, Mercedes." />
         <meta property="og:url" content="https://add-tuning.ru/reviews" />
         <link rel="canonical" href="https://add-tuning.ru/reviews" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": reviews.slice(0, 6).map((review, index) => ({
+              "@type": "Review",
+              "position": index + 1,
+              "author": {
+                "@type": "Person",
+                "name": review.name
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": review.rating,
+                "bestRating": 5
+              },
+              "datePublished": review.date.split('.').reverse().join('-'),
+              "reviewBody": review.text,
+              "itemReviewed": {
+                "@type": "Service",
+                "name": "Чип-тюнинг автомобилей",
+                "provider": {
+                  "@type": "AutomotiveBusiness",
+                  "name": "ADD Tuning",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Тольятти"
+                  }
+                }
+              }
+            }))
+          })}
+        </script>
       </Helmet>
       <Header />
       
