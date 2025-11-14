@@ -37,6 +37,26 @@ const Services = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Услуги",
+                "item": "https://add-tuning.ru/services"
+              }
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "ItemList",
             "itemListElement": servicesList.map((service, index) => ({
               "@type": "Service",

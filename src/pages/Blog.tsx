@@ -113,6 +113,26 @@ const Blog = () => {
             }))
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Блог",
+                "item": "https://add-tuning.ru/blog"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
       

@@ -62,6 +62,26 @@ const Price = () => {
         <meta property="og:description" content="Прозрачные цены: Stage 1 от 7000₽, Stage 2 от 35000₽, удаление DPF от 7000₽." />
         <meta property="og:url" content="https://add-tuning.ru/price" />
         <link rel="canonical" href="https://add-tuning.ru/price" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Цены",
+                "item": "https://add-tuning.ru/price"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
       

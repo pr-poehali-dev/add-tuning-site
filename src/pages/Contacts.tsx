@@ -19,6 +19,26 @@ const Contacts = () => {
         <meta property="og:description" content="Запись на чип-тюнинг: +7 937 213-45-47. Работаем ежедневно 9:00-20:00." />
         <meta property="og:url" content="https://add-tuning.ru/contacts" />
         <link rel="canonical" href="https://add-tuning.ru/contacts" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Контакты",
+                "item": "https://add-tuning.ru/contacts"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
       

@@ -92,6 +92,26 @@ const Portfolio = () => {
         <meta property="og:description" content="1300+ успешных проектов. Результаты на BMW, Audi, Mercedes, VW." />
         <meta property="og:url" content="https://add-tuning.ru/portfolio" />
         <link rel="canonical" href="https://add-tuning.ru/portfolio" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Портфолио",
+                "item": "https://add-tuning.ru/portfolio"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
       

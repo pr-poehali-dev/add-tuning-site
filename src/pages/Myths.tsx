@@ -90,6 +90,26 @@ const Myths = () => {
         <meta property="og:description" content="Правда и заблуждения о чип-тюнинге от мастера с опытом 7+ лет." />
         <meta property="og:url" content="https://add-tuning.ru/myths" />
         <link rel="canonical" href="https://add-tuning.ru/myths" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://add-tuning.ru/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Мифы",
+                "item": "https://add-tuning.ru/myths"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Header />
       
