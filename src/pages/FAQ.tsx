@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import { Helmet } from 'react-helmet-async';
 
 const FAQ = () => {
   const faqCategories = [
@@ -130,6 +131,14 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Частые вопросы о чип-тюнинге — ADD Tuning Тольятти | FAQ</title>
+        <meta name="description" content="Ответы на частые вопросы о чип-тюнинге: безопасность, гарантия, расход топлива, ресурс двигателя. Профессиональные ответы от мастера с 7-летним опытом." />
+        <meta property="og:title" content="FAQ о чип-тюнинге — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Ответы на частые вопросы о чип-тюнинге: безопасность, гарантия, ресурс двигателя." />
+        <meta property="og:url" content="https://add-tuning.ru/faq" />
+        <link rel="canonical" href="https://add-tuning.ru/faq" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

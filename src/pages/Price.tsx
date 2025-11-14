@@ -4,6 +4,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import { Helmet } from 'react-helmet-async';
 
 interface ServiceItem {
   name: string;
@@ -54,6 +55,14 @@ const Price = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Цены на чип-тюнинг — ADD Tuning Тольятти | Стоимость Stage 1/2, удаления DPF/EGR</title>
+        <meta name="description" content="Прозрачные цены на услуги чип-тюнинга в Тольятти. Stage 1 от 7000₽, Stage 2 от 35000₽, удаление DPF от 7000₽, AdBlue от 15000₽. Без скрытых платежей." />
+        <meta property="og:title" content="Цены на чип-тюнинг — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Прозрачные цены: Stage 1 от 7000₽, Stage 2 от 35000₽, удаление DPF от 7000₽." />
+        <meta property="og:url" content="https://add-tuning.ru/price" />
+        <link rel="canonical" href="https://add-tuning.ru/price" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/5">

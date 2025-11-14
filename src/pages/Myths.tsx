@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import { Helmet } from 'react-helmet-async';
 
 const Myths = () => {
   const myths = [
@@ -82,6 +83,14 @@ const Myths = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Мифы о чип-тюнинге — ADD Tuning Тольятти | Правда и заблуждения</title>
+        <meta name="description" content="Развенчиваем популярные мифы о чип-тюнинге: убивает ли двигатель, расход топлива, гарантия. Правда от профессионала с 7-летним опытом." />
+        <meta property="og:title" content="Мифы о чип-тюнинге — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Правда и заблуждения о чип-тюнинге от мастера с опытом 7+ лет." />
+        <meta property="og:url" content="https://add-tuning.ru/myths" />
+        <link rel="canonical" href="https://add-tuning.ru/myths" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

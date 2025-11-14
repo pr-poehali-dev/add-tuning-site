@@ -4,6 +4,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import { Helmet } from 'react-helmet-async';
 
 const Reviews = () => {
   const reviews = [
@@ -65,6 +66,14 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Отзывы о чип-тюнинге — ADD Tuning Тольятти | Реальные отзывы клиентов</title>
+        <meta name="description" content="127 реальных отзывов о чип-тюнинге в Тольятти. Рейтинг 4.9/5. Опыт клиентов BMW, Audi, VW, Mercedes. Читайте мнения о Stage 1/2, удалении DPF." />
+        <meta property="og:title" content="Отзывы о чип-тюнинге — ADD Tuning Тольятти" />
+        <meta property="og:description" content="127 реальных отзывов. Рейтинг 4.9/5. Опыт клиентов на BMW, Audi, VW, Mercedes." />
+        <meta property="og:url" content="https://add-tuning.ru/reviews" />
+        <link rel="canonical" href="https://add-tuning.ru/reviews" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

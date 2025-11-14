@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 interface BlogPost {
   id: string;
@@ -76,6 +77,14 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Блог о чип-тюнинге — ADD Tuning Тольятти | Статьи, гайды, кейсы</title>
+        <meta name="description" content="Полезные статьи о чип-тюнинге: Stage 1/2, удаление DPF/EGR/AdBlue, диагностика ЭБУ. Реальные кейсы, ответы на вопросы, профессиональные советы." />
+        <meta property="og:title" content="Блог о чип-тюнинге — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Статьи, гайды и реальные кейсы от мастера с 7-летним опытом." />
+        <meta property="og:url" content="https://add-tuning.ru/blog" />
+        <link rel="canonical" href="https://add-tuning.ru/blog" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

@@ -5,12 +5,21 @@ import ContactInfo from '@/components/ContactInfo';
 import MapCard from '@/components/MapCard';
 import DiagnosticForm from '@/components/DiagnosticForm';
 import TuningBookingForm from '@/components/TuningBookingForm';
+import { Helmet } from 'react-helmet-async';
 
 const Contacts = () => {
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Контакты — ADD Tuning Тольятти | Запись на чип-тюнинг +7 937 213-45-47</title>
+        <meta name="description" content="Свяжитесь с нами: +7 937 213-45-47, Тольятти, проспект Степана Разина, 50. Запись на чип-тюнинг, диагностику ЭБУ. Работаем ежедневно 9:00-20:00." />
+        <meta property="og:title" content="Контакты — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Запись на чип-тюнинг: +7 937 213-45-47. Работаем ежедневно 9:00-20:00." />
+        <meta property="og:url" content="https://add-tuning.ru/contacts" />
+        <link rel="canonical" href="https://add-tuning.ru/contacts" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

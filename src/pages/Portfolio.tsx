@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import { Helmet } from 'react-helmet-async';
 
 const Portfolio = () => {
   const projects = [
@@ -84,6 +85,14 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Портфолио работ — ADD Tuning Тольятти | Примеры чип-тюнинга BMW, Audi, VW</title>
+        <meta name="description" content="1300+ успешных проектов чип-тюнинга в Тольятти. Результаты на BMW, Audi, Mercedes, Volkswagen. Прирост мощности +30-50% с гарантией." />
+        <meta property="og:title" content="Портфолио работ — ADD Tuning Тольятти" />
+        <meta property="og:description" content="1300+ успешных проектов. Результаты на BMW, Audi, Mercedes, VW." />
+        <meta property="og:url" content="https://add-tuning.ru/portfolio" />
+        <link rel="canonical" href="https://add-tuning.ru/portfolio" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">

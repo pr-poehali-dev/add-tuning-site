@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OrderForm from '@/components/OrderForm';
@@ -26,6 +27,14 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Услуги чип-тюнинга — ADD Tuning Тольятти | Stage 1, Stage 2, удаление DPF/EGR/AdBlue</title>
+        <meta name="description" content="Полный спектр услуг чип-тюнинга в Тольятти: Stage 1/2, удаление DPF, EGR, AdBlue, диагностика ЭБУ. Опыт 7+ лет, 1300+ автомобилей. Гарантия 1 год." />
+        <meta property="og:title" content="Услуги чип-тюнинга — ADD Tuning Тольятти" />
+        <meta property="og:description" content="Stage 1/2, удаление DPF/EGR/AdBlue, диагностика ЭБУ. Опыт 7+ лет, гарантия 1 год." />
+        <meta property="og:url" content="https://add-tuning.ru/services" />
+        <link rel="canonical" href="https://add-tuning.ru/services" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/10">
