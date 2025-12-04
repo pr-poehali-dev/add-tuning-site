@@ -14,6 +14,7 @@ interface AdminTabsProps {
   setNewService: (value: ServiceItem) => void;
   addService: () => void;
   deleteService: (index: number) => void;
+  updateService: (index: number, service: ServiceItem) => void;
   
   reviews: Review[];
   newReview: Review;
@@ -54,6 +55,7 @@ const AdminTabs = ({
   setNewService,
   addService,
   deleteService,
+  updateService,
   reviews,
   newReview,
   setNewReview,
@@ -100,6 +102,7 @@ const AdminTabs = ({
           setNewService={setNewService}
           addService={addService}
           deleteService={deleteService}
+          updateService={updateService}
         />
       </TabsContent>
 

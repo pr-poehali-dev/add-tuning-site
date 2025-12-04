@@ -265,6 +265,12 @@ const Admin = () => {
     saveServices(services.filter((_, i) => i !== index));
   };
 
+  const updateService = (index: number, updatedService: ServiceItem) => {
+    const newServices = [...services];
+    newServices[index] = updatedService;
+    saveServices(newServices);
+  };
+
   const addReview = () => {
     if (!newReview.name || !newReview.text) return;
     saveReviews([...reviews, newReview]);
@@ -410,6 +416,7 @@ const Admin = () => {
             setNewService={setNewService}
             addService={addService}
             deleteService={deleteService}
+            updateService={updateService}
             reviews={reviews}
             newReview={newReview}
             setNewReview={setNewReview}
