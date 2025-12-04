@@ -1,23 +1,29 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 Crawl-delay: 1
 
 User-agent: Yandex
 Allow: /
+Disallow: /admin
 Crawl-delay: 0.5
 Host: add-tuning.ru
 
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /admin
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /admin
 
 # Блокировка нежелательных ботов
 User-agent: AhrefsBot

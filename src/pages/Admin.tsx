@@ -4,6 +4,7 @@ import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
+import { Helmet } from 'react-helmet-async';
 import AdminLogin from '@/components/admin/AdminLogin';
 import AdminTabs from '@/components/admin/AdminTabs';
 import type {
@@ -20,6 +21,8 @@ const Admin = () => {
   const { toast } = useToast();
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loginAttempts, setLoginAttempts] = useState(0);
+  const [isBlocked, setIsBlocked] = useState(false);
   
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -91,11 +94,41 @@ const Admin = () => {
 
   useEffect(() => {
     const savedAuth = localStorage.getItem('admin_auth');
-    if (savedAuth === 'true') {
-      setIsAuthenticated(true);
-      loadAllData();
+    const authToken = localStorage.getItem('admin_token');
+    const authTime = localStorage.getItem('admin_auth_time');
+    
+    if (savedAuth === 'true' && authToken && authTime) {
+      const timePassed = Date.now() - parseInt(authTime);
+      const fourHours = 4 * 60 * 60 * 1000;
+      
+      if (timePassed < fourHours) {
+        setIsAuthenticated(true);
+        loadAllData();
+      } else {
+        localStorage.removeItem('admin_auth');
+        localStorage.removeItem('admin_token');
+        localStorage.removeItem('admin_auth_time');
+        loadDefaultData();
+      }
     } else {
       loadDefaultData();
+    }
+
+    const blockTime = localStorage.getItem('admin_block_time');
+    if (blockTime) {
+      const timePassed = Date.now() - parseInt(blockTime);
+      const fifteenMinutes = 15 * 60 * 1000;
+      
+      if (timePassed < fifteenMinutes) {
+        setIsBlocked(true);
+        setTimeout(() => {
+          setIsBlocked(false);
+          localStorage.removeItem('admin_block_time');
+          setLoginAttempts(0);
+        }, fifteenMinutes - timePassed);
+      } else {
+        localStorage.removeItem('admin_block_time');
+      }
     }
   }, []);
 
@@ -150,27 +183,64 @@ const Admin = () => {
   };
 
   const handleLogin = () => {
+    if (isBlocked) {
+      toast({
+        title: 'Доступ заблокирован',
+        description: 'Слишком много неудачных попыток входа. Попробуйте через 15 минут.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     if (password === 'addtuning2024') {
+      const authToken = Math.random().toString(36).substring(2) + Date.now().toString(36);
       setIsAuthenticated(true);
       localStorage.setItem('admin_auth', 'true');
+      localStorage.setItem('admin_token', authToken);
+      localStorage.setItem('admin_auth_time', Date.now().toString());
+      setLoginAttempts(0);
       loadAllData();
       toast({
         title: 'Успешный вход',
         description: 'Добро пожаловать в админ-панель',
       });
     } else {
-      toast({
-        title: 'Ошибка',
-        description: 'Неверный пароль',
-        variant: 'destructive',
-      });
+      const newAttempts = loginAttempts + 1;
+      setLoginAttempts(newAttempts);
+      
+      if (newAttempts >= 5) {
+        setIsBlocked(true);
+        localStorage.setItem('admin_block_time', Date.now().toString());
+        toast({
+          title: 'Доступ заблокирован',
+          description: 'Слишком много неудачных попыток входа. Доступ заблокирован на 15 минут.',
+          variant: 'destructive',
+        });
+        setTimeout(() => {
+          setIsBlocked(false);
+          localStorage.removeItem('admin_block_time');
+          setLoginAttempts(0);
+        }, 15 * 60 * 1000);
+      } else {
+        toast({
+          title: 'Ошибка',
+          description: `Неверный пароль. Осталось попыток: ${5 - newAttempts}`,
+          variant: 'destructive',
+        });
+      }
     }
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
     localStorage.removeItem('admin_auth');
+    localStorage.removeItem('admin_token');
+    localStorage.removeItem('admin_auth_time');
     setPassword('');
+    toast({
+      title: 'Выход выполнен',
+      description: 'Вы вышли из админ-панели',
+    });
   };
 
   const loadAllData = () => {
@@ -396,11 +466,37 @@ const Admin = () => {
   };
 
   if (!isAuthenticated) {
-    return <AdminLogin password={password} setPassword={setPassword} handleLogin={handleLogin} />;
+    return (
+      <>
+        <Helmet>
+          <title>Вход в админ-панель — ADD Tuning</title>
+          <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noydir" />
+          <meta name="googlebot" content="noindex, nofollow" />
+          <meta name="bingbot" content="noindex, nofollow" />
+          <meta name="yandex" content="noindex, nofollow" />
+          <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
+        </Helmet>
+        <AdminLogin 
+          password={password} 
+          setPassword={setPassword} 
+          handleLogin={handleLogin}
+          isBlocked={isBlocked}
+          attemptsLeft={5 - loginAttempts}
+        />
+      </>
+    );
   }
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Админ-панель — ADD Tuning</title>
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, noydir" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="bingbot" content="noindex, nofollow" />
+        <meta name="yandex" content="noindex, nofollow" />
+        <meta httpEquiv="X-Robots-Tag" content="noindex, nofollow" />
+      </Helmet>
       <Header />
       
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-background to-primary/5">
