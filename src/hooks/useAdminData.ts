@@ -102,12 +102,25 @@ export const useAdminData = (isAuthenticated: boolean) => {
       { car: 'Hyundai Solaris', year: '2020', stage: 'Stage 1', powerBefore: '123', powerAfter: '145', torqueBefore: '151', torqueAfter: '180', image: 'https://cdn.poehali.dev/files/f1b1e923-4080-40db-a491-21706b27e9b4.png' },
     ];
 
+    const reviewsData: Review[] = [
+      { name: 'Алексей Петров', car: 'BMW 320d F30', rating: 5, date: '28.10.2024', text: 'Делал Stage 1 на дизеле. Прибавка мощности реально ощущается, особенно на обгонах. Расход остался прежним. Мастер работает быстро и профессионально, все показал на графиках. Через месяц езды никаких проблем.' },
+      { name: 'Максим Волков', car: 'Audi A4 2.0 TDI', rating: 5, date: '21.10.2024', text: 'Удалили DPF и EGR, машина ожила! Пропали провалы при разгоне, тяга стала ровнее. Работу сделали за день, все аккуратно. Проехал уже 2000 км — полёт нормальный. Спасибо!' },
+      { name: 'Андрей Соколов', car: 'VW Golf GTI Mk7', rating: 5, date: '14.10.2024', text: 'Прошили GTI на Stage 1, плюс настроили DSG. Машина стала совсем другой! Разгон быстрее, коробка переключается четче. Мастер знает что делает, показывал логи до и после. Однозначно рекомендую.' },
+      { name: 'Дмитрий Иванов', car: 'Mercedes C220d W205', rating: 5, date: '07.10.2024', text: 'Обратился с проблемой — после прошивки у другого "специалиста" машина не заводилась. Восстановили ЭБУ, вернули заводскую прошивку. Потом сделали нормальный Stage 1. Теперь всё работает как часы.' },
+      { name: 'Сергей Морозов', car: 'Skoda Octavia 1.8 TSI', rating: 5, date: '30.09.2024', text: 'Чип-тюнинг + отключение иммобилайзера (менял ЭБУ после замыкания). Работу выполнили качественно и быстро. Мощность прибавилась хорошо, машина стала веселее. Цена адекватная.' },
+      { name: 'Роман Козлов', car: 'Ford Mondeo 2.0 TDCi', rating: 5, date: '22.09.2024', text: 'Делал удаление сажевого фильтра и AdBlue. Больше не горят ошибки, мотор работает ровно. Машина стала динамичнее и расход немного упал. Мастер объяснил все нюансы. Доволен на 100%!' },
+    ];
+
     if (!localStorage.getItem('admin_services')) {
       setServices(priceServices);
     }
 
     if (!localStorage.getItem('admin_portfolio')) {
       setPortfolio(portfolioData);
+    }
+
+    if (!localStorage.getItem('admin_reviews')) {
+      setReviews(reviewsData);
     }
 
     try {
@@ -140,7 +153,11 @@ export const useAdminData = (isAuthenticated: boolean) => {
     }
 
     const savedReviews = localStorage.getItem('admin_reviews');
-    if (savedReviews) setReviews(JSON.parse(savedReviews));
+    if (savedReviews) {
+      setReviews(JSON.parse(savedReviews));
+    } else {
+      loadDefaultData();
+    }
 
     const savedPortfolio = localStorage.getItem('admin_portfolio');
     if (savedPortfolio) {

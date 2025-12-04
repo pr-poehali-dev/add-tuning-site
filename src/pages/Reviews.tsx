@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Icon from '@/components/ui/icon';
@@ -6,15 +7,22 @@ import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
 import { Helmet } from 'react-helmet-async';
 
+interface Review {
+  name: string;
+  car: string;
+  rating: number;
+  date: string;
+  text: string;
+}
+
 const Reviews = () => {
-  const reviews = [
+  const defaultReviews = [
     {
       name: 'Алексей Петров',
       car: 'BMW 320d F30',
       rating: 5,
       date: '28.10.2024',
       text: 'Делал Stage 1 на дизеле. Прибавка мощности реально ощущается, особенно на обгонах. Расход остался прежним. Мастер работает быстро и профессионально, все показал на графиках. Через месяц езды никаких проблем.',
-      initials: 'АП'
     },
     {
       name: 'Максим Волков',
@@ -22,7 +30,6 @@ const Reviews = () => {
       rating: 5,
       date: '21.10.2024',
       text: 'Удалили DPF и EGR, машина ожила! Пропали провалы при разгоне, тяга стала ровнее. Работу сделали за день, все аккуратно. Проехал уже 2000 км — полёт нормальный. Спасибо!',
-      initials: 'МВ'
     },
     {
       name: 'Андрей Соколов',
@@ -30,7 +37,6 @@ const Reviews = () => {
       rating: 5,
       date: '14.10.2024',
       text: 'Прошили GTI на Stage 1, плюс настроили DSG. Машина стала совсем другой! Разгон быстрее, коробка переключается четче. Мастер знает что делает, показывал логи до и после. Однозначно рекомендую.',
-      initials: 'АС'
     },
     {
       name: 'Дмитрий Иванов',
@@ -38,7 +44,6 @@ const Reviews = () => {
       rating: 5,
       date: '07.10.2024',
       text: 'Обратился с проблемой — после прошивки у другого "специалиста" машина не заводилась. Восстановили ЭБУ, вернули заводскую прошивку. Потом сделали нормальный Stage 1. Теперь всё работает как часы.',
-      initials: 'ДИ'
     },
     {
       name: 'Сергей Морозов',
@@ -46,7 +51,6 @@ const Reviews = () => {
       rating: 5,
       date: '30.09.2024',
       text: 'Чип-тюнинг + отключение иммобилайзера (менял ЭБУ после замыкания). Работу выполнили качественно и быстро. Мощность прибавилась хорошо, машина стала веселее. Цена адекватная.',
-      initials: 'СМ'
     },
     {
       name: 'Роман Козлов',
@@ -54,9 +58,37 @@ const Reviews = () => {
       rating: 5,
       date: '22.09.2024',
       text: 'Делал удаление сажевого фильтра и AdBlue. Больше не горят ошибки, мотор работает ровно. Машина стала динамичнее и расход немного упал. Мастер объяснил все нюансы. Доволен на 100%!',
-      initials: 'РК'
     },
   ];
+
+  const [reviews, setReviews] = useState<Review[]>(defaultReviews);
+
+  useEffect(() => {
+    const loadReviews = () => {
+      const savedReviews = localStorage.getItem('admin_reviews');
+      if (savedReviews) {
+        setReviews(JSON.parse(savedReviews));
+      } else {
+        setReviews(defaultReviews);
+      }
+    };
+
+    loadReviews();
+
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'admin_reviews') {
+        loadReviews();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    const interval = setInterval(loadReviews, 1000);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   const stats = [
     { value: '98%', label: 'Довольных клиентов' },
@@ -150,34 +182,37 @@ const Reviews = () => {
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-            {reviews.map((review, index) => (
-              <Card key={index} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <Avatar className="w-10 h-10 sm:w-12 sm:h-12">
-                      <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
-                        {review.initials}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <h3 className="font-semibold text-base sm:text-lg">{review.name}</h3>
-                        <span className="text-xs sm:text-sm text-muted-foreground">{review.date}</span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-muted-foreground mb-2">{review.car}</p>
-                      <div className="flex gap-1">
-                        {Array.from({ length: review.rating }).map((_, i) => (
-                          <Icon key={i} name="Star" size={14} className="text-primary fill-primary sm:w-4 sm:h-4" />
-                        ))}
+            {reviews.map((review, index) => {
+              const initials = review.name.split(' ').map(n => n[0]).join('').toUpperCase();
+              return (
+                <Card key={index} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                      <Avatar className="w-10 h-10 sm:w-12 sm:h-12">
+                        <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
+                          {initials}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <h3 className="font-semibold text-base sm:text-lg">{review.name}</h3>
+                          <span className="text-xs sm:text-sm text-muted-foreground">{review.date}</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-muted-foreground mb-2">{review.car}</p>
+                        <div className="flex gap-1">
+                          {Array.from({ length: review.rating }).map((_, i) => (
+                            <Icon key={i} name="Star" size={14} className="text-primary fill-primary sm:w-4 sm:h-4" />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {review.text}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {review.text}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           <div className="mt-10 sm:mt-16 bg-card rounded-2xl p-6 sm:p-8 text-center">
