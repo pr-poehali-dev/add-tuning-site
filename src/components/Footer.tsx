@@ -19,10 +19,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-foreground">Навигация</h3>
             <ul className="space-y-2">
+              <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Главная</Link></li>
               <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Услуги</Link></li>
-              <li><Link to="/price" className="text-muted-foreground hover:text-primary transition-colors">Прайс</Link></li>
+              <li><Link to="/price" className="text-muted-foreground hover:text-primary transition-colors">Цены</Link></li>
               <li><Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Портфолио</Link></li>
               <li><Link to="/reviews" className="text-muted-foreground hover:text-primary transition-colors">Отзывы</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
+              <li><Link to="/myths" className="text-muted-foreground hover:text-primary transition-colors">Мифы</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Блог</Link></li>
+              <li><Link to="/contacts" className="text-muted-foreground hover:text-primary transition-colors">Контакты</Link></li>
             </ul>
           </div>
 
