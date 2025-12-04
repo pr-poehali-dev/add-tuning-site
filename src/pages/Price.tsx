@@ -6,8 +6,6 @@ import MobileBookingButton from '@/components/MobileBookingButton';
 import MessengerButtons from '@/components/MessengerButtons';
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 interface ServiceItem {
   name: string;
@@ -56,8 +54,6 @@ const Price = () => {
   ];
 
   const [services, setServices] = useState<ServiceItem[]>([]);
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
-  const [editedService, setEditedService] = useState<ServiceItem | null>(null);
 
   useEffect(() => {
     const savedServices = localStorage.getItem('admin_services');
@@ -67,27 +63,6 @@ const Price = () => {
       setServices(defaultServices);
     }
   }, []);
-
-  const startEditing = (index: number, service: ServiceItem) => {
-    setEditingIndex(index);
-    setEditedService({ ...service });
-  };
-
-  const cancelEditing = () => {
-    setEditingIndex(null);
-    setEditedService(null);
-  };
-
-  const saveEditing = () => {
-    if (editingIndex !== null && editedService) {
-      const newServices = [...services];
-      newServices[editingIndex] = editedService;
-      setServices(newServices);
-      localStorage.setItem('admin_services', JSON.stringify(newServices));
-      setEditingIndex(null);
-      setEditedService(null);
-    }
-  };
 
   const categories = Array.from(new Set(services.map(s => s.category)));
 
@@ -145,70 +120,20 @@ const Price = () => {
                   <div className="space-y-1 sm:space-y-2">
                     {services
                       .filter(s => s.category === category)
-                      .map((service, idx) => {
-                        const globalIndex = services.findIndex(s => s === service);
-                        return (
-                          <div key={idx} className="p-2 sm:p-3 rounded-lg hover:bg-accent/50 transition-colors">
-                            {editingIndex === globalIndex && editedService ? (
-                              <div className="space-y-2">
-                                <Input
-                                  placeholder="Название услуги"
-                                  value={editedService.name}
-                                  onChange={(e) => setEditedService({ ...editedService, name: e.target.value })}
-                                  className="text-xs sm:text-sm h-8"
-                                />
-                                <div className="grid grid-cols-2 gap-2">
-                                  <Input
-                                    type="number"
-                                    placeholder="Мин. цена"
-                                    value={editedService.minPrice}
-                                    onChange={(e) => setEditedService({ ...editedService, minPrice: Number(e.target.value) })}
-                                    className="text-xs sm:text-sm h-8"
-                                  />
-                                  <Input
-                                    type="number"
-                                    placeholder="Макс. цена"
-                                    value={editedService.maxPrice}
-                                    onChange={(e) => setEditedService({ ...editedService, maxPrice: Number(e.target.value) })}
-                                    className="text-xs sm:text-sm h-8"
-                                  />
-                                </div>
-                                <div className="flex gap-2">
-                                  <Button onClick={saveEditing} size="sm" className="flex-1 h-8 text-xs">
-                                    <Icon name="Check" size={14} className="mr-1" />
-                                    Сохранить
-                                  </Button>
-                                  <Button onClick={cancelEditing} size="sm" variant="outline" className="flex-1 h-8 text-xs">
-                                    <Icon name="X" size={14} className="mr-1" />
-                                    Отмена
-                                  </Button>
-                                </div>
-                              </div>
-                            ) : (
-                              <div className="flex justify-between items-center gap-2">
-                                <span className="text-xs sm:text-sm flex-1">{service.name}</span>
-                                <div className="flex items-center gap-2">
-                                  <span className="text-xs sm:text-sm font-medium text-primary whitespace-nowrap">
-                                    {service.minPrice === service.maxPrice
-                                      ? `${service.minPrice.toLocaleString('ru-RU')} ₽`
-                                      : `${service.minPrice.toLocaleString('ru-RU')} - ${service.maxPrice.toLocaleString('ru-RU')} ₽`
-                                    }
-                                  </span>
-                                  <Button 
-                                    variant="ghost" 
-                                    size="sm" 
-                                    onClick={() => startEditing(globalIndex, service)}
-                                    className="h-7 w-7 p-0"
-                                    title="Редактировать"
-                                  >
-                                    <Icon name="Pencil" size={14} className="text-primary" />
-                                  </Button>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
+                      .map((service, index) => (
+                        <div
+                          key={index}
+                          className="flex justify-between items-center p-2 sm:p-3 rounded-lg hover:bg-accent/50 transition-colors gap-2"
+                        >
+                          <span className="text-xs sm:text-sm">{service.name}</span>
+                          <span className="text-xs sm:text-sm font-medium text-primary whitespace-nowrap">
+                            {service.minPrice === service.maxPrice
+                              ? `${service.minPrice.toLocaleString('ru-RU')} ₽`
+                              : `${service.minPrice.toLocaleString('ru-RU')} - ${service.maxPrice.toLocaleString('ru-RU')} ₽`
+                            }
+                          </span>
+                        </div>
+                      ))}
                   </div>
                 </CardContent>
               </Card>
