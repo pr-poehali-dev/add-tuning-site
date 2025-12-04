@@ -17,6 +17,7 @@ const Contacts = lazy(() => import("./pages/Contacts"));
 const Myths = lazy(() => import("./pages/Myths"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Admin = lazy(() => import("./pages/Admin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const CookieConsent = lazy(() => import("./components/CookieConsent"));
 
@@ -57,6 +58,7 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/admin" element={<Admin />} />
               
               {/* SEO redirects */}
               <Route path="/service" element={<Navigate to="/services" replace />} />
