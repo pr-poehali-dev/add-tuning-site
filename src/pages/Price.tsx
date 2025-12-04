@@ -128,31 +128,6 @@ const Price = () => {
             ))}
           </div>
 
-          <Card className="mt-6 sm:mt-8">
-            <CardHeader className="p-4 sm:p-6">
-              <CardTitle className="text-lg sm:text-xl flex items-center gap-2">
-                <Icon name="PlayCircle" size={18} className="text-primary sm:w-5 sm:h-5" />
-                Процесс работы
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-4 sm:p-6 pt-0">
-              <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                Смотрите, как проходит чип-тюнинг: от диагностики до финального тест-драйва
-              </p>
-              <div className="aspect-video rounded-lg overflow-hidden bg-black">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://rutube.ru/play/embed/YOUR_VIDEO_ID/"
-                  frameBorder="0"
-                  allow="clipboard-write; autoplay"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            </CardContent>
-          </Card>
-
           <Card className="mt-6 sm:mt-8 bg-primary/5 border-primary/20">
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-start gap-2 sm:gap-3 mb-6">
