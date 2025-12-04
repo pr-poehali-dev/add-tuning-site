@@ -25,7 +25,7 @@ const MobileBookingButton = () => {
   };
 
   const handleTelegram = () => {
-    window.open('https://t.me/addtuning', '_blank');
+    window.open('https://t.me/Add_Tuning', '_blank');
   };
 
   const handleVK = () => {

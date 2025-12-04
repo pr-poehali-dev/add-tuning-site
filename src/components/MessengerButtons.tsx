@@ -9,7 +9,7 @@ interface MessengerButtonsProps {
 
 const MessengerButtons = ({ size = 'lg', className = '', layout = 'horizontal' }: MessengerButtonsProps) => {
   const whatsappNumber = '79372134547';
-  const telegramUsername = 'addtuning';
+  const telegramUsername = 'Add_Tuning';
   const vkLink = 'https://vk.com/addtuning';
 
   const handleWhatsApp = () => {
