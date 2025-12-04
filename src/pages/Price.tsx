@@ -56,12 +56,31 @@ const Price = () => {
   const [services, setServices] = useState<ServiceItem[]>([]);
 
   useEffect(() => {
-    const savedServices = localStorage.getItem('admin_services');
-    if (savedServices) {
-      setServices(JSON.parse(savedServices));
-    } else {
-      setServices(defaultServices);
-    }
+    const loadServices = () => {
+      const savedServices = localStorage.getItem('admin_services');
+      if (savedServices) {
+        setServices(JSON.parse(savedServices));
+      } else {
+        setServices(defaultServices);
+      }
+    };
+
+    loadServices();
+
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'admin_services') {
+        loadServices();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    const interval = setInterval(loadServices, 1000);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
   }, []);
 
   const categories = Array.from(new Set(services.map(s => s.category)));
