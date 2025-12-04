@@ -21,24 +21,28 @@ interface AdminTabsProps {
   setNewReview: (value: Review) => void;
   addReview: () => void;
   deleteReview: (index: number) => void;
+  updateReview: (index: number, review: Review) => void;
   
   portfolio: PortfolioItem[];
   newPortfolio: PortfolioItem;
   setNewPortfolio: (value: PortfolioItem) => void;
   addPortfolio: () => void;
   deletePortfolio: (index: number) => void;
+  updatePortfolio: (index: number, item: PortfolioItem) => void;
   
   faqItems: FAQItem[];
   newFAQ: FAQItem;
   setNewFAQ: (value: FAQItem) => void;
   addFAQ: () => void;
   deleteFAQ: (index: number) => void;
+  updateFAQ: (index: number, item: FAQItem) => void;
   
   blogPosts: BlogPost[];
   newBlogPost: BlogPost;
   setNewBlogPost: (value: BlogPost) => void;
   addBlogPost: () => void;
   deleteBlogPost: (index: number) => void;
+  updateBlogPost: (index: number, post: BlogPost) => void;
   
   contactInfo: ContactInfo;
   setContactInfo: (value: ContactInfo) => void;
@@ -61,21 +65,25 @@ const AdminTabs = ({
   setNewReview,
   addReview,
   deleteReview,
+  updateReview,
   portfolio,
   newPortfolio,
   setNewPortfolio,
   addPortfolio,
   deletePortfolio,
+  updatePortfolio,
   faqItems,
   newFAQ,
   setNewFAQ,
   addFAQ,
   deleteFAQ,
+  updateFAQ,
   blogPosts,
   newBlogPost,
   setNewBlogPost,
   addBlogPost,
   deleteBlogPost,
+  updateBlogPost,
   contactInfo,
   setContactInfo,
   saveContacts,
@@ -113,6 +121,7 @@ const AdminTabs = ({
           setNewReview={setNewReview}
           addReview={addReview}
           deleteReview={deleteReview}
+          updateReview={updateReview}
         />
       </TabsContent>
 
@@ -123,6 +132,7 @@ const AdminTabs = ({
           setNewPortfolio={setNewPortfolio}
           addPortfolio={addPortfolio}
           deletePortfolio={deletePortfolio}
+          updatePortfolio={updatePortfolio}
         />
       </TabsContent>
 
@@ -133,6 +143,7 @@ const AdminTabs = ({
           setNewFAQ={setNewFAQ}
           addFAQ={addFAQ}
           deleteFAQ={deleteFAQ}
+          updateFAQ={updateFAQ}
         />
       </TabsContent>
 
@@ -143,6 +154,7 @@ const AdminTabs = ({
           setNewBlogPost={setNewBlogPost}
           addBlogPost={addBlogPost}
           deleteBlogPost={deleteBlogPost}
+          updateBlogPost={updateBlogPost}
         />
       </TabsContent>
 

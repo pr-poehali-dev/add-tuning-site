@@ -281,6 +281,12 @@ const Admin = () => {
     saveReviews(reviews.filter((_, i) => i !== index));
   };
 
+  const updateReview = (index: number, updatedReview: Review) => {
+    const newReviews = [...reviews];
+    newReviews[index] = updatedReview;
+    saveReviews(newReviews);
+  };
+
   const addPortfolio = () => {
     if (!newPortfolio.car) return;
     savePortfolio([...portfolio, newPortfolio]);
@@ -289,6 +295,12 @@ const Admin = () => {
 
   const deletePortfolio = (index: number) => {
     savePortfolio(portfolio.filter((_, i) => i !== index));
+  };
+
+  const updatePortfolio = (index: number, updatedItem: PortfolioItem) => {
+    const newPortfolio = [...portfolio];
+    newPortfolio[index] = updatedItem;
+    savePortfolio(newPortfolio);
   };
 
   const addFAQ = () => {
@@ -301,6 +313,12 @@ const Admin = () => {
     saveFAQ(faqItems.filter((_, i) => i !== index));
   };
 
+  const updateFAQ = (index: number, updatedItem: FAQItem) => {
+    const newFAQ = [...faqItems];
+    newFAQ[index] = updatedItem;
+    saveFAQ(newFAQ);
+  };
+
   const addBlogPost = () => {
     if (!newBlogPost.title || !newBlogPost.content) return;
     const id = newBlogPost.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
@@ -310,6 +328,12 @@ const Admin = () => {
 
   const deleteBlogPost = (index: number) => {
     saveBlog(blogPosts.filter((_, i) => i !== index));
+  };
+
+  const updateBlogPost = (index: number, updatedPost: BlogPost) => {
+    const newPosts = [...blogPosts];
+    newPosts[index] = updatedPost;
+    saveBlog(newPosts);
   };
 
   const exportData = () => {
@@ -422,21 +446,25 @@ const Admin = () => {
             setNewReview={setNewReview}
             addReview={addReview}
             deleteReview={deleteReview}
+            updateReview={updateReview}
             portfolio={portfolio}
             newPortfolio={newPortfolio}
             setNewPortfolio={setNewPortfolio}
             addPortfolio={addPortfolio}
             deletePortfolio={deletePortfolio}
+            updatePortfolio={updatePortfolio}
             faqItems={faqItems}
             newFAQ={newFAQ}
             setNewFAQ={setNewFAQ}
             addFAQ={addFAQ}
             deleteFAQ={deleteFAQ}
+            updateFAQ={updateFAQ}
             blogPosts={blogPosts}
             newBlogPost={newBlogPost}
             setNewBlogPost={setNewBlogPost}
             addBlogPost={addBlogPost}
             deleteBlogPost={deleteBlogPost}
+            updateBlogPost={updateBlogPost}
             contactInfo={contactInfo}
             setContactInfo={setContactInfo}
             saveContacts={saveContacts}
