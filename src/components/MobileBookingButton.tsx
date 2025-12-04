@@ -25,7 +25,7 @@ const MobileBookingButton = () => {
   };
 
   const handleTelegram = () => {
-    window.open('https://t.me/Add_Tuning', '_blank');
+    window.open('https://t.me/Add_Tuning?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг', '_blank');
   };
 
   const handleVK = () => {

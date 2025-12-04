@@ -17,7 +17,7 @@ const MessengerButtons = ({ size = 'lg', className = '', layout = 'horizontal' }
   };
 
   const handleTelegram = () => {
-    window.open(`https://t.me/${telegramUsername}`, '_blank');
+    window.open(`https://t.me/${telegramUsername}?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг`, '_blank');
   };
 
   const handleVK = () => {
