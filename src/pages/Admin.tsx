@@ -94,8 +94,60 @@ const Admin = () => {
     if (savedAuth === 'true') {
       setIsAuthenticated(true);
       loadAllData();
+    } else {
+      loadDefaultData();
     }
   }, []);
+
+  const loadDefaultData = async () => {
+    const priceServices: ServiceItem[] = [
+      { name: 'Stage 1 (бензин)', minPrice: 7000, maxPrice: 20000, category: 'Чип-тюнинг' },
+      { name: 'Stage 1 (дизель)', minPrice: 7000, maxPrice: 30000, category: 'Чип-тюнинг' },
+      { name: 'Stage 2 (с доработками)', minPrice: 35000, maxPrice: 60000, category: 'Чип-тюнинг' },
+      { name: 'Эко-тюнинг', minPrice: 7000, maxPrice: 15000, category: 'Чип-тюнинг' },
+      { name: 'Прошивка DSG', minPrice: 7000, maxPrice: 25000, category: 'Коробки передач' },
+      { name: 'Прошивка АКПП', minPrice: 15000, maxPrice: 22000, category: 'Коробки передач' },
+      { name: 'Компьютерная диагностика', minPrice: 2000, maxPrice: 2000, category: 'Диагностика' },
+      { name: 'Прописка кодов форсунок', minPrice: 700, maxPrice: 1500, category: 'Диагностика' },
+    ];
+
+    const portfolioData: PortfolioItem[] = [
+      { car: 'BMW 320d F30', year: '2018', stage: 'Stage 1', powerBefore: '190', powerAfter: '245', torqueBefore: '400', torqueAfter: '500', image: 'https://cdn.poehali.dev/files/8c1ea7ab-c671-424f-92a5-4d94593b56bd.png' },
+      { car: 'Audi A4 2.0 TFSI', year: '2019', stage: 'Stage 2', powerBefore: '252', powerAfter: '340', torqueBefore: '370', torqueAfter: '480', image: 'https://cdn.poehali.dev/files/0e7c2531-1a2f-495f-9e1f-ca06c1226ef9.png' },
+      { car: 'Volkswagen Golf GTI', year: '2020', stage: 'Stage 1', powerBefore: '245', powerAfter: '310', torqueBefore: '370', torqueAfter: '450', image: 'https://cdn.poehali.dev/files/43696436-5287-424d-83c7-59937a0b8762.png' },
+      { car: 'Mercedes C220d W205', year: '2017', stage: 'Stage 1', powerBefore: '194', powerAfter: '250', torqueBefore: '400', torqueAfter: '520', image: 'https://cdn.poehali.dev/files/7b082b82-7c29-4d7e-86a8-8a10ad560dba.png' },
+      { car: 'Mercedes C200 CDI', year: '2006', stage: 'Stage 1', powerBefore: '136', powerAfter: '180', torqueBefore: '300', torqueAfter: '380', image: 'https://cdn.poehali.dev/files/e6a030a8-0741-4e43-951f-ee726e6be7a9.png' },
+      { car: 'Hyundai Solaris', year: '2020', stage: 'Stage 1', powerBefore: '123', powerAfter: '145', torqueBefore: '151', torqueAfter: '180', image: 'https://cdn.poehali.dev/files/f1b1e923-4080-40db-a491-21706b27e9b4.png' },
+    ];
+
+    if (!localStorage.getItem('admin_services')) {
+      setServices(priceServices);
+    }
+
+    if (!localStorage.getItem('admin_portfolio')) {
+      setPortfolio(portfolioData);
+    }
+
+    try {
+      const blogModule = await import('../data/blogPosts');
+      const blogData = Object.values(blogModule.blogPostsData).map(post => ({
+        id: post.id,
+        title: post.title,
+        date: post.date,
+        readTime: post.readTime,
+        category: post.category,
+        image: post.image,
+        excerpt: post.content.intro,
+        content: post.content.intro + '\n\n' + post.content.sections.map(s => s.title + '\n' + s.content + (s.list ? '\n' + s.list.join('\n') : '')).join('\n\n') + '\n\n' + post.content.conclusion
+      }));
+      
+      if (!localStorage.getItem('admin_blog')) {
+        setBlogPosts(blogData);
+      }
+    } catch (error) {
+      console.error('Failed to load blog data:', error);
+    }
+  };
 
   const handleLogin = () => {
     if (password === 'addtuning2024') {
@@ -123,19 +175,31 @@ const Admin = () => {
 
   const loadAllData = () => {
     const savedServices = localStorage.getItem('admin_services');
-    if (savedServices) setServices(JSON.parse(savedServices));
+    if (savedServices) {
+      setServices(JSON.parse(savedServices));
+    } else {
+      loadDefaultData();
+    }
 
     const savedReviews = localStorage.getItem('admin_reviews');
     if (savedReviews) setReviews(JSON.parse(savedReviews));
 
     const savedPortfolio = localStorage.getItem('admin_portfolio');
-    if (savedPortfolio) setPortfolio(JSON.parse(savedPortfolio));
+    if (savedPortfolio) {
+      setPortfolio(JSON.parse(savedPortfolio));
+    } else {
+      loadDefaultData();
+    }
 
     const savedFAQ = localStorage.getItem('admin_faq');
     if (savedFAQ) setFaqItems(JSON.parse(savedFAQ));
 
     const savedBlog = localStorage.getItem('admin_blog');
-    if (savedBlog) setBlogPosts(JSON.parse(savedBlog));
+    if (savedBlog) {
+      setBlogPosts(JSON.parse(savedBlog));
+    } else {
+      loadDefaultData();
+    }
 
     const savedContacts = localStorage.getItem('admin_contacts');
     if (savedContacts) setContactInfo(JSON.parse(savedContacts));
