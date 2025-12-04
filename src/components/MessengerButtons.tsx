@@ -11,7 +11,6 @@ const MessengerButtons = ({ size = 'lg', className = '', layout = 'horizontal' }
   const whatsappNumber = '79372134547';
   const telegramUsername = 'addtuning';
   const vkLink = 'https://vk.com/addtuning';
-  const maxLink = 'https://max.mail.ru/channels/addtuning';
 
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}?text=Здравствуйте!%20Хочу%20записаться%20на%20чип-тюнинг`, '_blank');
@@ -23,10 +22,6 @@ const MessengerButtons = ({ size = 'lg', className = '', layout = 'horizontal' }
 
   const handleVK = () => {
     window.open(vkLink, '_blank');
-  };
-
-  const handleMAX = () => {
-    window.open(maxLink, '_blank');
   };
 
   const buttonClass = layout === 'vertical' ? 'w-full' : '';
@@ -59,15 +54,6 @@ const MessengerButtons = ({ size = 'lg', className = '', layout = 'horizontal' }
       >
         <Icon name="Users" size={18} className="sm:w-5 sm:h-5" />
         <span className="hidden xs:inline">Написать в </span>VK
-      </Button>
-
-      <Button 
-        size={size}
-        className={`bg-[#FF6633] hover:bg-[#E55522] text-white shadow-lg shadow-[#FF6633]/30 text-sm sm:text-base font-semibold px-4 sm:px-6 py-4 sm:py-5 gap-2 ${buttonClass}`}
-        onClick={handleMAX}
-      >
-        <Icon name="Mail" size={18} className="sm:w-5 sm:h-5" />
-        <span className="hidden xs:inline">Написать в </span>MAX
       </Button>
     </div>
   );

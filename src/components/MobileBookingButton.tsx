@@ -32,10 +32,6 @@ const MobileBookingButton = () => {
     window.open('https://vk.com/addtuning', '_blank');
   };
 
-  const handleMAX = () => {
-    window.open('https://max.mail.ru/channels/addtuning', '_blank');
-  };
-
   return (
     <div 
       className={`fixed bottom-4 right-3 sm:bottom-6 sm:right-4 z-40 lg:hidden transition-all duration-300 ${
@@ -67,14 +63,6 @@ const MobileBookingButton = () => {
           >
             <Icon name="Users" size={14} className="mr-1.5" />
             VK
-          </Button>
-          <Button 
-            size="sm"
-            className="bg-[#FF6633] hover:bg-[#E55522] text-white shadow-lg shadow-[#FF6633]/30 text-xs font-semibold px-3 py-2 rounded-full"
-            onClick={handleMAX}
-          >
-            <Icon name="Mail" size={14} className="mr-1.5" />
-            MAX
           </Button>
         </div>
       )}
