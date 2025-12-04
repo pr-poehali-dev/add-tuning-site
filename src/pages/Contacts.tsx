@@ -5,6 +5,7 @@ import ContactInfo from '@/components/ContactInfo';
 import MapCard from '@/components/MapCard';
 import DiagnosticForm from '@/components/DiagnosticForm';
 import TuningBookingForm from '@/components/TuningBookingForm';
+import MessengerButtons from '@/components/MessengerButtons';
 import { Helmet } from 'react-helmet-async';
 
 const Contacts = () => {
@@ -56,6 +57,10 @@ const Contacts = () => {
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Наши контакты</h2>
               
               <ContactInfo />
+              <div className="my-6">
+                <h3 className="text-lg font-semibold mb-4 text-center">Свяжитесь с нами</h3>
+                <MessengerButtons layout="vertical" />
+              </div>
               <MapCard />
               <DiagnosticForm 
                 lastSubmitTime={lastSubmitTime}

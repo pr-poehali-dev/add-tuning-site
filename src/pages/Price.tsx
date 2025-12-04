@@ -1,9 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import MessengerButtons from '@/components/MessengerButtons';
 import { Helmet } from 'react-helmet-async';
 
 interface ServiceItem {
@@ -129,7 +129,7 @@ const Price = () => {
 
           <Card className="mt-6 sm:mt-8 bg-primary/5 border-primary/20">
             <CardContent className="p-4 sm:p-6">
-              <div className="flex items-start gap-2 sm:gap-3">
+              <div className="flex items-start gap-2 sm:gap-3 mb-6">
                 <Icon name="Info" size={18} className="text-primary mt-1 flex-shrink-0 sm:w-5 sm:h-5" />
                 <div className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                   <p>
@@ -139,10 +139,11 @@ const Price = () => {
                     Итоговая стоимость зависит от марки и модели автомобиля, сложности работ и выбранных опций.
                   </p>
                   <p>
-                    Для точного расчета стоимости свяжитесь со мной по телефону или через WhatsApp.
+                    Для точного расчета стоимости свяжитесь любым удобным способом:
                   </p>
                 </div>
               </div>
+              <MessengerButtons />
             </CardContent>
           </Card>
 

@@ -1,10 +1,10 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import MessengerButtons from '@/components/MessengerButtons';
 import { Helmet } from 'react-helmet-async';
 
 const Portfolio = () => {
@@ -195,16 +195,7 @@ const Portfolio = () => {
               <Icon name="BarChart3" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Хотите такой же результат?</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">Запишитесь на диагностику и получите расчет прироста мощности для вашего автомобиля</p>
-              <div className="flex justify-center gap-4 flex-wrap">
-                <Button 
-                  size="lg" 
-                  className="gap-2 text-sm sm:text-base"
-                  onClick={() => window.open('https://wa.me/79372134547?text=Здравствуйте!%20Хочу%20узнать%20больше%20о%20чип-тюнинге', '_blank')}
-                >
-                  <Icon name="MessageCircle" size={20} />
-                  Написать в WhatsApp
-                </Button>
-              </div>
+              <MessengerButtons />
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileBookingButton from '@/components/MobileBookingButton';
+import MessengerButtons from '@/components/MessengerButtons';
 import { Helmet } from 'react-helmet-async';
 
 const FAQ = () => {
@@ -248,17 +248,9 @@ const FAQ = () => {
             <Icon name="MessageCircleQuestion" size={40} className="text-primary mx-auto mb-3 sm:mb-4 sm:w-12 sm:h-12" />
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Остались вопросы?</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 px-4">
-              Напишите в WhatsApp — отвечу на все вопросы, помогу определиться с выбором услуги
+              Свяжитесь любым удобным способом — отвечу на все вопросы, помогу определиться с выбором услуги
             </p>
-            <a
-              href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20есть%20вопрос%20по%20чип-тюнингу"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm sm:text-lg"
-            >
-              <Icon name="MessageCircle" size={24} className="mr-2" />
-              Написать в WhatsApp
-            </a>
+            <MessengerButtons />
           </div>
         </div>
       </section>

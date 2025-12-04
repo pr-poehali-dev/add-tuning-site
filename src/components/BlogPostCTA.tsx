@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import MessengerButtons from '@/components/MessengerButtons';
 
 const BlogPostCTA = () => {
   return (
@@ -9,17 +10,9 @@ const BlogPostCTA = () => {
           <Icon name="MessageSquare" size={48} className="text-primary mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-4">Остались вопросы по теме?</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Напишите в WhatsApp — я подробно расскажу про тюнинг именно вашего автомобиля
+            Свяжитесь с нами любым удобным способом — я подробно расскажу про тюнинг именно вашего автомобиля
           </p>
-          <a
-            href="https://wa.me/79372134547?text=Здравствуйте!%20У%20меня%20вопрос%20о%20чип-тюнинге"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-lg"
-          >
-            <Icon name="MessageCircle" size={24} className="mr-2" />
-            Написать в WhatsApp
-          </a>
+          <MessengerButtons />
         </CardContent>
       </Card>
     </div>
